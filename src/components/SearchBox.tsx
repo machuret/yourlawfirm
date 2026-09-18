@@ -22,23 +22,23 @@ export default function SearchBox({ size = "md", placeholder = "Search a legal i
     else if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => (a <= 0 ? items.length - 1 : a - 1)); }
     else if (e.key === "Escape") setOpen(false);
   }
-  const pad = size === "lg" ? "py-4 pl-5 pr-32 text-lg" : size === "sm" ? "py-2 pl-3 pr-20 text-sm" : "py-3 pl-4 pr-28";
+  const pad = size === "lg" ? "py-4 pl-6 pr-32 text-[19px]" : size === "sm" ? "py-1.5 pl-4 pr-20 text-[14px]" : "py-3 pl-5 pr-28";
   return (
     <div ref={box} className="relative w-full">
       <form onSubmit={submit} role="search">
         <label htmlFor={id} className="sr-only">Search</label>
         <input id={id} value={q} onChange={(e) => setQ(e.target.value)} onFocus={() => items.length && setOpen(true)} onKeyDown={key} placeholder={placeholder} autoComplete="off"
           role="combobox" aria-expanded={open} aria-controls={`${id}-list`} aria-activedescendant={active >= 0 ? `${id}-${active}` : undefined}
-          className={`w-full rounded-md border border-line bg-paper text-ink shadow-sm focus:border-green ${pad}`} />
-        <button type="submit" className={`absolute right-1.5 top-1/2 -translate-y-1/2 btn btn-solid ${size === "sm" ? "px-3 py-1 text-sm" : ""}`}>Search</button>
+          className={`w-full rounded-full border border-hair bg-paper text-ink shadow-[0_2px_12px_rgba(0,0,0,.06)] outline-none focus:border-accent ${pad}`} />
+        <button type="submit" className={`absolute right-1.5 top-1/2 -translate-y-1/2 btn btn-primary ${size === "sm" ? "!px-3 !py-1 !text-[13px]" : ""}`}>Search</button>
       </form>
       {open && items.length ? (
-        <ul id={`${id}-list`} role="listbox" className="absolute z-50 mt-2 max-h-96 w-full overflow-auto rounded-md border border-line bg-paper py-1 text-ink shadow-xl">
+        <ul id={`${id}-list`} role="listbox" className="absolute z-50 mt-2 max-h-96 w-full overflow-auto rounded-2xl border border-hair bg-paper p-1.5 text-left text-ink shadow-[0_20px_50px_rgba(0,0,0,.14)]">
           {items.map((s, i) => (
             <li key={s.url + i} id={`${id}-${i}`} role="option" aria-selected={i === active}>
-              <button type="button" onMouseEnter={() => setActive(i)} onClick={() => go(s.url)} className={`flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left ${i === active ? "bg-stone" : ""}`}>
+              <button type="button" onMouseEnter={() => setActive(i)} onClick={() => go(s.url)} className={`flex w-full items-center justify-between gap-4 rounded-xl px-3.5 py-2.5 text-left ${i === active ? "bg-soft" : ""}`}>
                 <span><span className="block font-medium">{s.label}</span>{s.sublabel ? <span className="block text-xs text-muted">{s.sublabel}</span> : null}</span>
-                <span className="shrink-0 text-xs text-brass">{KIND[s.kind]}</span>
+                <span className="shrink-0 text-[12px] text-accent">{KIND[s.kind]}</span>
               </button>
             </li>))}
         </ul>) : null}

@@ -14,8 +14,8 @@ export default async function Search({ searchParams }: { searchParams: Promise<R
   return (<>
     <Hero title={q ? `Results for “${q}”` : "Find a lawyer"} crumbs={[{ name: "Search" }]}><div className="max-w-2xl"><SearchBox size="lg" /></div></Hero>
     <div className="wrap py-10">
-      {quick.length ? <div className="mb-8"><p className="text-sm text-muted">Jump to</p><ul className="mt-2 flex flex-wrap gap-2">{quick.map((s) => <li key={s.url}><Link href={s.url} className="chip hover:bg-stone">{s.label}</Link></li>)}</ul></div> : null}
-      {q || sp.area || lat != null ? <p className="mb-4 text-sm text-muted">{rows.length} {rows.length === 1 ? "firm" : "firms"}{lat != null ? " near you" : ""}</p> : <p className="text-ink/80">Search by legal issue, suburb, postcode or firm name, or <Link href="/law" className="underline">browse areas of law</Link>.</p>}
+      {quick.length ? <div className="mb-8"><p className="text-sm text-muted">Jump to</p><ul className="mt-2 flex flex-wrap gap-2">{quick.map((s) => <li key={s.url}><Link href={s.url} className="pill hover:bg-hair">{s.label}</Link></li>)}</ul></div> : null}
+      {q || sp.area || lat != null ? <p className="mb-4 text-sm text-muted">{rows.length} {rows.length === 1 ? "firm" : "firms"}{lat != null ? " near you" : ""}</p> : <p className="text-ink/80">Search by legal issue, suburb, postcode or firm name, or <Link href="/law" className="link">browse areas of law</Link>.</p>}
       {(q || sp.area || lat != null) ? <ListingList rows={rows} areas={areaMap(areas)} name={`Search results for ${q}`} /> : null}
     </div></>);
 }

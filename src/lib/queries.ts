@@ -4,7 +4,7 @@ import { siteAreaFilter, SITE_KEY } from "./site";
 import type { Listing, PracticeArea, Region, Practitioner, Review, Group, StateInfo, Suggestion } from "./types";
 
 const LISTING_COLS = "listing_id,firm_id,slug,business_name,office_name,listing_type,is_law_practice,suburb,state,postcode,region_slug,region_name,address_line_1,level_floor,latitude,longitude,phone_e164,phone_primary,website_url,booking_url,email_general,primary_practice_area,practice_areas,languages_spoken,fee_structures,free_first_consultation,no_win_no_fee,legal_aid_accepted,after_hours,opening_hours,timezone,tagline,short_description,badges,claim_status,is_verified,plan_tier,is_featured,featured_until,logo_url,hero_image_url,google_rating,google_review_count,year_established,number_of_lawyers,social_links,firm_linkedin_url,google_fetched_at,reviews_available,founders,leadership,data_confidence,date_last_verified";
-const AREA_COLS = "slug,name,parent_group,group_slug,candidate_site,is_lawyer_area,intro,body,faq,hero_image_url,hero_credit,seo_title,meta_description,sort";
+const AREA_COLS = "slug,name,parent_group,group_slug,candidate_site,is_lawyer_area,intro,body,faq,hero_image_url,hero_credit,seo_title,meta_description,sort,why,au_context";
 const REGION_COLS = "region_slug,region_name,state,region_type,major_centres,intro,body,faq,hero_image_url,hero_credit,seo_title,meta_description";
 
 function base() { return supabase.from("public_listings").select(LISTING_COLS, { count: "exact" }); }
@@ -101,4 +101,12 @@ export async function suggest(q: string): Promise<Suggestion[]> {
   if (q.trim().length < 2) return [];
   const { data } = await supabase.rpc("suggest", { q, site: SITE_KEY, lim: 10 });
   return (data ?? []) as Suggestion[];
+}
+export async function getAreaTopRegions(area: string, lim = 12) {
+  const { data } = await supabase.rpc("area_top_regions", { area, lim });
+  return (data ?? []) as { region_slug: string; region_name: string; state: string; listings: number }[];
+}
+export async function getLogos(area?: string | null, region?: string | null, lim = 24) {
+  const { data } = await supabase.rpc("logo_wall", { area: area ?? null, region: region ?? null, lim });
+  return (data ?? []) as { slug: string; business_name: string; logo_url: string }[];
 }

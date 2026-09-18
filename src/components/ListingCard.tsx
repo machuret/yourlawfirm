@@ -1,31 +1,44 @@
 import Link from "next/link";
+import { BadgeCheck, Phone, Globe, Languages, Sparkles, HandCoins, Clock } from "lucide-react";
 import type { Listing } from "@/lib/types";
 import { fmtPhone, areaName } from "@/lib/format";
 import Stars from "./Stars";
+import Tip from "./Tip";
+import OpenStatus from "./OpenStatus";
+export function Initials({ name, className = "" }: { name: string; className?: string }) {
+  const i = name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+  return <span className={`display text-accent ${className}`}>{i}</span>;
+}
 export default function ListingCard({ l, areas }: { l: Listing; areas: Record<string, string> }) {
   const featured = l.is_featured && (!l.featured_until || l.featured_until >= new Date().toISOString().slice(0, 10));
-  const initials = l.business_name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+  const langs = (l.languages_spoken ?? []).filter((x) => x !== "english");
   return (
-    <article className={`card grid gap-4 p-5 md:grid-cols-[4.5rem_1fr_auto] ${featured ? "ring-2 ring-brass" : ""}`}>
-      <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-md border border-line bg-paper">
-        {l.logo_url ? <img src={l.logo_url} alt="" className="max-h-14 max-w-14 object-contain" loading="lazy" /> : <span className="font-display text-xl text-green">{initials}</span>}
+    <article className={`surface card-hover relative flex flex-col p-5 ${featured ? "ring-2 ring-star/70" : ""}`}>
+      <div className="flex items-start gap-4">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-soft">
+          {l.logo_url ? <img src={l.logo_url} alt="" className="max-h-11 max-w-11 object-contain" loading="lazy" /> : <Initials name={l.business_name} className="text-lg" />}
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-1.5">
+            <h3 className="truncate text-[19px] leading-tight"><Link href={`/lawyers/${l.slug}`} className="after:absolute after:inset-0 hover:underline">{l.business_name}</Link></h3>
+            {l.data_confidence === "high" ? <Tip label="Verified: phone number confirmed on the firm’s website and Google"><BadgeCheck aria-hidden="true" className="relative z-10 h-4 w-4 shrink-0 text-accent" /></Tip> : null}
+          </div>
+          <p className="mt-0.5 truncate text-[14px] text-muted">{[l.suburb, l.state].filter(Boolean).join(", ")}{l.region_name ? ` · ${l.region_name}` : ""}</p>
+          <div className="relative z-10 mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1"><Stars rating={l.google_rating} count={l.google_review_count} fetchedAt={l.google_fetched_at} /><OpenStatus hours={l.opening_hours} tz={l.timezone} /></div>
+        </div>
+        {featured ? <span className="pill pill-accent !text-[12px]"><Sparkles className="h-3 w-3" />Featured</span> : null}
       </div>
-      <div className="min-w-0">
-        {featured ? <p className="text-xs font-semibold text-brass">Featured</p> : null}
-        <h3 className="text-xl leading-snug"><Link href={`/lawyers/${l.slug}`} className="hover:underline">{l.business_name}</Link></h3>
-        <p className="mt-0.5 text-sm text-muted">{[l.suburb, l.state].filter(Boolean).join(", ")}{l.region_name ? ` · ${l.region_name}` : ""}</p>
-        <div className="mt-1"><Stars rating={l.google_rating} count={l.google_review_count} fetchedAt={l.google_fetched_at} /></div>
-        {l.short_description ? <p className="mt-2 line-clamp-2 text-sm text-ink/80">{l.short_description}</p> : null}
-        <ul className="mt-3 flex flex-wrap gap-1.5 text-xs">
-          {(l.practice_areas ?? []).slice(0, 4).map((a) => <li key={a} className={`chip ${a === l.primary_practice_area ? "chip-on" : ""}`}>{areaName(a, areas)}</li>)}
-          {l.no_win_no_fee ? <li className="chip">No win, no fee</li> : null}
-          {l.free_first_consultation === "yes" ? <li className="chip">Free first consult</li> : null}
-          {!l.is_law_practice ? <li className="chip text-muted">Licensed conveyancer</li> : null}
-        </ul>
+      {l.short_description ? <p className="mt-3 line-clamp-2 text-[15px] text-[#424245]">{l.short_description}</p> : null}
+      <div className="relative z-10 mt-3 flex flex-wrap gap-1.5">
+        {(l.practice_areas ?? []).slice(0, 3).map((a) => <span key={a} className={`pill !text-[13px] ${a === l.primary_practice_area ? "pill-accent" : ""}`}>{areaName(a, areas)}</span>)}
+        {l.no_win_no_fee ? <Tip label="The firm mentions no win, no fee arrangements. Confirm terms in writing."><span className="pill !text-[13px]"><HandCoins className="h-3.5 w-3.5" />No win, no fee</span></Tip> : null}
+        {l.free_first_consultation === "yes" ? <Tip label="The firm advertises a free first consultation."><span className="pill !text-[13px]"><Clock className="h-3.5 w-3.5" />Free first consult</span></Tip> : null}
+        {langs.length ? <Tip label={`Languages mentioned on the firm’s website: ${langs.join(", ")}`}><span className="pill !text-[13px]"><Languages className="h-3.5 w-3.5" />{langs.length + 1} languages</span></Tip> : null}
       </div>
-      <div className="flex flex-row gap-2 md:flex-col md:items-stretch md:justify-center">
-        <Link href={`/lawyers/${l.slug}`} className="btn btn-solid">View profile</Link>
-        {l.phone_e164 ? <a href={`tel:${l.phone_e164}`} className="btn btn-line">{fmtPhone(l.phone_primary)}</a> : null}
+      <div className="relative z-10 mt-auto flex items-center gap-2 pt-4">
+        {l.phone_e164 ? <a href={`tel:${l.phone_e164}`} className="btn btn-soft !px-3.5 !py-2 text-[14px]"><Phone className="h-4 w-4" />{fmtPhone(l.phone_primary)}</a> : null}
+        {l.website_url ? <a href={l.website_url} target="_blank" rel="noopener nofollow" className="btn btn-ghost text-[14px]" aria-label={`${l.business_name} website`}><Globe className="h-4 w-4" />Website</a> : null}
+        <Link href={`/lawyers/${l.slug}`} className="btn btn-ghost ml-auto text-[14px]">Profile ›</Link>
       </div>
     </article>
   );

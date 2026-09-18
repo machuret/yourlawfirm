@@ -13,41 +13,42 @@ export default function Header({ brand, groups, states }: { brand: string; group
     document.addEventListener("mousedown", h); document.addEventListener("keydown", k); return () => { document.removeEventListener("mousedown", h); document.removeEventListener("keydown", k); }; }, []);
   const tog = (k: "law" | "loc" | "mob") => setOpen((o) => (o === k ? null : k));
   return (
-    <header ref={ref} className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="wrap flex items-center gap-6 py-3">
-        <Link href="/" className="font-display text-2xl text-green-deep shrink-0">{brand}</Link>
-        <nav className="hidden lg:flex items-center gap-1 text-sm" aria-label="Main">
-          <button onClick={() => tog("law")} aria-expanded={open === "law"} className={`navbtn ${open === "law" ? "bg-stone" : ""}`}>Areas of law <span aria-hidden="true">▾</span></button>
-          <button onClick={() => tog("loc")} aria-expanded={open === "loc"} className={`navbtn ${open === "loc" ? "bg-stone" : ""}`}>Locations <span aria-hidden="true">▾</span></button>
+    <header ref={ref} className="sticky top-0 z-40 border-b border-hair bg-[rgba(251,251,253,.78)] backdrop-blur-xl backdrop-saturate-150">
+      <div className="wrap flex h-14 items-center gap-5">
+        <Link href="/" className="display text-[19px] tracking-tight shrink-0">{brand}</Link>
+        <nav className="hidden lg:flex items-center gap-0.5 text-[14px] text-[#424245]" aria-label="Main">
+          <button onClick={() => tog("law")} aria-expanded={open === "law"} className={`navbtn ${open === "law" ? "bg-soft" : ""}`}>Areas of law <span aria-hidden="true">▾</span></button>
+          <button onClick={() => tog("loc")} aria-expanded={open === "loc"} className={`navbtn ${open === "loc" ? "bg-soft" : ""}`}>Locations <span aria-hidden="true">▾</span></button>
           <Link href="/search" className="navbtn">Find a lawyer</Link>
           <Link href="/claim" className="navbtn">For law firms</Link>
+          <Link href="/about" className="navbtn">About</Link>
         </nav>
         <div className="ml-auto hidden md:block w-80"><SearchBox size="sm" placeholder="Search law, suburb or firm" /></div>
         <button className="lg:hidden ml-auto md:ml-0 navbtn" onClick={() => tog("mob")} aria-expanded={open === "mob"} aria-label="Menu">{open === "mob" ? "Close" : "Menu"}</button>
       </div>
       {open === "law" ? (
-        <div className="absolute inset-x-0 top-full border-b border-line bg-paper shadow-xl">
+        <div className="absolute inset-x-0 top-full border-b border-hair bg-[rgba(251,251,253,.96)] backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,.08)]">
           <div className="wrap grid gap-x-8 gap-y-6 py-8 md:grid-cols-4 max-h-[75vh] overflow-auto">
             {groups.map((g) => (
               <div key={g.slug}>
-                <Link href={`/law/${g.slug}`} className="font-display text-lg text-green-deep hover:underline">{g.name}</Link>
-                <ul className="mt-2 grid gap-1 text-sm">{g.areas.slice(0, 7).map((a) => <li key={a.slug}><Link href={`/law/${g.slug}/${a.slug}`} className="text-ink/80 hover:text-ink hover:underline">{a.name}</Link></li>)}
-                  {g.areas.length > 7 ? <li><Link href={`/law/${g.slug}`} className="text-brass hover:underline">All {g.areas.length}</Link></li> : null}</ul>
+                <Link href={`/law/${g.slug}`} className="text-[15px] font-semibold hover:text-accent">{g.name}</Link>
+                <ul className="mt-2 grid gap-1 text-sm">{g.areas.slice(0, 7).map((a) => <li key={a.slug}><Link href={`/law/${g.slug}/${a.slug}`} className="text-muted hover:text-ink">{a.name}</Link></li>)}
+                  {g.areas.length > 7 ? <li><Link href={`/law/${g.slug}`} className="text-accent hover:underline">All {g.areas.length}</Link></li> : null}</ul>
               </div>))}
           </div>
         </div>) : null}
       {open === "loc" ? (
-        <div className="absolute inset-x-0 top-full border-b border-line bg-paper shadow-xl">
+        <div className="absolute inset-x-0 top-full border-b border-hair bg-[rgba(251,251,253,.96)] backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,.08)]">
           <div className="wrap grid gap-x-8 gap-y-6 py-8 sm:grid-cols-2 md:grid-cols-4 max-h-[75vh] overflow-auto">
             {states.map((s) => (
               <div key={s.state}>
-                <p className="font-display text-lg text-green-deep">{s.name}</p>
-                <ul className="mt-2 grid gap-1 text-sm">{s.regions.map((r) => <li key={r.slug}><Link href={`/locations/${r.slug}`} className="text-ink/80 hover:text-ink hover:underline">{r.name}</Link></li>)}</ul>
+                <p className="text-[15px] font-semibold">{s.name}</p>
+                <ul className="mt-2 grid gap-1 text-sm">{s.regions.map((r) => <li key={r.slug}><Link href={`/locations/${r.slug}`} className="text-muted hover:text-ink">{r.name}</Link></li>)}</ul>
               </div>))}
           </div>
         </div>) : null}
       {open === "mob" ? (
-        <div className="lg:hidden border-t border-line bg-paper">
+        <div className="lg:hidden border-t border-hair bg-paper max-h-[80vh] overflow-auto">
           <div className="wrap py-4 grid gap-4">
             <SearchBox size="sm" />
             <details><summary className="cursor-pointer font-medium">Areas of law</summary>

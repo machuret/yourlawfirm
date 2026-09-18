@@ -10,3 +10,5 @@ export function areaName(slug: string, map: Record<string, string>) { return map
 export function areaMap(areas: { slug: string; name: string }[]) { return Object.fromEntries(areas.map((a) => [a.slug, a.name])); }
 export const DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
 export const DAY_LABEL: Record<string, string> = { mon: "Mon", tue: "Tue", wed: "Wed", thu: "Thu", fri: "Fri", sat: "Sat", sun: "Sun" };
+/** "Agribusiness & Rural Law" -> "Agribusiness & Rural lawyers"; "Divorce & Separation" -> "Divorce & Separation lawyers" */
+export function lawyersTitle(name: string) { return /\bLaw$/.test(name) ? name.replace(/\s+Law$/, " lawyers") : `${name} lawyers`; }

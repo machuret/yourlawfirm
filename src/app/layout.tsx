@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Public_Sans } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import { getSite, siteUrl } from "@/lib/site";
 import { getGroups, getPracticeAreas, getRegions, getStates } from "@/lib/queries";
 import Header from "@/components/Header";
@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", axes: ["opsz"] });
-const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-public-sans" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const interTight = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tight", display: "swap" });
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getSite();
@@ -25,8 +25,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     .filter(([, a]) => areas.some((x) => x.slug === a)).map(([gg, a, n]) => ({ href: `/law/${gg}/${a}`, name: n }));
   const base = siteUrl();
   return (
-    <html lang="en-AU" className={`${fraunces.variable} ${publicSans.variable}`}>
-      <body className="min-h-screen flex flex-col">
+    <html lang="en-AU" className={`${inter.variable} ${interTight.variable}`}>
+      <body className="min-h-screen flex flex-col bg-bg">
         <JsonLd data={[{ "@context": "https://schema.org", "@type": "Organization", name: site.brand_name, url: base },
           { "@context": "https://schema.org", "@type": "WebSite", name: site.brand_name, url: base, potentialAction: { "@type": "SearchAction", target: `${base}/search?q={search_term_string}`, "query-input": "required name=search_term_string" } }]} />
         <Header brand={site.brand_name ?? "Your Law Firm"} groups={g} states={s} />

@@ -4,17 +4,17 @@ import JsonLd from "./JsonLd";
 import { itemListLd } from "@/lib/seo";
 import type { Listing } from "@/lib/types";
 export default function ListingList({ rows, areas, name, page, count, hrefFor, size = 24 }: { rows: Listing[]; areas: Record<string, string>; name: string; page?: number; count?: number; hrefFor?: (p: number) => string; size?: number }) {
-  if (!rows.length) return <p className="card p-6 text-ink/80">No listings here yet. Try a nearby location or a broader area of law.</p>;
+  if (!rows.length) return <p className="surface-flat p-6 text-muted">No firms listed here yet. Try a nearby location or a broader area of law.</p>;
   const pages = count ? Math.ceil(count / size) : 0;
   return (
     <div>
       <JsonLd data={itemListLd(name, rows)} />
-      <div className="grid gap-4">{rows.map((l) => <ListingCard key={l.listing_id} l={l} areas={areas} />)}</div>
+      <div className="grid gap-4 md:grid-cols-2">{rows.map((l) => <ListingCard key={l.listing_id} l={l} areas={areas} />)}</div>
       {hrefFor && page && pages > 1 ? (
-        <nav aria-label="Pagination" className="mt-8 flex items-center justify-between text-sm">
-          {page > 1 ? <Link href={hrefFor(page - 1)} className="btn btn-line">Previous</Link> : <span />}
-          <span className="text-muted">Page {page} of {pages}</span>
-          {page < pages ? <Link href={hrefFor(page + 1)} className="btn btn-line">Next</Link> : <span />}
+        <nav aria-label="Pagination" className="mt-10 flex items-center justify-center gap-2 text-[15px]">
+          {page > 1 ? <Link href={hrefFor(page - 1)} className="btn btn-soft">‹ Previous</Link> : null}
+          <span className="px-3 text-muted">Page {page} of {pages}</span>
+          {page < pages ? <Link href={hrefFor(page + 1)} className="btn btn-soft">Next ›</Link> : null}
         </nav>) : null}
     </div>
   );
