@@ -1,8 +1,8 @@
 import { supabase } from "./supabase";
 import { siteAreaFilter } from "./site";
-import type { Listing, PracticeArea, Region, Practitioner } from "./types";
+import type { Listing, PracticeArea, Region, Practitioner, Review } from "./types";
 
-const LISTING_COLS = "listing_id,slug,business_name,office_name,listing_type,is_law_practice,suburb,state,postcode,region_slug,region_name,address_line_1,level_floor,latitude,longitude,phone_e164,phone_primary,website_url,booking_url,email_general,primary_practice_area,practice_areas,languages_spoken,fee_structures,free_first_consultation,no_win_no_fee,legal_aid_accepted,after_hours,opening_hours,timezone,tagline,short_description,badges,claim_status,is_verified,plan_tier,is_featured,featured_until,logo_url,hero_image_url,google_rating,google_review_count,year_established,number_of_lawyers,social_links";
+const LISTING_COLS = "listing_id,firm_id,slug,business_name,office_name,listing_type,is_law_practice,suburb,state,postcode,region_slug,region_name,address_line_1,level_floor,latitude,longitude,phone_e164,phone_primary,website_url,booking_url,email_general,primary_practice_area,practice_areas,languages_spoken,fee_structures,free_first_consultation,no_win_no_fee,legal_aid_accepted,after_hours,opening_hours,timezone,tagline,short_description,badges,claim_status,is_verified,plan_tier,is_featured,featured_until,logo_url,hero_image_url,google_rating,google_review_count,year_established,number_of_lawyers,social_links,firm_linkedin_url,google_fetched_at,reviews_available,founders,leadership";
 
 function base() { return supabase.from("public_listings").select(LISTING_COLS, { count: "exact" }); }
 function scopedWith(filter: string[]) { const q = base(); return filter.length ? q.overlaps("practice_areas", filter) : q; }
@@ -55,8 +55,8 @@ export async function getListing(slug: string) {
   const { data } = await base().eq("slug", slug).maybeSingle();
   return data as Listing | null;
 }
-export async function getPractitioners(listingId: string): Promise<Practitioner[]> {
-  const { data } = await supabase.from("public_practitioners").select("practitioner_id,slug,full_name_display,role_title,practitioner_type,is_principal,practice_areas,admission_year").eq("listing_id", listingId).order("is_principal", { ascending: false }).order("full_name_display");
+export async function getPractitioners(firmId: string): Promise<Practitioner[]> {
+  const { data } = await supabase.from("public_practitioners").select("practitioner_id,slug,full_name_display,role_title,practitioner_type,is_principal,practice_areas,admission_year,linkedin_url,leadership_role,is_founder").eq("firm_id", firmId).order("is_principal", { ascending: false }).order("full_name_display");
   return data ?? [];
 }
 export async function searchText(q: string, area?: string) {
@@ -72,4 +72,8 @@ export async function searchNearby(lat: number, lng: number, area?: string, radi
   const filter = await siteAreaFilter();
   const { data } = await supabase.rpc("nearby_listings", { lat, lng, radius_km: radiusKm, area: area ?? null, site: filter.length ? process.env.NEXT_PUBLIC_SITE_KEY : null, lim: 40 });
   return (data ?? []) as Listing[];
+}
+export async function getReviews(listingId: string): Promise<Review[]> {
+  const { data } = await supabase.from("public_reviews").select("review_id,source,author_name,author_photo_url,rating,text,published_at,source_url,fetched_at").eq("listing_id", listingId).not("text", "is", null).order("published_at", { ascending: false, nullsFirst: false }).limit(8);
+  return (data ?? []) as Review[];
 }

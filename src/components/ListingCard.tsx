@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Listing } from "@/lib/types";
 import { fmtPhone, areaName } from "@/lib/format";
+import Stars from "./Stars";
 
 export default function ListingCard({ l, areas, distanceKm }: { l: Listing; areas: Record<string, string>; distanceKm?: number }) {
   const featured = l.is_featured && (!l.featured_until || l.featured_until >= new Date().toISOString().slice(0, 10));
@@ -16,6 +17,7 @@ export default function ListingCard({ l, areas, distanceKm }: { l: Listing; area
             {[l.address_line_1, l.suburb, l.state, l.postcode].filter(Boolean).join(", ")}
             {distanceKm != null ? ` · ${distanceKm.toFixed(1)} km` : ""}
           </p>
+          <Stars rating={l.google_rating} count={l.google_review_count} fetchedAt={l.google_fetched_at} />
         </div>
         {l.logo_url ? <img src={l.logo_url} alt="" width={96} height={40} className="shrink-0 max-h-10 w-auto object-contain" /> : null}
       </div>

@@ -1,5 +1,5 @@
 export type Listing = {
-  listing_id: string; slug: string; business_name: string; office_name: string | null;
+  listing_id: string; firm_id?: string; slug: string; business_name: string; office_name: string | null;
   listing_type: string; is_law_practice: boolean; suburb: string | null; state: string | null; postcode: string | null;
   region_slug: string | null; region_name: string | null; address_line_1: string | null; level_floor: string | null;
   latitude: number | null; longitude: number | null; phone_e164: string | null; phone_primary: string | null;
@@ -11,8 +11,11 @@ export type Listing = {
   claim_status: string; is_verified: boolean; plan_tier: string; is_featured: boolean; featured_until: string | null;
   logo_url: string | null; hero_image_url: string | null; google_rating: number | null; google_review_count: number | null;
   year_established: number | null; number_of_lawyers: number | null; social_links: Record<string, string> | null;
+  firm_linkedin_url: string | null; google_fetched_at: string | null; reviews_available: number | null; founders: string[] | null;
+  leadership: { name: string; role: string | null; linkedin: string | null; slug: string }[] | null;
 };
+export type Review = { review_id: string; source: string; author_name: string | null; author_photo_url: string | null; rating: number | null; text: string | null; published_at: string | null; source_url: string | null; fetched_at: string };
 export type PracticeArea = { slug: string; name: string; parent_group: string; candidate_site: string; is_lawyer_area: boolean };
 export type Region = { region_slug: string; region_name: string; state: string; region_type: string; major_centres: string[] };
 export type Site = { site_key: string; domain: string | null; brand_name: string | null; site_type: string; practice_area_filter: string[]; tagline: string | null; primary_colour: string | null };
-export type Practitioner = { practitioner_id: string; slug: string; full_name_display: string; role_title: string | null; practitioner_type: string; is_principal: boolean; practice_areas: string[] | null; admission_year: number | null };
+export type Practitioner = { practitioner_id: string; slug: string; full_name_display: string; role_title: string | null; practitioner_type: string; is_principal: boolean; practice_areas: string[] | null; admission_year: number | null; linkedin_url?: string | null; leadership_role?: string | null; is_founder?: boolean };
