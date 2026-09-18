@@ -1,3 +1,5 @@
+export type Faq = { q: string; a: string };
+export type Credit = { title?: string | null; creator?: string | null; license?: string | null; license_version?: string | null; license_url?: string | null; source_url?: string | null; source?: string | null } | null;
 export type Listing = {
   listing_id: string; firm_id?: string; slug: string; business_name: string; office_name: string | null;
   listing_type: string; is_law_practice: boolean; suburb: string | null; state: string | null; postcode: string | null;
@@ -12,10 +14,14 @@ export type Listing = {
   logo_url: string | null; hero_image_url: string | null; google_rating: number | null; google_review_count: number | null;
   year_established: number | null; number_of_lawyers: number | null; social_links: Record<string, string> | null;
   firm_linkedin_url: string | null; google_fetched_at: string | null; reviews_available: number | null; founders: string[] | null;
+  data_confidence: string | null; date_last_verified: string | null;
   leadership: { name: string; role: string | null; linkedin: string | null; slug: string }[] | null;
 };
 export type Review = { review_id: string; source: string; author_name: string | null; author_photo_url: string | null; rating: number | null; text: string | null; published_at: string | null; source_url: string | null; fetched_at: string };
-export type PracticeArea = { slug: string; name: string; parent_group: string; candidate_site: string; is_lawyer_area: boolean };
-export type Region = { region_slug: string; region_name: string; state: string; region_type: string; major_centres: string[] };
+export type Group = { slug: string; name: string; short_name: string | null; sort: number; hero_image_url: string | null; hero_credit: Credit; intro: string | null; body: string | null; faq: Faq[] | null; seo_title: string | null; meta_description: string | null };
+export type PracticeArea = { slug: string; name: string; parent_group: string; group_slug: string; candidate_site: string; is_lawyer_area: boolean; intro?: string | null; body?: string | null; faq?: Faq[] | null; hero_image_url?: string | null; hero_credit?: Credit; seo_title?: string | null; meta_description?: string | null; sort?: number };
+export type Region = { region_slug: string; region_name: string; state: string; region_type: string; major_centres: string[]; intro?: string | null; body?: string | null; faq?: Faq[] | null; hero_image_url?: string | null; hero_credit?: Credit; seo_title?: string | null; meta_description?: string | null };
+export type StateInfo = { state: string; name: string; regulator: string; complaints_body: string; lower_court: string; intermediate_court: string | null; supreme_court: string; tribunal: string; family_court: string; body: string };
 export type Site = { site_key: string; domain: string | null; brand_name: string | null; site_type: string; practice_area_filter: string[]; tagline: string | null; primary_colour: string | null };
 export type Practitioner = { practitioner_id: string; slug: string; full_name_display: string; role_title: string | null; practitioner_type: string; is_principal: boolean; practice_areas: string[] | null; admission_year: number | null; linkedin_url?: string | null; leadership_role?: string | null; is_founder?: boolean };
+export type Suggestion = { kind: "category" | "area" | "region" | "suburb" | "firm"; label: string; sublabel: string; url: string };

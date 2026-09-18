@@ -1,61 +1,45 @@
 import Link from "next/link";
-import SearchForm from "@/components/SearchForm";
+import Hero from "@/components/Hero";
+import SearchBox from "@/components/SearchBox";
+import AreaTiles from "@/components/AreaTiles";
 import ListingCard from "@/components/ListingCard";
-import { getSite } from "@/lib/site";
-import { getPracticeAreas, getAreaCounts, getRegions, getRegionCounts, getFeatured } from "@/lib/queries";
+import { getGroups, getPracticeAreas, getGroupCounts, getRegions, getRegionCounts, getFeatured, getAreaCounts } from "@/lib/queries";
 import { areaMap } from "@/lib/format";
-
+import { canonical } from "@/lib/seo";
 export const revalidate = 3600;
-
+export const metadata = canonical("/");
 export default async function Home() {
-  const [site, areas, counts, regions, regionCounts, featured] = await Promise.all([getSite(), getPracticeAreas(), getAreaCounts(), getRegions(), getRegionCounts(), getFeatured(6)]);
-  const total = Object.values(regionCounts).reduce((a, b) => a + b, 0);
-  const groups = Object.entries(areas.reduce<Record<string, typeof areas>>((acc, a) => ((acc[a.parent_group] ??= []).push(a), acc), {}));
-  const states = ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"];
+  const [groups, areas, gCounts, regions, rCounts, featured, aCounts] = await Promise.all([getGroups(), getPracticeAreas(), getGroupCounts(), getRegions(), getRegionCounts(), getFeatured(6), getAreaCounts()]);
+  const total = Object.values(rCounts).reduce((a, b) => a + b, 0);
+  const topAreas = [...areas].sort((a, b) => (aCounts[b.slug] ?? 0) - (aCounts[a.slug] ?? 0)).filter((a) => a.slug !== "general-practice").slice(0, 12);
+  const topRegions = [...regions].sort((a, b) => (rCounts[b.region_slug] ?? 0) - (rCounts[a.region_slug] ?? 0)).slice(0, 8);
   return (
     <>
-      <section className="wrap pt-10 pb-12 md:pt-16">
-        <h1 className="text-4xl md:text-6xl max-w-3xl leading-[1.05]">{site.tagline ?? "Find a lawyer near you."}</h1>
-        <p className="mt-4 max-w-prose text-muted">{total.toLocaleString("en-AU")} listings across every state and territory, compiled from public directories and firm websites. Pick an area of law, tell us where you are, and compare.</p>
-        <div className="mt-8"><SearchForm areas={areas} /></div>
+      <Hero size="lg" title="Find the right lawyer, near you." intro={`${total.toLocaleString("en-AU")} Australian law firms, solicitors and conveyancers, checked against their own websites and Google. Compare ratings, people and fees, then contact them directly.`}>
+        <div className="max-w-2xl"><SearchBox size="lg" placeholder="Try “divorce”, “Parramatta” or a firm name" /></div>
+        <p className="mt-4 text-sm text-white/70">Popular: {topAreas.slice(0, 5).map((a, i) => <span key={a.slug}>{i ? " · " : ""}<Link href={`/law/${a.group_slug}/${a.slug}`} className="underline hover:text-white">{a.name}</Link></span>)}</p>
+      </Hero>
+      <section className="wrap py-16">
+        <div className="flex items-end justify-between gap-4"><h2 className="section-title">Areas of law</h2><Link href="/law" className="text-sm underline">All areas</Link></div>
+        <div className="mt-6"><AreaTiles tiles={groups.filter((g) => g.slug !== "general").map((g) => ({ href: `/law/${g.slug}`, name: g.name, sub: g.intro ?? undefined, image: g.hero_image_url, count: gCounts[g.slug] }))} /></div>
       </section>
-
       <section className="bg-stone">
-        <div className="wrap py-12">
-          <h2 className="text-2xl">Browse by area of law</h2>
-          <div className="mt-6 grid gap-8 md:grid-cols-3">
-            {groups.map(([g, list]) => (
-              <div key={g}>
-                <h3 className="text-base font-semibold font-body">{g}</h3>
-                <ul className="mt-2 grid gap-1 text-sm">
-                  {list.map((a) => <li key={a.slug} className="flex justify-between gap-3"><Link href={`/practice-areas/${a.slug}`} className="hover:underline">{a.name}</Link><span className="text-muted tabular-nums">{counts[a.slug] ?? 0}</span></li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
+        <div className="wrap py-16 grid gap-12 lg:grid-cols-2">
+          <div><h2 className="section-title">Most searched</h2>
+            <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2">{topAreas.map((a) => <li key={a.slug} className="flex justify-between gap-3 border-b border-line py-2"><Link href={`/law/${a.group_slug}/${a.slug}`} className="hover:underline">{a.name}</Link><span className="text-sm text-muted tabular-nums">{aCounts[a.slug] ?? 0}</span></li>)}</ul></div>
+          <div><h2 className="section-title">Biggest locations</h2>
+            <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2">{topRegions.map((r) => <li key={r.region_slug} className="flex justify-between gap-3 border-b border-line py-2"><Link href={`/locations/${r.region_slug}`} className="hover:underline">{r.region_name}, {r.state}</Link><span className="text-sm text-muted tabular-nums">{rCounts[r.region_slug] ?? 0}</span></li>)}</ul>
+            <Link href="/locations" className="mt-4 inline-block text-sm underline">All 66 locations</Link></div>
         </div>
       </section>
-
-      <section className="wrap py-12">
-        <h2 className="text-2xl">Browse by location</h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {states.map((st) => (
-            <div key={st}>
-              <h3 className="text-base font-semibold font-body">{st}</h3>
-              <ul className="mt-2 grid gap-1 text-sm">
-                {regions.filter((r) => r.state === st).map((r) => <li key={r.region_slug} className="flex justify-between gap-3"><Link href={`/locations/${r.region_slug}`} className="hover:underline">{r.region_name}</Link><span className="text-muted tabular-nums">{regionCounts[r.region_slug] ?? 0}</span></li>)}
-              </ul>
-            </div>
-          ))}
+      {featured.length ? (<section className="wrap py-16"><h2 className="section-title">Well-reviewed firms</h2><div className="mt-6 grid gap-4">{featured.map((l) => <ListingCard key={l.listing_id} l={l} areas={areaMap(areas)} />)}</div></section>) : null}
+      <section className="wrap pb-4">
+        <div className="card grid gap-6 p-8 md:grid-cols-3">
+          <div><h3 className="text-xl">Checked, not scraped and forgotten</h3><p className="mt-2 text-sm text-ink/80">Every listing is matched to a live firm website, and most are confirmed against Google by phone number.</p></div>
+          <div><h3 className="text-xl">Real reviews, clearly sourced</h3><p className="mt-2 text-sm text-ink/80">Google ratings and reviews show where they came from and when we retrieved them.</p></div>
+          <div><h3 className="text-xl">Contact firms directly</h3><p className="mt-2 text-sm text-ink/80">No middleman fees. Call, visit the website or send an enquiry straight to the firm.</p></div>
         </div>
       </section>
-
-      {featured.length ? (
-        <section className="wrap py-6">
-          <h2 className="text-2xl">Firms with complete profiles</h2>
-          <div className="mt-2">{featured.map((l) => <ListingCard key={l.listing_id} l={l} areas={areaMap(areas)} />)}</div>
-        </section>
-      ) : null}
     </>
   );
 }

@@ -1,19 +1,24 @@
 import type { MetadataRoute } from "next";
 import { supabase } from "@/lib/supabase";
-import { getPracticeAreas, getRegions } from "@/lib/queries";
-import { getSite } from "@/lib/site";
+import { getGroups, getPracticeAreas, getRegions, getGroupCounts } from "@/lib/queries";
+import { getSite, siteUrl } from "@/lib/site";
 export const revalidate = 86400;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const site = await getSite();
-  const base = `https://${site.domain ?? process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "localhost:3000"}`;
-  const [areas, regions] = await Promise.all([getPracticeAreas(), getRegions()]);
-  let q = supabase.from("public_listings").select("slug,date_last_verified,practice_areas").range(0, 49999);
-  if (site.practice_area_filter?.length) q = q.overlaps("practice_areas", site.practice_area_filter);
-  const { data } = await q;
-  return [
-    { url: base, changeFrequency: "daily", priority: 1 },
-    ...areas.map((a) => ({ url: `${base}/practice-areas/${a.slug}`, changeFrequency: "weekly" as const, priority: 0.8 })),
-    ...regions.map((r) => ({ url: `${base}/locations/${r.region_slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
-    ...(data ?? []).map((l) => ({ url: `${base}/lawyers/${l.slug}`, lastModified: l.date_last_verified ?? undefined, priority: 0.5 })),
-  ];
+  const site = await getSite(); const base = siteUrl();
+  const [groups, areas, regions, gc] = await Promise.all([getGroups(), getPracticeAreas(), getRegions(), getGroupCounts()]);
+  const listings: { slug: string; date_last_verified: string | null }[] = [];
+  for (let from = 0; ; from += 1000) {
+    let q = supabase.from("public_listings").select("slug,date_last_verified").range(from, from + 999);
+    if (site.practice_area_filter?.length) q = q.overlaps("practice_areas", site.practice_area_filter);
+    const { data } = await q; listings.push(...(data ?? [])); if (!data || data.length < 1000) break;
+  }
+  const { data: combos } = await supabase.rpc("area_region_pairs");
+  const u = (p: string, priority: number, changeFrequency: "daily" | "weekly" | "monthly" = "weekly") => ({ url: base + p, priority, changeFrequency });
+  return [u("/", 1, "daily"), u("/law", 0.9), u("/locations", 0.9),
+    ...groups.filter((g) => (gc[g.slug] ?? 0) > 0).map((g) => u(`/law/${g.slug}`, 0.9)),
+    ...areas.map((a) => u(`/law/${a.group_slug}/${a.slug}`, 0.8)),
+    ...regions.map((r) => u(`/locations/${r.region_slug}`, 0.8)),
+    ...((combos ?? []) as { group_slug: string; area_slug: string; region_slug: string }[]).map((c) => u(`/law/${c.group_slug}/${c.area_slug}/${c.region_slug}`, 0.6)),
+    ...listings.map((l) => ({ url: `${base}/lawyers/${l.slug}`, lastModified: l.date_last_verified ?? undefined, priority: 0.5 })),
+    u("/about", 0.3, "monthly"), u("/privacy", 0.2, "monthly"), u("/terms", 0.2, "monthly")];
 }
