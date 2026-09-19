@@ -1,3 +1,4 @@
+import locationImages from '@/content/location-images.json';
 /** Original AI-generated editorial images, not photographs of listed firms. */
 export const legalImages = { library: '/images/legal-library.webp', family: '/images/family-advice.webp', property: '/images/property-law.webp', business: '/images/business-law.webp' };
 export function groupImage(group?: string | null): string {
@@ -7,3 +8,5 @@ export function groupImage(group?: string | null): string {
   if (['business', 'employment', 'immigration'].includes(group ?? '')) return legalImages.business;
   return legalImages.library;
 }
+
+export function locationImage(slug: string): string { return (locationImages as Record<string,string>)[slug] ?? legalImages.library; }

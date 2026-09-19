@@ -15,7 +15,7 @@
 ## Validation
 
 - Production build completes with TypeScript and all 16 static pages generated.
-- ESLint: no errors; ten existing warnings remain for unused imports and unoptimised external listing/logo images.
+- ESLint: no errors; six existing warnings remain for unused imports and unoptimised external listing/logo images.
 - Browser review: desktop homepage, practice card grid and comparison table; 390px mobile homepage and family-law practice page; mobile menu; light/dark mode; live autocomplete and ArrowDown/Enter selection.
 - Two firms can be shortlisted and opened in the comparison table with ratings, practice areas and phone links intact.
 - Mobile document width stays inside the viewport on homepage and the reviewed practice page.
@@ -23,4 +23,4 @@
 
 ## Scope and remaining work
 
-This is a presentation and shared-UI audit, not a legal-content or source-data verification. Existing listings, enquiry delivery, claims, map data and database configuration are preserved. External firm logos may still be outdated or broken; validating their identity is a separate data-quality task. Production deployment and all ten site variants have not been independently verified. No enquiry or claim was submitted during testing.
+The subsequent location/practice expansion is documented in [CONTENT-AUDIT.md](CONTENT-AUDIT.md), including 66 regional heroes, 101 practice-area guides, 12 group guides, image budgets and an identified legacy-content correction. Existing listings, enquiry delivery, claims, map data and database configuration are preserved. External firm logos may still be outdated or broken; validating their identity is a separate data-quality task. Production deployment and all ten site variants have not been independently verified. No enquiry or claim was submitted during testing.

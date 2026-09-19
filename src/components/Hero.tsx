@@ -27,7 +27,7 @@ export default function Hero({ title, kicker, intro, image, credit, crumbs, chil
             {stats?.length ? <dl className="hero-stats">{stats.map((s) => <div key={s.l}><dt>{s.l}</dt><dd className="stat">{s.v}</dd></div>)}</dl> : null}
           </div>
           {illustrated ? <figure className="hero-figure">
-            {source.startsWith("/") ? <Image src={source} alt="" fill preload sizes="(max-width: 767px) 100vw, 45vw" className="object-cover" /> :
+            {source.startsWith("/") ? <Image src={source} alt="" fill preload sizes="(max-width: 767px) 100vw, (max-width: 1280px) 45vw, 600px" className="object-cover" /> :
               // eslint-disable-next-line @next/next/no-img-element
               <img src={source} alt="" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />}
             <figcaption>{!image ? "AI-generated editorial image" : typeof credit === "string" ? credit : credit ? <>
