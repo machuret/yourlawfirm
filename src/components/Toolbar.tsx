@@ -11,7 +11,7 @@ export default function Toolbar({ count }: { count: number }) {
   const active = CHIPS.some((c) => sp.get(c.k) === "1") || !!sp.get("lang");
   const view = sp.get("view") === "map" ? "map" : "list";
   return (
-    <div className={`sticky top-14 z-30 -mx-[22px] border-b border-hair bg-glass px-[22px] py-3 backdrop-blur-xl transition-opacity ${pending ? "opacity-60" : ""}`}>
+    <div className={`sticky top-20 z-30 -mx-[22px] border-b border-hair bg-glass px-[22px] py-3 backdrop-blur-xl transition-opacity ${pending ? "opacity-60" : ""}`}>
       <div className="flex items-center gap-3">
         <div className="scroll-x flex-1">
           {CHIPS.map(({ k, label, I, tip }) => { const on = sp.get(k) === "1"; return (

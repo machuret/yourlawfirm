@@ -1,17 +1,43 @@
+import Image from "next/image";
 import type { Crumb } from "@/lib/seo";
 import Breadcrumbs from "./Breadcrumbs";
-import { gStyle } from "@/lib/theme";
-export default function Hero({ title, kicker, intro, crumbs, children, size = "md", center = false, group, stats }: { title: string; kicker?: string; intro?: string | null; image?: string | null; credit?: unknown; crumbs?: Crumb[]; children?: React.ReactNode; size?: "md" | "lg"; center?: boolean; group?: string | null; stats?: { v: string; l: string }[] }) {
+import { groupImage } from "@/lib/imagery";
+import type { Credit } from "@/lib/types";
+
+type HeroProps = {
+  title: string; kicker?: string; intro?: string | null; image?: string | null;
+  credit?: Credit | string; crumbs?: Crumb[]; children?: React.ReactNode;
+  size?: "md" | "lg"; center?: boolean; group?: string | null;
+  stats?: { v: string; l: string }[];
+};
+export default function Hero({ title, kicker, intro, image, credit, crumbs, children, size = "md", center = false, group, stats }: HeroProps) {
+  const illustrated = size === "lg" || Boolean(group || image);
+  const source = image || groupImage(group);
   return (
-    <section className="relative overflow-hidden" style={gStyle(group)}>
-      <div aria-hidden="true" className="g-glow pointer-events-none absolute inset-x-0 top-0 h-[36rem]" />
-      <div className={`wrap relative ${size === "lg" ? "pt-14 pb-10 md:pt-24 md:pb-14" : "pt-7 pb-10 md:pt-10 md:pb-12"} ${center ? "text-center" : ""}`}>
-        {crumbs ? <div className={`mb-7 ${center ? "flex justify-center" : ""}`}><Breadcrumbs items={crumbs} /></div> : null}
-        {kicker ? <p className="inline-flex items-center gap-2 rounded-full g-tint px-3 py-1 text-[13px] font-semibold">{kicker}</p> : null}
-        <h1 className={`${size === "lg" ? "h-xl" : "h-lg"} mt-3 ${center ? "mx-auto" : ""} max-w-4xl`}>{title}</h1>
-        {intro ? <p className={`lede mt-5 max-w-3xl ${center ? "mx-auto" : ""}`}>{intro}</p> : null}
-        {children ? <div className={`mt-8 ${center ? "mx-auto max-w-2xl" : ""}`}>{children}</div> : null}
-        {stats?.length ? <dl className={`mt-9 flex flex-wrap gap-x-10 gap-y-4 ${center ? "justify-center" : ""}`}>{stats.map((s) => <div key={s.l}><dt className="sr-only">{s.l}</dt><dd><span className="stat block text-[28px] leading-none">{s.v}</span><span className="mt-1 block text-[13px] text-muted">{s.l}</span></dd></div>)}</dl> : null}
+    <section className={`directory-hero ${illustrated ? "hero-illustrated" : "hero-simple"} ${size === "lg" ? "hero-home" : ""}`}>
+      <div className="wrap relative">
+        {crumbs ? <div className="hero-breadcrumbs"><Breadcrumbs items={crumbs} light={illustrated} /></div> : null}
+        <div className={`hero-layout ${!illustrated && center ? "text-center" : ""}`}>
+          <div className="hero-copy">
+            <p className="hero-kicker"><span aria-hidden="true" />{kicker || (size === "lg" ? "Australia’s independent legal directory" : "Your next step starts here")}</p>
+            <h1 className={size === "lg" ? "h-xl" : "h-lg"}>{title}</h1>
+            {intro ? <p className="lede mt-6">{intro}</p> : null}
+            {children ? <div className="hero-search mt-8">{children}</div> : null}
+            {size === "lg" ? <p className="hero-assurance">Free to browse <span>·</span> No sign-up <span>·</span> Contact firms directly</p> : null}
+            {stats?.length ? <dl className="hero-stats">{stats.map((s) => <div key={s.l}><dt>{s.l}</dt><dd className="stat">{s.v}</dd></div>)}</dl> : null}
+          </div>
+          {illustrated ? <figure className="hero-figure">
+            {source.startsWith("/") ? <Image src={source} alt="" fill preload sizes="(max-width: 767px) 100vw, 45vw" className="object-cover" /> :
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={source} alt="" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />}
+            <figcaption>{!image ? "AI-generated editorial image" : typeof credit === "string" ? credit : credit ? <>
+              {credit.source_url && /^https?:\/\//.test(credit.source_url) ? <a href={credit.source_url} target="_blank" rel="noopener noreferrer" className="underline">{credit.title || "Image"}</a> : credit.title || "Image"}
+              {credit.creator ? ` · ${credit.creator}` : ""}
+              {credit.license_url && /^https?:\/\//.test(credit.license_url) ? <> · <a href={credit.license_url} target="_blank" rel="noopener noreferrer" className="underline">{credit.license || "Licence"}</a></> : credit.license ? ` · ${credit.license}` : ""}
+            </> : "Legal directory"}</figcaption>
+            {size === "lg" ? <div className="hero-image-note"><span>Clarity. Confidence. A way forward.</span><p>Find the right expertise<br />for what matters to you.</p></div> : null}
+          </figure> : null}
+        </div>
       </div>
     </section>
   );

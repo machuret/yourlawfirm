@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
 import { Heart, X, Scale } from "lucide-react";
 type Item = { slug: string; name: string };
@@ -21,9 +21,8 @@ export function SaveButton({ slug, name }: { slug: string; name: string }) {
   );
 }
 export function CompareTray() {
-  const raw = useList(); const list: Item[] = JSON.parse(raw); const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted || !list.length) return null;
+  const raw = useList(); const list: Item[] = JSON.parse(raw);
+  if (!list.length) return null;
   return (
     <div className="fixed inset-x-0 bottom-20 z-40 flex justify-center px-3 md:bottom-6">
       <div className="flex max-w-full items-center gap-2 rounded-full border border-hair bg-[var(--tray-bg)] p-1.5 pl-4 text-[var(--tray-fg)] shadow-[var(--shadow-pop)] backdrop-blur-xl">

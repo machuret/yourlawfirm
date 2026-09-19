@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Landmark } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import SearchBox from "./SearchBox";
@@ -9,14 +10,15 @@ type R = { state: string; name: string; regions: { slug: string; name: string }[
 export default function Header({ brand, groups, states }: { brand: string; groups: G[]; states: R[] }) {
   const [open, setOpen] = useState<null | "law" | "loc" | "mob">(null);
   const ref = useRef<HTMLElement>(null); const path = usePathname();
-  useEffect(() => setOpen(null), [path]);
+  const [previousPath, setPreviousPath] = useState(path);
+  if (previousPath !== path) { setPreviousPath(path); setOpen(null); }
   useEffect(() => { const h = (e: MouseEvent) => { if (!ref.current?.contains(e.target as Node)) setOpen(null); }; const k = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
     document.addEventListener("mousedown", h); document.addEventListener("keydown", k); return () => { document.removeEventListener("mousedown", h); document.removeEventListener("keydown", k); }; }, []);
   const tog = (k: "law" | "loc" | "mob") => setOpen((o) => (o === k ? null : k));
   return (
     <header ref={ref} className="sticky top-0 z-40 border-b border-hair bg-glass backdrop-blur-xl backdrop-saturate-150">
-      <div className="wrap flex h-14 items-center gap-5">
-        <Link href="/" className="display text-[19px] tracking-tight shrink-0">{brand}</Link>
+      <div className="wrap flex h-20 items-center gap-5">
+        <Link href="/" className="brand-lockup shrink-0"><span className="brand-mark" aria-hidden="true"><Landmark size={23} strokeWidth={1.4} /></span><span><span className="brand-name">{brand}</span><span className="brand-caption">Australian legal directory</span></span></Link>
         <nav className="hidden lg:flex items-center gap-0.5 text-[14px] text-ink-2" aria-label="Main">
           <button onClick={() => tog("law")} aria-expanded={open === "law"} className={`navbtn ${open === "law" ? "bg-soft" : ""}`}>Areas of law <span aria-hidden="true">▾</span></button>
           <button onClick={() => tog("loc")} aria-expanded={open === "loc"} className={`navbtn ${open === "loc" ? "bg-soft" : ""}`}>Locations <span aria-hidden="true">▾</span></button>
@@ -24,7 +26,7 @@ export default function Header({ brand, groups, states }: { brand: string; group
           <Link href="/claim" className="navbtn">For law firms</Link>
           <Link href="/about" className="navbtn hidden xl:inline-block">About</Link>
         </nav>
-        <div className="ml-auto hidden md:block w-64 xl:w-80"><SearchBox size="sm" placeholder="Search law, suburb or firm" /></div>
+        <div className="header-search ml-auto hidden md:block w-64 xl:w-80"><SearchBox size="sm" placeholder="Search law, suburb or firm" /></div>
         <div className="ml-auto md:ml-0"><ThemeToggle /></div>
         <button className="lg:hidden navbtn" onClick={() => tog("mob")} aria-expanded={open === "mob"} aria-label="Menu">{open === "mob" ? "Close" : "Menu"}</button>
       </div>

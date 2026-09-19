@@ -2,7 +2,7 @@ import Link from "next/link";
 type G = { slug: string; name: string }; type S = { state: string; name: string };
 export default function Footer({ brand, groups, states, popular }: { brand: string; groups: G[]; states: S[]; popular: { href: string; name: string }[] }) {
   return (
-    <footer className="mt-28 border-t border-hair bg-soft text-[13px] text-muted">
+    <footer className="directory-footer border-t border-hair text-[13px]">
       <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
           <p className="display text-[19px] text-ink">{brand}</p>

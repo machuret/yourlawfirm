@@ -1,0 +1,25 @@
+{
+  "generator": "Built-in image_gen",
+  "assets": [
+    {
+      "file": "public/images/legal-library.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: legal directory homepage hero photograph, landscape 3:2. A beautifully restrained Australian legal chambers library, close view of warm walnut reading desk with closed unmarked leather law volumes and an elegant brass reading lamp, tall sandstone arched windows on the right, shelves of legal volumes receding softly in background. Architectural editorial photography, afternoon natural light, rich navy shadows, warm ivory stone and subtle brass, sophisticated and credible, realistic materials, no people, no text, no readable book titles, no logos, no gavels, no scales, no watermark."
+    },
+    {
+      "file": "public/images/family-advice.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: family law and estate planning directory hero, landscape 3:2. Calm private consultation room in an Australian solicitor's office, two comfortable linen armchairs beside a walnut table with a neatly closed document folder, softly lit window and eucalyptus foliage outside, welcoming human atmosphere without people. High-end editorial interior photograph, natural warm light, muted sage, ivory, walnut, understated and trustworthy. No text, no logos, no gavels, no scales, no watermark."
+    },
+    {
+      "file": "public/images/property-law.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: Australian property and conveyancing legal directory hero, landscape 3:2. Elegant Australian sandstone terrace house frontage with white timber window frames and a dark navy front door, mature eucalyptus branch framing upper edge, warm afternoon sun grazing sandstone, quiet established residential street. Premium architectural editorial photograph, authentic realistic materials, warm ivory and sage palette. No people, no text, no logos, no watermark."
+    },
+    {
+      "file": "public/images/business-law.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: business and employment legal directory hero, landscape 3:2. Sophisticated Australian city office meeting room, walnut conference table, navy upholstered chairs, neatly stacked contract folders, floor-to-ceiling windows overlooking softly defocused contemporary city architecture, quiet assured atmosphere. Premium editorial photography, natural side light, warm neutrals, navy and brass details. No people, no readable text, no logos, no watermark."
+    },
+    {
+      "file": "public/images/estate-planning.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: Australian wills and estate planning legal directory hero and category card, landscape 3:2. Editorial still life on an antique walnut writing desk beside a sunlit window: a closed ivory document folder tied with a thin linen ribbon, an elegant fountain pen, reading glasses and a small ceramic vase of eucalyptus; in soft background a tranquil established Australian garden. Premium understated photograph, warm ivory, olive greens, walnut, calm reflective atmosphere, tactile authentic materials. No people, no readable text, no logos, no watermark, no gavels or scales."
+    }
+  ]
+}
