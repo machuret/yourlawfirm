@@ -1,0 +1,1081 @@
+{
+ "style": "Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s",
+ "size": "1792x1024 then crop to 1920x800 centre-right",
+ "storage": "Supabase bucket 'heroes', path <type>s/<slug>.jpg; set hero_image_url and hero_credit={\"source\":\"generated\",\"license\":\"owned\"}",
+ "images": [
+  {
+   "type": "group",
+   "slug": "family",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Theme: Family & Relationships. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "wills",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Theme: Wills & Estates. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "criminal",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "sandstone Australian courthouse steps at early morning, empty corridor with soft light. Theme: Criminal & Traffic. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "injury",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Theme: Injury & Compensation. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "property",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Theme: Property & Conveyancing. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "business",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Theme: Business & Commercial. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "employment",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "workplaces: an empty office at dusk, a hard hat on a bench, a lanyard on a desk. Theme: Employment & Workplace. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "immigration",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Theme: Immigration & Visas. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "disputes",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Theme: Disputes & Litigation. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "government",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Theme: Government & Public Law. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "specialist",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "industry: a harbour with ships, a light aircraft on a regional airstrip, a mine site at golden hour. Theme: Specialist Areas. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "group",
+   "slug": "general",
+   "target": "practice_groups.hero_image_url",
+   "prompt": "a country town main street in Australia with a small law office shopfront, morning light. Theme: General Practice. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "family-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting family law: family lawyer consultation, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "divorce-separation",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting divorce & separation: wedding rings table, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "child-custody-parenting",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting parenting & child custody: parent child holding hands, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "property-settlement",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting family property settlement: house model and calculator, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "domestic-violence-avo",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting domestic violence & avos: safe home door lock, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "de-facto-relationships",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting de facto relationships: couple home keys, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "surrogacy-adoption",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting surrogacy & adoption: newborn baby hand, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "mediation",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting mediation & dispute resolution: mediation meeting table, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "wills-estates",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting wills & estates: will document pen, in the visual world of heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "probate-estate-administration",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting probate & estate administration: family documents desk, in the visual world of heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "contested-wills",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting contested wills & family provision: legal books desk, in the visual world of heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "powers-of-attorney-guardianship",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting powers of attorney & guardianship: elderly hands holding, in the visual world of heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "elder-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting elder law & aged care: senior couple garden, in the visual world of heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "estate-planning-trusts",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting estate planning & testamentary trusts: financial planning documents, in the visual world of heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "criminal-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting criminal law: court gavel, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "drink-driving",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting drink & drug driving: car keys bar, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "traffic-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting traffic offences: highway traffic, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "drug-offences",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting drug offences: police car lights, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "assault-violence",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting assault & violent offences: courtroom interior, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "sexual-offences-defence",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting sexual offences defence: courthouse steps, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "fraud-white-collar",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting fraud & white collar crime: financial documents audit, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "bail-applications",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting bail applications: prison bars, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "appeals",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting criminal appeals: law library books, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "personal-injury",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting personal injury: physiotherapy injury recovery, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "motor-vehicle-accidents",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting motor vehicle accidents / ctp: car crash road, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "workers-compensation",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting workers compensation: construction worker safety, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "public-liability",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting public liability: wet floor sign, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "medical-negligence",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting medical negligence: hospital corridor, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "tpd-superannuation-claims",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting tpd & superannuation claims: superannuation paperwork, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "dust-diseases-asbestos",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting dust diseases & asbestos: old building demolition, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "class-actions",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting class actions: crowd people, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "victims-compensation",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting victims of crime compensation: support hands, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "property-conveyancing",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting property & conveyancing: sold sign house, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "commercial-property",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting commercial property & leasing: office building glass, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "strata-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting strata & body corporate: apartment building, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "building-construction",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting building & construction: construction site crane, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "planning-environment",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting planning & environment: aerial suburbs development, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "residential-tenancy",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting residential tenancy: apartment for rent, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "business-commercial",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting business & commercial law: small business shop owner, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "corporate-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting corporate law & m&a: boardroom, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "contracts",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting contract law: contract signing, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "franchising",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting franchising: franchise store, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "buying-selling-business",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting buying or selling a business: handshake shop, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "intellectual-property",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting intellectual property & trade marks: creative design studio, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "technology-privacy",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting technology, privacy & data: laptop code screen, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "competition-consumer",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting competition & consumer law: shopping mall, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "insolvency-restructuring",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting insolvency & restructuring: empty office, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "bankruptcy",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting personal bankruptcy: unpaid bills, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "debt-recovery",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting debt recovery: invoice paperwork, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "tax-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting tax law: tax forms calculator, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "banking-finance",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting banking & finance: bank building, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "agribusiness",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting agribusiness & rural law: farm paddock tractor, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "employment-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting employment law: office team meeting, in the visual world of workplaces: an empty office at dusk, a hard hat on a bench, a lanyard on a desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "unfair-dismissal",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting unfair dismissal: office box packing, in the visual world of workplaces: an empty office at dusk, a hard hat on a bench, a lanyard on a desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "workplace-discrimination-harassment",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting workplace discrimination & harassment: workplace diversity, in the visual world of workplaces: an empty office at dusk, a hard hat on a bench, a lanyard on a desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "employer-advisory",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting employer advisory & industrial relations: human resources desk, in the visual world of workplaces: an empty office at dusk, a hard hat on a bench, a lanyard on a desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "immigration",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting immigration & visas: airport passport, in the visual world of journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "partner-visas",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting partner & family visas: couple wedding, in the visual world of journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "skilled-business-visas",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting skilled & business visas: professional worker, in the visual world of journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "citizenship",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting citizenship: australian flag, in the visual world of journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "visa-appeals-art",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting visa refusals & tribunal appeals: tribunal hearing room, in the visual world of journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "litigation-disputes",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting litigation & dispute resolution: courtroom benches, in the visual world of negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "defamation",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting defamation: newspaper headlines, in the visual world of negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "debt-disputes",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting consumer debt & credit disputes: bills calculator, in the visual world of negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "administrative-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting administrative & government law: government building, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "human-rights-discrimination",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting human rights & discrimination: people diversity, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "ndis-disability",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting ndis & disability law: wheelchair support, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "centrelink-social-security",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting centrelink & social security: government office queue, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "indigenous-native-title",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting native title & aboriginal legal services: outback landscape, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "military-veterans",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting military & veterans law: military memorial, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "maritime-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting maritime & admiralty law: port ships, in the visual world of industry: a harbour with ships, a light aircraft on a regional airstrip, a mine site at golden hour. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "aviation-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting aviation law: airplane runway, in the visual world of industry: a harbour with ships, a light aircraft on a regional airstrip, a mine site at golden hour. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "sports-entertainment",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting sports & entertainment law: stadium lights, in the visual world of industry: a harbour with ships, a light aircraft on a regional airstrip, a mine site at golden hour. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "notary-public",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting notary public & jp services: stamp seal document, in the visual world of industry: a harbour with ships, a light aircraft on a regional airstrip, a mine site at golden hour. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "mining-resources-energy",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting mining, resources & energy: mining site, in the visual world of industry: a harbour with ships, a light aircraft on a regional airstrip, a mine site at golden hour. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "child-protection-care",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting child protection & care matters: child playground, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "binding-financial-agreements",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting binding financial agreements: signing contract pen, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "international-family-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting international family law & hague abduction: airport departure board, in the visual world of quiet domestic moments: a kitchen table with two coffee cups, a child's drawing on a fridge, keys in a bowl. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "superannuation-death-benefits",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting superannuation death benefits: retirement savings, in the visual world of heirloom objects: a fountain pen on thick paper, an old photo album, reading glasses on a timber desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "firearms-licensing",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting firearms & licensing matters: target shooting range, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "youth-justice",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting youth justice & children's court: teenager backpack, in the visual world of sandstone Australian courthouse steps at early morning, empty corridor with soft light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "institutional-abuse-claims",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting institutional abuse claims & national redress: church building, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "psychological-injury",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting psychological injury claims: calm window light, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "product-liability",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting product liability: product recall, in the visual world of recovery and care: physiotherapy equipment, a walking path by the sea, a hand on a window sill. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "retirement-villages",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting retirement villages & aged care contracts: retirement village garden, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "commercial-litigation",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting commercial litigation: court documents, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "liquor-licensing-gaming",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting liquor licensing & gaming: bar restaurant, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "not-for-profit-charity",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting not-for-profit & charity law: community volunteers, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "workplace-injury-bullying",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting workplace bullying & stop bullying orders: stressed office worker, in the visual world of workplaces: an empty office at dusk, a hard hat on a bench, a lanyard on a desk. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "visa-cancellation-character",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting visa cancellation & character (s501): legal documents stamp, in the visual world of journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "coronial-inquests",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting coronial inquests: flowers memorial, in the visual world of negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "professional-negligence",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting professional negligence: accountant office, in the visual world of negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "insurance-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting insurance law & disputes: insurance form, in the visual world of negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "civil-claims-against-police",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting civil claims against police: police station, in the visual world of negotiation: a long meeting table with paper and water glasses, two chairs facing each other. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "education-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting education law: school classroom, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "health-medical-law",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting health & medical practitioner law: doctor stethoscope, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "mental-health-guardianship-tribunal",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting mental health & guardianship tribunal: hospital window, in the visual world of civic architecture: Canberra buildings in soft light, a public reading room, stamped documents. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "licensed-conveyancing",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting licensed conveyancing (non-lawyer): house keys handover, in the visual world of Australian homes: a Queenslander verandah, terrace house doors, keys on a timber bench, suburban street. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "migration-agent-services",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting registered migration agent (non-lawyer): travel visa application, in the visual world of journeys: an airport window at sunrise, a passport on a map, a suitcase by a door. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "cyber-security-incidents",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting cyber incidents & data breach response: cyber security screen, in the visual world of small Australian businesses: a caf\u00e9 counter, a workshop bench, a laptop beside invoices, a shopfront at dawn. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "area",
+   "slug": "general-practice",
+   "target": "practice_areas.hero_image_url",
+   "prompt": "Scene suggesting general practice (regional generalist): country main street, in the visual world of a country town main street in Australia with a small law office shopfront, morning light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-sydney-cbd",
+   "target": "regions.hero_image_url",
+   "prompt": "Sydney CBD, New South Wales, Australia: city skyline and streetscape typical of Sydney. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-sydney-north",
+   "target": "regions.hero_image_url",
+   "prompt": "Sydney North Shore & Northern Beaches, New South Wales, Australia: suburban high street and parks typical of Chatswood, North Sydney, Hornsby. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-sydney-west",
+   "target": "regions.hero_image_url",
+   "prompt": "Western Sydney, New South Wales, Australia: suburban high street and parks typical of Parramatta, Blacktown, Penrith. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-sydney-south",
+   "target": "regions.hero_image_url",
+   "prompt": "Southern Sydney, New South Wales, Australia: suburban high street and parks typical of Hurstville, Sutherland, Cronulla. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-sydney-east",
+   "target": "regions.hero_image_url",
+   "prompt": "Eastern Suburbs & Inner West, New South Wales, Australia: suburban high street and parks typical of Bondi Junction, Randwick, Newtown. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-sydney-hills",
+   "target": "regions.hero_image_url",
+   "prompt": "Hills District, New South Wales, Australia: suburban high street and parks typical of Castle Hill, Baulkham Hills, Norwest. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-central-coast",
+   "target": "regions.hero_image_url",
+   "prompt": "Central Coast, New South Wales, Australia: regional town and surrounding landscape typical of Gosford, Wyong, Erina. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-hunter",
+   "target": "regions.hero_image_url",
+   "prompt": "Newcastle & Hunter, New South Wales, Australia: regional town and surrounding landscape typical of Newcastle, Maitland, Cessnock. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-illawarra",
+   "target": "regions.hero_image_url",
+   "prompt": "Illawarra & Wollongong, New South Wales, Australia: regional town and surrounding landscape typical of Wollongong, Shellharbour, Kiama. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-south-coast",
+   "target": "regions.hero_image_url",
+   "prompt": "South Coast, New South Wales, Australia: regional town and surrounding landscape typical of Nowra, Ulladulla, Batemans Bay. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-southern-highlands",
+   "target": "regions.hero_image_url",
+   "prompt": "Southern Highlands & Tablelands, New South Wales, Australia: regional town and surrounding landscape typical of Bowral, Goulburn, Queanbeyan. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-snowy-monaro",
+   "target": "regions.hero_image_url",
+   "prompt": "Snowy Monaro, New South Wales, Australia: regional town and surrounding landscape typical of Cooma, Jindabyne. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-mid-north-coast",
+   "target": "regions.hero_image_url",
+   "prompt": "Mid North Coast, New South Wales, Australia: regional town and surrounding landscape typical of Port Macquarie, Coffs Harbour, Taree. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-northern-rivers",
+   "target": "regions.hero_image_url",
+   "prompt": "Northern Rivers, New South Wales, Australia: regional town and surrounding landscape typical of Lismore, Ballina, Byron Bay. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-new-england",
+   "target": "regions.hero_image_url",
+   "prompt": "New England & North West, New South Wales, Australia: regional town and surrounding landscape typical of Armidale, Tamworth, Moree. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-central-west",
+   "target": "regions.hero_image_url",
+   "prompt": "Central West & Orana, New South Wales, Australia: regional town and surrounding landscape typical of Orange, Bathurst, Dubbo. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-riverina",
+   "target": "regions.hero_image_url",
+   "prompt": "Riverina & Murray, New South Wales, Australia: regional town and surrounding landscape typical of Wagga Wagga, Albury, Griffith. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nsw-far-west",
+   "target": "regions.hero_image_url",
+   "prompt": "Far West, New South Wales, Australia: vast outback landscape and small settlement typical of Broken Hill. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "act-canberra",
+   "target": "regions.hero_image_url",
+   "prompt": "Canberra, Australian Capital Territory, Australia: city skyline and streetscape typical of Canberra City, Belconnen, Woden. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-melbourne-cbd",
+   "target": "regions.hero_image_url",
+   "prompt": "Melbourne CBD, Victoria, Australia: city skyline and streetscape typical of Melbourne. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-melbourne-east",
+   "target": "regions.hero_image_url",
+   "prompt": "Eastern Melbourne, Victoria, Australia: suburban high street and parks typical of Box Hill, Ringwood, Glen Waverley. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-melbourne-south-east",
+   "target": "regions.hero_image_url",
+   "prompt": "South East Melbourne, Victoria, Australia: suburban high street and parks typical of Dandenong, Frankston, Cranbourne. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-melbourne-north",
+   "target": "regions.hero_image_url",
+   "prompt": "Northern Melbourne, Victoria, Australia: suburban high street and parks typical of Preston, Broadmeadows, Epping. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-melbourne-west",
+   "target": "regions.hero_image_url",
+   "prompt": "Western Melbourne, Victoria, Australia: suburban high street and parks typical of Footscray, Sunshine, Werribee. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-mornington-peninsula",
+   "target": "regions.hero_image_url",
+   "prompt": "Mornington Peninsula, Victoria, Australia: regional town and surrounding landscape typical of Mornington, Rosebud. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-geelong",
+   "target": "regions.hero_image_url",
+   "prompt": "Geelong & Surf Coast, Victoria, Australia: regional town and surrounding landscape typical of Geelong, Torquay. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-ballarat",
+   "target": "regions.hero_image_url",
+   "prompt": "Ballarat & Central Highlands, Victoria, Australia: regional town and surrounding landscape typical of Ballarat. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-bendigo",
+   "target": "regions.hero_image_url",
+   "prompt": "Bendigo & Loddon, Victoria, Australia: regional town and surrounding landscape typical of Bendigo, Castlemaine. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-gippsland",
+   "target": "regions.hero_image_url",
+   "prompt": "Gippsland, Victoria, Australia: regional town and surrounding landscape typical of Traralgon, Sale, Bairnsdale. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-hume",
+   "target": "regions.hero_image_url",
+   "prompt": "Hume & North East, Victoria, Australia: regional town and surrounding landscape typical of Shepparton, Wangaratta, Wodonga. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-western",
+   "target": "regions.hero_image_url",
+   "prompt": "Western District & Wimmera, Victoria, Australia: regional town and surrounding landscape typical of Warrnambool, Hamilton, Horsham. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "vic-mallee",
+   "target": "regions.hero_image_url",
+   "prompt": "Mallee, Victoria, Australia: regional town and surrounding landscape typical of Mildura, Swan Hill. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-brisbane-cbd",
+   "target": "regions.hero_image_url",
+   "prompt": "Brisbane CBD, Queensland, Australia: city skyline and streetscape typical of Brisbane. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-brisbane-north",
+   "target": "regions.hero_image_url",
+   "prompt": "Brisbane North & Moreton Bay, Queensland, Australia: suburban high street and parks typical of Chermside, Redcliffe, North Lakes. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-brisbane-south",
+   "target": "regions.hero_image_url",
+   "prompt": "Brisbane South & Logan, Queensland, Australia: suburban high street and parks typical of Mount Gravatt, Logan, Springwood. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-ipswich",
+   "target": "regions.hero_image_url",
+   "prompt": "Ipswich, Queensland, Australia: suburban high street and parks typical of Ipswich, Springfield. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-gold-coast",
+   "target": "regions.hero_image_url",
+   "prompt": "Gold Coast, Queensland, Australia: regional town and surrounding landscape typical of Southport, Surfers Paradise, Robina. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-sunshine-coast",
+   "target": "regions.hero_image_url",
+   "prompt": "Sunshine Coast, Queensland, Australia: regional town and surrounding landscape typical of Maroochydore, Caloundra, Noosa. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-toowoomba",
+   "target": "regions.hero_image_url",
+   "prompt": "Toowoomba & Darling Downs, Queensland, Australia: regional town and surrounding landscape typical of Toowoomba, Warwick, Dalby. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-wide-bay",
+   "target": "regions.hero_image_url",
+   "prompt": "Wide Bay-Burnett, Queensland, Australia: regional town and surrounding landscape typical of Bundaberg, Hervey Bay, Maryborough. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-central",
+   "target": "regions.hero_image_url",
+   "prompt": "Central Queensland, Queensland, Australia: regional town and surrounding landscape typical of Rockhampton, Gladstone, Emerald. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-mackay",
+   "target": "regions.hero_image_url",
+   "prompt": "Mackay & Whitsundays, Queensland, Australia: regional town and surrounding landscape typical of Mackay, Airlie Beach. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-townsville",
+   "target": "regions.hero_image_url",
+   "prompt": "Townsville & North Queensland, Queensland, Australia: regional town and surrounding landscape typical of Townsville, Bowen, Ayr. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-cairns",
+   "target": "regions.hero_image_url",
+   "prompt": "Cairns & Far North, Queensland, Australia: regional town and surrounding landscape typical of Cairns, Port Douglas, Atherton. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "qld-outback",
+   "target": "regions.hero_image_url",
+   "prompt": "Outback & Torres Strait, Queensland, Australia: vast outback landscape and small settlement typical of Mount Isa, Longreach, Thursday Island. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-perth-cbd",
+   "target": "regions.hero_image_url",
+   "prompt": "Perth CBD, Western Australia, Australia: city skyline and streetscape typical of Perth. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-perth-north",
+   "target": "regions.hero_image_url",
+   "prompt": "Perth North, Western Australia, Australia: suburban high street and parks typical of Joondalup, Wanneroo, Stirling. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-perth-south",
+   "target": "regions.hero_image_url",
+   "prompt": "Perth South, Western Australia, Australia: suburban high street and parks typical of Fremantle, Rockingham, Mandurah. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-perth-east",
+   "target": "regions.hero_image_url",
+   "prompt": "Perth East, Western Australia, Australia: suburban high street and parks typical of Midland, Cannington. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-south-west",
+   "target": "regions.hero_image_url",
+   "prompt": "South West, Western Australia, Australia: regional town and surrounding landscape typical of Bunbury, Busselton, Margaret River. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-great-southern",
+   "target": "regions.hero_image_url",
+   "prompt": "Great Southern, Western Australia, Australia: regional town and surrounding landscape typical of Albany. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-goldfields",
+   "target": "regions.hero_image_url",
+   "prompt": "Goldfields-Esperance, Western Australia, Australia: regional town and surrounding landscape typical of Kalgoorlie, Esperance. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-midwest",
+   "target": "regions.hero_image_url",
+   "prompt": "Mid West & Gascoyne, Western Australia, Australia: regional town and surrounding landscape typical of Geraldton, Carnarvon. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "wa-north-west",
+   "target": "regions.hero_image_url",
+   "prompt": "Pilbara & Kimberley, Western Australia, Australia: vast outback landscape and small settlement typical of Karratha, Port Hedland, Broome. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "sa-adelaide-cbd",
+   "target": "regions.hero_image_url",
+   "prompt": "Adelaide CBD, South Australia, Australia: city skyline and streetscape typical of Adelaide. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "sa-adelaide-metro",
+   "target": "regions.hero_image_url",
+   "prompt": "Adelaide Metro, South Australia, Australia: suburban high street and parks typical of Norwood, Glenelg, Salisbury. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "sa-barossa-hills",
+   "target": "regions.hero_image_url",
+   "prompt": "Barossa & Adelaide Hills, South Australia, Australia: regional town and surrounding landscape typical of Mount Barker, Nuriootpa, Gawler. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "sa-fleurieu",
+   "target": "regions.hero_image_url",
+   "prompt": "Fleurieu & Kangaroo Island, South Australia, Australia: regional town and surrounding landscape typical of Victor Harbor. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "sa-limestone-coast",
+   "target": "regions.hero_image_url",
+   "prompt": "Limestone Coast, South Australia, Australia: regional town and surrounding landscape typical of Mount Gambier. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "sa-riverland-murray",
+   "target": "regions.hero_image_url",
+   "prompt": "Riverland & Murraylands, South Australia, Australia: regional town and surrounding landscape typical of Berri, Murray Bridge, Renmark. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "sa-eyre-yorke",
+   "target": "regions.hero_image_url",
+   "prompt": "Eyre, Yorke & Mid North, South Australia, Australia: regional town and surrounding landscape typical of Port Lincoln, Port Augusta, Whyalla. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "tas-hobart",
+   "target": "regions.hero_image_url",
+   "prompt": "Hobart & South, Tasmania, Australia: city skyline and streetscape typical of Hobart, Glenorchy, Kingston. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "tas-launceston",
+   "target": "regions.hero_image_url",
+   "prompt": "Launceston & North, Tasmania, Australia: regional town and surrounding landscape typical of Launceston. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "tas-north-west",
+   "target": "regions.hero_image_url",
+   "prompt": "North West & West Coast, Tasmania, Australia: regional town and surrounding landscape typical of Devonport, Burnie, Ulverstone. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nt-darwin",
+   "target": "regions.hero_image_url",
+   "prompt": "Darwin & Palmerston, Northern Territory, Australia: city skyline and streetscape typical of Darwin, Palmerston, Casuarina. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  },
+  {
+   "type": "region",
+   "slug": "nt-central",
+   "target": "regions.hero_image_url",
+   "prompt": "Alice Springs & Central, Northern Territory, Australia: vast outback landscape and small settlement typical of Alice Springs, Tennant Creek, Katherine. Recognisably Australian vegetation, architecture and light. Editorial photograph, natural window light, warm neutral palette with soft greens, shallow depth of field, calm and hopeful mood, Australian setting, uncluttered composition with generous negative space on the left for headline text, 16:9, photorealistic, no text, no logos, no gavels, no scales of justice, no handshakes, no identifiable faces in focus, no stock-photo clich\u00e9s"
+  }
+ ]
+}

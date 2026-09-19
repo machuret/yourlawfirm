@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { supabase } from "./supabase";
 import { siteAreaFilter, SITE_KEY } from "./site";
+import type { Filters } from "./filters";
 import type { Listing, PracticeArea, Region, Practitioner, Review, Group, StateInfo, Suggestion } from "./types";
 
 const LISTING_COLS = "listing_id,firm_id,slug,business_name,office_name,listing_type,is_law_practice,suburb,state,postcode,region_slug,region_name,address_line_1,level_floor,latitude,longitude,phone_e164,phone_primary,website_url,booking_url,email_general,primary_practice_area,practice_areas,languages_spoken,fee_structures,free_first_consultation,no_win_no_fee,legal_aid_accepted,after_hours,opening_hours,timezone,tagline,short_description,badges,claim_status,is_verified,plan_tier,is_featured,featured_until,logo_url,hero_image_url,google_rating,google_review_count,year_established,number_of_lawyers,social_links,firm_linkedin_url,google_fetched_at,reviews_available,founders,leadership,data_confidence,date_last_verified";
@@ -9,7 +10,24 @@ const REGION_COLS = "region_slug,region_name,state,region_type,major_centres,int
 
 function base() { return supabase.from("public_listings").select(LISTING_COLS, { count: "exact" }); }
 function scopedWith(filter: string[]) { const q = base(); return filter.length ? q.overlaps("practice_areas", filter) : q; }
-const ORDER = (q: ReturnType<typeof base>) => q.order("is_featured", { ascending: false }).order("sort_priority", { ascending: false }).order("data_confidence", { ascending: true }).order("google_review_count", { ascending: false, nullsFirst: false }).order("business_name");
+type Q = ReturnType<typeof base>;
+function applyFilters(q: Q, f?: Filters): Q {
+  if (!f) return q;
+  if (f.open) q = q.eq("open_now", true);
+  if (f.verified) q = q.eq("data_confidence", "high");
+  if (f.top) q = q.gte("google_rating", 4).gte("google_review_count", 3);
+  if (f.free) q = q.eq("free_first_consultation", "yes");
+  if (f.nwnf) q = q.eq("no_win_no_fee", true);
+  if (f.lang) q = q.contains("languages_spoken", [f.lang]);
+  return q;
+}
+function sorted(q: Q, f?: Filters): Q {
+  if (f?.sort === "rating") return q.order("is_featured", { ascending: false }).order("google_rating", { ascending: false, nullsFirst: false }).order("google_review_count", { ascending: false, nullsFirst: false });
+  if (f?.sort === "reviews") return q.order("is_featured", { ascending: false }).order("google_review_count", { ascending: false, nullsFirst: false });
+  if (f?.sort === "name") return q.order("business_name");
+  return ORDER(q);
+}
+const ORDER = (q: Q) => q.order("is_featured", { ascending: false }).order("sort_priority", { ascending: false }).order("data_confidence", { ascending: true }).order("google_review_count", { ascending: false, nullsFirst: false }).order("business_name");
 
 export const getGroups = cache(async (): Promise<Group[]> => {
   const filter = await siteAreaFilter();
@@ -50,17 +68,18 @@ export async function getRegionGroupCounts(region: string) {
   return { groups, areas };
 }
 
-export async function listByAreas(areaSlugs: string[], opts: { region?: string; page?: number; size?: number; primaryOnly?: boolean } = {}) {
+export async function listByAreas(areaSlugs: string[], opts: { region?: string; page?: number; size?: number; primaryOnly?: boolean; filters?: Filters } = {}) {
   const size = opts.size ?? 24, from = ((opts.page ?? 1) - 1) * size;
   let q = scopedWith(await siteAreaFilter());
   q = areaSlugs.length === 1 && !opts.primaryOnly ? q.contains("practice_areas", areaSlugs) : opts.primaryOnly ? q.in("primary_practice_area", areaSlugs) : q.overlaps("practice_areas", areaSlugs);
   if (opts.region) q = q.eq("region_slug", opts.region);
-  const { data, count } = await ORDER(q).range(from, from + size - 1);
+  q = applyFilters(q, opts.filters);
+  const { data, count } = await sorted(q, opts.filters).range(from, from + size - 1);
   return { rows: (data ?? []) as Listing[], count: count ?? 0 };
 }
-export async function listByRegion(region: string, page = 1, size = 24) {
+export async function listByRegion(region: string, page = 1, size = 24, filters?: Filters) {
   const from = (page - 1) * size;
-  const { data, count } = await ORDER(scopedWith(await siteAreaFilter()).eq("region_slug", region)).range(from, from + size - 1);
+  const { data, count } = await sorted(applyFilters(scopedWith(await siteAreaFilter()).eq("region_slug", region), filters), filters).range(from, from + size - 1);
   return { rows: (data ?? []) as Listing[], count: count ?? 0 };
 }
 export async function getFeatured(limit = 6): Promise<Listing[]> {
@@ -83,13 +102,14 @@ export async function getRelated(listingId: string, lim = 6): Promise<Listing[]>
   const { data } = await supabase.rpc("related_listings", { lid: listingId, lim });
   return (data ?? []) as Listing[];
 }
-export async function searchText(q: string, area?: string) {
+export async function searchText(q: string, area?: string, filters?: Filters) {
   const text = q.trim().replace(/[,%()]/g, " ");
   let query = scopedWith(await siteAreaFilter());
   if (/^\d{4}$/.test(text)) query = query.eq("postcode", text);
   else if (text) query = query.or(`suburb.ilike.%${text}%,business_name.ilike.%${text}%,region_name.ilike.%${text}%`);
   if (area) query = query.contains("practice_areas", [area]);
-  const { data } = await ORDER(query).limit(48);
+  query = applyFilters(query, filters);
+  const { data } = await sorted(query, filters).limit(filters?.view === "map" ? 300 : 48);
   return (data ?? []) as Listing[];
 }
 export async function searchNearby(lat: number, lng: number, area?: string, radiusKm = 25) {
@@ -109,4 +129,10 @@ export async function getAreaTopRegions(area: string, lim = 12) {
 export async function getLogos(area?: string | null, region?: string | null, lim = 24) {
   const { data } = await supabase.rpc("logo_wall", { area: area ?? null, region: region ?? null, lim });
   return (data ?? []) as { slug: string; business_name: string; logo_url: string }[];
+}
+export async function getListingsBySlugs(slugs: string[]) {
+  if (!slugs.length) return [] as Listing[];
+  const { data } = await base().in("slug", slugs.slice(0, 4));
+  const rows = (data ?? []) as Listing[];
+  return slugs.map((s) => rows.find((r) => r.slug === s)).filter(Boolean) as Listing[];
 }

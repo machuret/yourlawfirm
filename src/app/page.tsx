@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShieldCheck, Star, PhoneCall } from "lucide-react";
+import { ShieldCheck, Star, PhoneCall, HeartCrack, Siren, Flower2, Bandage, KeyRound, BriefcaseBusiness, Plane, FileWarning } from "lucide-react";
 import Hero from "@/components/Hero";
 import SearchBox from "@/components/SearchBox";
 import AreaTiles from "@/components/AreaTiles";
@@ -22,6 +22,14 @@ export default async function Home() {
         <SearchBox size="lg" placeholder="Try “divorce”, “Parramatta” or a firm name" />
         <div className="mt-5 flex flex-wrap justify-center gap-2">{topAreas.slice(0, 6).map((a) => <Link key={a.slug} href={`/law/${a.group_slug}/${a.slug}`} className="pill hover:bg-hair">{a.name}</Link>)}</div>
       </Hero>
+      <section className="wrap pb-6">
+        <h2 className="text-center text-[24px] font-semibold tracking-tight">What’s happening?</h2>
+        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {([[HeartCrack, "I’m separating", "/law/family/divorce-separation"], [Siren, "I’ve been charged", "/law/criminal/criminal-law"], [Flower2, "Someone has died", "/law/wills/probate-estate-administration"], [Bandage, "I was injured", "/law/injury/personal-injury"],
+            [KeyRound, "I’m buying or selling", "/law/property/property-conveyancing"], [BriefcaseBusiness, "I lost my job", "/law/employment/unfair-dismissal"], [Plane, "I need a visa", "/law/immigration/immigration"], [FileWarning, "I’m owed money", "/law/business/debt-recovery"]] as const).map(([I, t, h]) => (
+            <li key={h}><Link href={h} className="surface card-hover flex h-full items-center gap-3 p-4"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent"><I className="h-5 w-5" /></span><span className="text-[15px] font-medium leading-snug">{t}</span></Link></li>))}
+        </ul>
+      </section>
       <LogoCarousel logos={logos} title="Firms you’ll find here" />
       <section className="wrap py-14">
         <div className="flex items-end justify-between gap-4"><h2 className="h-md">Browse by area of law</h2><Link href="/law" className="link text-[15px]">All areas ›</Link></div>

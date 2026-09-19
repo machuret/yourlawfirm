@@ -5,6 +5,7 @@ import { getGroups, getPracticeAreas, getRegions, getStates } from "@/lib/querie
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import { CompareTray } from "@/components/Shortlist";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -31,6 +32,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           { "@context": "https://schema.org", "@type": "WebSite", name: site.brand_name, url: base, potentialAction: { "@type": "SearchAction", target: `${base}/search?q={search_term_string}`, "query-input": "required name=search_term_string" } }]} />
         <Header brand={site.brand_name ?? "Your Law Firm"} groups={g} states={s} />
         <main className="flex-1">{children}</main>
+        <CompareTray />
         <Footer brand={site.brand_name ?? "Your Law Firm"} groups={g} states={s} popular={pop} />
       </body>
     </html>

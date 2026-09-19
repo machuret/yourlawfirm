@@ -14,6 +14,7 @@ import JsonLd from "@/components/JsonLd";
 import ListingCard, { Initials } from "@/components/ListingCard";
 import OpenStatus from "@/components/OpenStatus";
 import LinkGrid from "@/components/LinkGrid";
+import { SaveButton } from "@/components/Shortlist";
 export const revalidate = 3600;
 type P = { params: Promise<{ slug: string }> };
 const ROLE: Record<string, string> = { founder: "Founder", co_founder: "Co-founder", founding_partner: "Founding partner", managing_partner: "Managing partner", senior_partner: "Senior partner", partner: "Partner", managing_director: "Managing director", principal: "Principal", director: "Director", ceo: "CEO", president: "President", chair: "Chair", special_counsel: "Special counsel", of_counsel: "Of counsel" };
@@ -34,7 +35,7 @@ export default async function ListingPage({ params }: P) {
     geo: l.latitude ? { "@type": "GeoCoordinates", latitude: l.latitude, longitude: l.longitude } : undefined, areaServed: l.region_name ? { "@type": "Place", name: l.region_name } : undefined, hasMap: l.latitude ? `https://www.google.com/maps?q=${l.latitude},${l.longitude}` : undefined,
     knowsAbout: (l.practice_areas ?? []).map((a) => areaName(a, names)), foundingDate: l.year_established ? String(l.year_established) : undefined,
     openingHoursSpecification: l.opening_hours ? DAYS.flatMap((d) => (l.opening_hours?.[d] ?? []).map(([o, c]) => ({ "@type": "OpeningHoursSpecification", dayOfWeek: ({ mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday", sun: "Sunday" } as Record<string, string>)[d], opens: o, closes: c }))) : undefined,
-    aggregateRating: l.google_rating && l.google_review_count ? { "@type": "AggregateRating", ratingValue: l.google_rating, reviewCount: l.google_review_count, bestRating: 5 } : undefined,
+    aggregateRating: l.google_rating && (l.google_review_count ?? 0) >= 3 ? { "@type": "AggregateRating", ratingValue: l.google_rating, reviewCount: l.google_review_count, bestRating: 5 } : undefined,
     employee: leaders.slice(0, 10).map((p) => ({ "@type": "Person", name: p.full_name_display, jobTitle: ROLE[p.leadership_role ?? ""] ?? p.role_title ?? undefined, sameAs: p.linkedin_url ?? undefined })),
     sameAs: [l.website_url, l.firm_linkedin_url, ...Object.values(l.social_links ?? {})].filter(Boolean) };
   const crumbs = [...(g ? [{ name: g.name, href: `/law/${g.slug}` }] : []), ...(pa && g && pa.name !== g.name ? [{ name: pa.name, href: `/law/${g.slug}/${pa.slug}` }] : []), ...(pa && g && l.region_slug ? [{ name: l.region_name ?? "", href: `/law/${g.slug}/${pa.slug}/${l.region_slug}` }] : []), { name: l.business_name }];
@@ -61,24 +62,32 @@ export default async function ListingPage({ params }: P) {
             {l.phone_e164 ? <a href={`tel:${l.phone_e164}`} className="btn btn-primary"><Phone className="h-4 w-4" />Call {fmtPhone(l.phone_primary)}</a> : null}
             {l.website_url ? <a href={l.website_url} target="_blank" rel="noopener nofollow" className="btn btn-soft"><Globe className="h-4 w-4" />Website</a> : null}
             <a href="#enquire" className="btn btn-soft"><Send className="h-4 w-4" />Send enquiry</a>
+            <SaveButton slug={l.slug} name={l.business_name} />
           </div>
         </div>
       </section>
-      <div className="wrap grid gap-12 pb-10 lg:grid-cols-[1fr_22rem]">
-        <div className="min-w-0">
+      <nav aria-label="On this page" className="sticky top-14 z-30 border-y border-hair bg-[rgba(251,251,253,.88)] backdrop-blur-xl">
+        <ul className="wrap scroll-x !gap-1 py-2 text-[14px]">{[["overview", "Overview"], ...(people.length ? [["people", "People"]] : []), ...(google.length || own.length ? [["reviews", "Reviews"]] : []), ...(l.opening_hours ? [["hours", "Hours"]] : []), ...(l.latitude ? [["location", "Location"]] : []), ["enquire", "Enquire"]].map(([id, t]) => <li key={id}><a href={`#${id}`} className="navbtn block text-muted hover:text-ink">{t}</a></li>)}</ul>
+      </nav>
+      <div className="wrap grid gap-12 pb-10 pt-10 lg:grid-cols-[1fr_22rem]">
+        <div id="overview" className="min-w-0 scroll-mt-28">
           {l.short_description ? <p className="text-[21px] leading-[1.45] tracking-tight text-[#333336]">{l.short_description}</p> : null}
           <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">Areas of practice</h2>
-            <ul className="mt-4 flex flex-wrap gap-2">{(l.practice_areas ?? []).map((a) => { const x = areas.find((z) => z.slug === a); return <li key={a}><Link href={x ? `/law/${x.group_slug}/${x.slug}${l.region_slug ? `/${l.region_slug}` : ""}` : "#"} className={`pill hover:bg-hair ${a === l.primary_practice_area ? "pill-accent" : ""}`}>{areaName(a, names)}</Link></li>; })}</ul></section>
+            {(() => { const all = [l.primary_practice_area, ...(l.practice_areas ?? []).filter((a) => a !== l.primary_practice_area)];
+              const pill = (a: string) => { const x = areas.find((z) => z.slug === a); return <li key={a}><Link href={x ? `/law/${x.group_slug}/${x.slug}${l.region_slug ? `/${l.region_slug}` : ""}` : "#"} className={`pill hover:bg-hair ${a === l.primary_practice_area ? "pill-accent" : ""}`}>{areaName(a, names)}</Link></li>; };
+              return <><ul className="mt-4 flex flex-wrap gap-2">{all.slice(0, 5).map(pill)}</ul>{all.length > 5 ? <details className="mt-2"><summary className="link cursor-pointer text-[14px]">Show {all.length - 5} more</summary><ul className="mt-2 flex flex-wrap gap-2">{all.slice(5).map(pill)}</ul></details> : null}</>; })()}</section>
           {facts.length ? <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">At a glance</h2>
             <dl className="surface mt-4 grid gap-px overflow-hidden sm:grid-cols-2">{facts.map(([k, v]) => <div key={k} className="bg-paper p-5"><dt className="text-[13px] text-muted">{k}</dt><dd className="mt-0.5 text-[17px] font-medium">{v}</dd></div>)}</dl></section> : null}
-          {leaders.length ? <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">Leadership</h2>
+          {leaders.length ? <section id="people" className="mt-12 scroll-mt-28"><h2 className="text-[24px] font-semibold tracking-tight">Leadership</h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">{leaders.map((p) => <li key={p.practitioner_id} className="surface flex items-center gap-4 p-4">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-soft"><Initials name={p.full_name_display} className="text-sm" /></span>
               <div className="min-w-0 flex-1"><p className="truncate font-semibold">{p.full_name_display}</p><p className="text-[14px] text-muted">{p.is_founder ? "Founder · " : ""}{ROLE[p.leadership_role ?? ""] ?? p.role_title}</p></div>
               {p.linkedin_url ? <a href={p.linkedin_url} target="_blank" rel="noopener nofollow" aria-label={`${p.full_name_display} on LinkedIn`} className="text-link"><Linkedin className="h-5 w-5" /></a> : null}</li>)}</ul></section> : null}
           {team.length ? <section className="mt-8"><h3 className="text-[19px] font-semibold tracking-tight">Team</h3>
             <ul className="mt-3 grid gap-x-8 sm:grid-cols-2">{team.map((p) => <li key={p.practitioner_id} className="flex items-center justify-between gap-3 border-b border-hair py-2.5 text-[15px]"><span>{p.full_name_display}<span className="text-muted">{p.role_title ? ` · ${p.role_title}` : ""}</span></span>{p.linkedin_url ? <a href={p.linkedin_url} target="_blank" rel="noopener nofollow" aria-label="LinkedIn" className="text-link"><Linkedin className="h-4 w-4" /></a> : null}</li>)}</ul></section> : null}
-          {google.length ? <section className="mt-14"><div className="flex items-baseline justify-between gap-4"><h2 className="text-[24px] font-semibold tracking-tight">Google reviews</h2><span className="text-[13px] text-muted">Retrieved {new Date(google[0].fetched_at).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}</span></div>
+          {google.length || own.length ? <div id="reviews" className="scroll-mt-28" /> : null}
+          {l.google_rating != null && (l.google_review_count ?? 0) >= 3 ? <section className="surface mt-14 flex items-center gap-6 p-6"><p className="display text-[48px] leading-none">{l.google_rating.toFixed(1)}</p><div><Stars rating={l.google_rating} size="lg" /><p className="mt-1 text-[15px] text-muted">Average from {l.google_review_count?.toLocaleString("en-AU")} Google reviews</p></div></section> : null}
+          {google.length ? <section className="mt-8"><div className="flex items-baseline justify-between gap-4"><h2 className="text-[24px] font-semibold tracking-tight">Google reviews</h2><span className="text-[13px] text-muted">Retrieved {new Date(google[0].fetched_at).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}</span></div>
             <ul className="scroll-x mt-4 snap-x pb-2">{google.map((r) => <li key={r.review_id} className="surface w-[85%] shrink-0 snap-start p-6 sm:w-[23rem]">
               <div className="flex items-center justify-between gap-2"><span className="truncate font-semibold">{r.author_name}</span><Stars rating={r.rating} /></div>
               {r.published_at ? <p className="text-[13px] text-muted">{new Date(r.published_at).toLocaleDateString("en-AU", { month: "long", year: "numeric" })}</p> : null}
@@ -86,10 +95,10 @@ export default async function ListingPage({ params }: P) {
               {r.source_url ? <a href={r.source_url} target="_blank" rel="noopener nofollow" className="link mt-3 inline-block text-[13px]">View on Google</a> : null}</li>)}</ul></section> : null}
           {own.length ? <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">Client testimonials</h2><p className="text-[13px] text-muted">Published by the firm on its own website.</p>
             <ul className="mt-4 grid gap-4 md:grid-cols-2">{own.map((r) => <li key={r.review_id} className="surface p-6 text-[15px]"><p className="leading-relaxed text-[#424245]">“{r.text}”</p>{r.author_name ? <p className="mt-2 text-muted">{r.author_name}</p> : null}</li>)}</ul></section> : null}
-          {l.latitude ? <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">Location</h2>
+          {l.latitude ? <section id="location" className="mt-12 scroll-mt-28"><h2 className="text-[24px] font-semibold tracking-tight">Location</h2>
             <div className="surface mt-4 overflow-hidden"><iframe title={`Map of ${l.business_name}`} src={`https://www.google.com/maps?q=${l.latitude},${l.longitude}&z=15&output=embed`} className="h-72 w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div></section> : null}
         </div>
-        <aside className="grid gap-4 self-start lg:sticky lg:top-20">
+        <aside className="grid gap-4 self-start lg:sticky lg:top-32">
           <div className="surface grid gap-3 p-6 text-[15px]">
             <h2 className="text-[21px] font-semibold tracking-tight">Contact</h2>
             {l.phone_e164 ? <a href={`tel:${l.phone_e164}`} className="btn btn-primary"><Phone className="h-4 w-4" />{fmtPhone(l.phone_primary)}</a> : null}
@@ -97,7 +106,7 @@ export default async function ListingPage({ params }: P) {
             {l.email_general ? <a href={`mailto:${l.email_general}`} className="link flex items-center gap-2 break-all"><Mail className="h-4 w-4 shrink-0" />{l.email_general}</a> : null}
             {l.firm_linkedin_url ? <a href={l.firm_linkedin_url} target="_blank" rel="noopener nofollow" className="link flex items-center gap-2"><Linkedin className="h-4 w-4" />LinkedIn</a> : null}
           </div>
-          {l.opening_hours ? <div className="surface p-6 text-[15px]"><h2 className="text-[21px] font-semibold tracking-tight">Opening hours</h2><table className="mt-3 w-full"><tbody>{DAYS.map((d) => <tr key={d} className="border-b border-hair last:border-0"><td className="py-1.5 text-muted">{DAY_LABEL[d]}</td><td className="py-1.5 text-right tabular-nums">{l.opening_hours?.[d]?.length ? l.opening_hours[d].map((r) => r.join("–")).join(", ") : "Closed"}</td></tr>)}</tbody></table></div> : null}
+          {l.opening_hours ? <div id="hours" className="surface scroll-mt-28 p-6 text-[15px]"><h2 className="text-[21px] font-semibold tracking-tight">Opening hours</h2><table className="mt-3 w-full"><tbody>{DAYS.map((d) => <tr key={d} className="border-b border-hair last:border-0"><td className="py-1.5 text-muted">{DAY_LABEL[d]}</td><td className="py-1.5 text-right tabular-nums">{l.opening_hours?.[d]?.length ? l.opening_hours[d].map((r) => r.join("–")).join(", ") : "Closed"}</td></tr>)}</tbody></table></div> : null}
           <div id="enquire" className="scroll-mt-24"><LeadForm listingId={l.listing_id} firm={l.business_name} area={l.primary_practice_area} region={l.region_slug} /></div>
         </aside>
       </div>

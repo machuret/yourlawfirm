@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Hero from "@/components/Hero";
 import FaqList from "@/components/FaqList";
 import ListingList from "@/components/ListingList";
+import Results from "@/components/Results";
+import { parseFilters, qs } from "@/lib/filters";
 import ContextCards from "@/components/ContextCards";
 import LogoCarousel from "@/components/LogoCarousel";
 import LinkGrid from "@/components/LinkGrid";
@@ -12,7 +14,7 @@ import { areaMap, lawyersTitle } from "@/lib/format";
 import { canonical } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 export const revalidate = 3600;
-type P = { params: Promise<{ group: string; area: string }>; searchParams: Promise<{ page?: string }> };
+type P = { params: Promise<{ group: string; area: string }>; searchParams: Promise<Record<string, string | undefined>> };
 export async function generateMetadata({ params }: P) {
   const { group, area } = await params; const a = await getPracticeArea(area); if (!a || a.group_slug !== group) return {};
   return { title: `${lawyersTitle(a.name)} in Australia`, description: a.meta_description ?? a.intro ?? undefined, ...canonical(`/law/${group}/${area}`) };
@@ -21,8 +23,8 @@ export default async function AreaPage({ params, searchParams }: P) {
   const [{ group, area }, sp] = await Promise.all([params, searchParams]);
   const [g, a] = await Promise.all([getGroup(group), getPracticeArea(area)]);
   if (!g || !a || a.group_slug !== g.slug) notFound();
-  const page = Math.max(1, Number(sp.page ?? 1) || 1);
-  const [all, counts, { rows, count }, top, logos, groups] = await Promise.all([getPracticeAreas(), getAreaCounts(), listByAreas([a.slug], { page }), getAreaTopRegions(a.slug, 16), getLogos(a.slug, null, 24), getGroups()]);
+  const page = Math.max(1, Number(sp.page ?? 1) || 1); const f = parseFilters(sp);
+  const [all, counts, { rows, count }, top, logos, groups] = await Promise.all([getPracticeAreas(), getAreaCounts(), listByAreas([a.slug], { page, filters: f, size: f.view === "map" ? 300 : 24 }), getAreaTopRegions(a.slug, 16), getLogos(a.slug, null, 24), getGroups()]);
   const siblings = all.filter((x) => x.group_slug === g.slug && x.slug !== a.slug);
   const url = `${siteUrl()}/law/${g.slug}/${a.slug}`;
   return (<>
@@ -39,7 +41,7 @@ export default async function AreaPage({ params, searchParams }: P) {
     <LogoCarousel logos={logos} title={`${a.name} firms in the directory`} />
     <div className="wrap">
       <h2 className="h-md">{(counts[a.slug] ?? count).toLocaleString("en-AU")} {a.name.toLowerCase()} firms</h2>
-      <div className="mt-8"><ListingList rows={rows} areas={areaMap(all)} name={`${a.name} lawyers`} page={page} count={count} hrefFor={(p) => `/law/${g.slug}/${a.slug}${p > 1 ? `?page=${p}` : ""}`} /></div>
+      <div className="mt-6"><Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers`} page={page} filters={f} hrefFor={(p) => `/law/${g.slug}/${a.slug}${qs(sp, { page: p > 1 ? p : null })}`} /></div>
       <FaqList faq={[...(a.faq ?? []), ...(g.faq ?? []).slice(0, 2)]} />
       <LinkGrid title={`More in ${g.name}`} links={siblings.map((s) => ({ href: `/law/${g.slug}/${s.slug}`, label: s.name, count: counts[s.slug] }))} />
       <LinkGrid title="Other areas of law" cols={4} links={groups.filter((x) => x.slug !== g.slug).map((x) => ({ href: `/law/${x.slug}`, label: x.name }))} />

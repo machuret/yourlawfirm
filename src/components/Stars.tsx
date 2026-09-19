@@ -1,6 +1,7 @@
 import Tip from "./Tip";
 export default function Stars({ rating, count, fetchedAt, size = "sm", light = false }: { rating: number | null; count?: number | null; fetchedAt?: string | null; size?: "sm" | "lg"; light?: boolean }) {
   if (rating == null) return null;
+  if (count != null && count < 3) return <Tip label={`Only ${count} Google review${count === 1 ? "" : "s"} so far, not enough for a reliable rating`}><span className={`text-[13px] ${light ? "text-white/70" : "text-muted"}`}>New on Google</span></Tip>;
   const pct = Math.max(0, Math.min(100, (rating / 5) * 100));
   const when = fetchedAt ? new Date(fetchedAt).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" }) : null;
   return (

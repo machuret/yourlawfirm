@@ -5,6 +5,7 @@ import { fmtPhone, areaName } from "@/lib/format";
 import Stars from "./Stars";
 import Tip from "./Tip";
 import OpenStatus from "./OpenStatus";
+import { SaveButton } from "./Shortlist";
 export function Initials({ name, className = "" }: { name: string; className?: string }) {
   const i = name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   return <span className={`display text-accent ${className}`}>{i}</span>;
@@ -13,7 +14,7 @@ export default function ListingCard({ l, areas }: { l: Listing; areas: Record<st
   const featured = l.is_featured && (!l.featured_until || l.featured_until >= new Date().toISOString().slice(0, 10));
   const langs = (l.languages_spoken ?? []).filter((x) => x !== "english");
   return (
-    <article className={`surface card-hover relative flex flex-col p-5 ${featured ? "ring-2 ring-star/70" : ""}`}>
+    <article className={`surface card-hover relative flex flex-col p-4 sm:p-5 ${featured ? "ring-2 ring-star/70" : ""}`}>
       <div className="flex items-start gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-soft">
           {l.logo_url ? <img src={l.logo_url} alt="" className="max-h-11 max-w-11 object-contain" loading="lazy" /> : <Initials name={l.business_name} className="text-lg" />}
@@ -26,11 +27,12 @@ export default function ListingCard({ l, areas }: { l: Listing; areas: Record<st
           <p className="mt-0.5 truncate text-[14px] text-muted">{[l.suburb, l.state].filter(Boolean).join(", ")}{l.region_name ? ` · ${l.region_name}` : ""}</p>
           <div className="relative z-10 mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1"><Stars rating={l.google_rating} count={l.google_review_count} fetchedAt={l.google_fetched_at} /><OpenStatus hours={l.opening_hours} tz={l.timezone} /></div>
         </div>
-        {featured ? <span className="pill pill-accent !text-[12px]"><Sparkles className="h-3 w-3" />Featured</span> : null}
+        <div className="flex shrink-0 items-center gap-1.5">{featured ? <span className="pill pill-accent !text-[12px]"><Sparkles className="h-3 w-3" />Featured</span> : null}<SaveButton slug={l.slug} name={l.business_name} /></div>
       </div>
-      {l.short_description ? <p className="mt-3 line-clamp-2 text-[15px] text-[#424245]">{l.short_description}</p> : null}
-      <div className="relative z-10 mt-3 flex flex-wrap gap-1.5">
-        {(l.practice_areas ?? []).slice(0, 3).map((a) => <span key={a} className={`pill !text-[13px] ${a === l.primary_practice_area ? "pill-accent" : ""}`}>{areaName(a, areas)}</span>)}
+      {l.short_description ? <p className="mt-3 line-clamp-2 text-[14px] leading-snug text-[#424245]">{l.short_description}</p> : null}
+      <div className="relative z-10 mt-3 flex flex-wrap gap-1.5 [&>*:nth-child(n+5)]:hidden">
+        <span className="pill pill-accent !text-[13px]">{areaName(l.primary_practice_area, areas)}</span>
+        {(l.practice_areas?.length ?? 0) > 1 ? <Tip label={(l.practice_areas ?? []).filter((a) => a !== l.primary_practice_area).map((a) => areaName(a, areas)).join(" · ")}><span className="pill !text-[13px]">+{(l.practice_areas?.length ?? 1) - 1} more</span></Tip> : null}
         {l.no_win_no_fee ? <Tip label="The firm mentions no win, no fee arrangements. Confirm terms in writing."><span className="pill !text-[13px]"><HandCoins className="h-3.5 w-3.5" />No win, no fee</span></Tip> : null}
         {l.free_first_consultation === "yes" ? <Tip label="The firm advertises a free first consultation."><span className="pill !text-[13px]"><Clock className="h-3.5 w-3.5" />Free first consult</span></Tip> : null}
         {langs.length ? <Tip label={`Languages mentioned on the firm’s website: ${langs.join(", ")}`}><span className="pill !text-[13px]"><Languages className="h-3.5 w-3.5" />{langs.length + 1} languages</span></Tip> : null}
