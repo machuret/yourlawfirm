@@ -35,10 +35,13 @@ This is practical directory guidance, not a comprehensive legal review of existi
 
 ## Verification
 
-- `npm run test:content`: five tests pass, covering the 66/101/12 content inventories, unique local/topic copy, official-resource availability, every regional asset and the divorce correction.
+- `npm run test:content`: six tests pass, covering the 66/101/12 content inventories, unique local/topic copy, official-resource availability, every regional asset and the divorce correction.
 - `npm run build`: production compilation, TypeScript and 16 static routes pass.
-- `npm run lint`: zero errors; six pre-existing warnings remain in listing/logo and search code.
+- `npm run lint`: zero errors; four pre-existing warnings remain for external listing/logo images.
 - Desktop and 390px mobile review covers the Bendigo location guide and regional family/divorce routes, working in-page anchors, loaded responsive hero imagery, readable guide columns and no horizontal overflow.
 - Image contact sheets were reviewed across all 66 regions. Collage-like outputs are replaced with continuous scenes before release.
 
 Production deployment, enquiry delivery, listing identities and all ten site variants are outside this verification. No enquiry or claim was submitted.
+
+
+Final merge review: checked the location page at 320px in light and dark modes, with no horizontal overflow or broken images. The sixth test validates all 71 generated assets against their provenance records and the 180 KB budget.

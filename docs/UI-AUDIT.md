@@ -15,7 +15,7 @@
 ## Validation
 
 - Production build completes with TypeScript and all 16 static pages generated.
-- ESLint: no errors; six existing warnings remain for unused imports and unoptimised external listing/logo images.
+- ESLint: no errors; four existing warnings remain for unoptimised external listing/logo images.
 - Browser review: desktop homepage, practice card grid and comparison table; 390px mobile homepage and family-law practice page; mobile menu; light/dark mode; live autocomplete and ArrowDown/Enter selection.
 - Two firms can be shortlisted and opened in the comparison table with ratings, practice areas and phone links intact.
 - Mobile document width stays inside the viewport on homepage and the reviewed practice page.

@@ -72,3 +72,22 @@ test('outdated divorce rules cannot override the reviewed display content', () =
   const other={slug:'traffic-law',body:'Original copy'};
   assert.equal(correctPracticeContent(other),other);
 });
+test('all 71 generated assets match their provenance and stay within budget', async () => {
+  const regional=require('../docs/location-imagery.json');
+  const topics=require('../docs/generated-imagery.json');
+  assert.equal(regional.assets.length,66);
+  assert.equal(topics.assets.length,5);
+  const assets=[...regional.assets,...topics.assets];
+  assert.equal(new Set(assets.map(a=>a.file)).size,71);
+  for (const asset of assets) {
+    const file=path.join(__dirname,'..',asset.file);
+    const bytes=fs.statSync(file).size;
+    assert.equal(bytes,asset.bytes,`${asset.file}: stale size in manifest`);
+    assert.ok(bytes<=180000,`${asset.file}: exceeds 180 KB`);
+    assert.ok(asset.prompt.length>100,`${asset.file}: missing generation prompt`);
+    const meta=await sharp(file).metadata();
+    assert.equal(meta.format,'webp',asset.file);
+    assert.equal(meta.width,asset.width,asset.file);
+    assert.equal(meta.height,asset.height,asset.file);
+  }
+});

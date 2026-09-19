@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import SearchBox from "@/components/SearchBox";
-import ListingList from "@/components/ListingList";
 import Results from "@/components/Results";
-import { parseFilters, qs } from "@/lib/filters";
+import { parseFilters } from "@/lib/filters";
 import { getPracticeAreas, searchText, searchNearby, suggest } from "@/lib/queries";
 import { areaMap } from "@/lib/format";
 export const metadata = { title: "Search lawyers", robots: { index: false, follow: true } };
