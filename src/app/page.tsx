@@ -22,17 +22,17 @@ export default async function Home() {
   const topRegions = [...regions].sort((a, b) => (rCounts[b.region_slug] ?? 0) - (rCounts[a.region_slug] ?? 0)).slice(0, 15);
   return (
     <>
-      <Hero size="lg" center title="The right lawyer, without the guesswork." intro="Every Australian firm here is matched to its own website and checked against Google. Compare ratings, people and fees, then contact them directly."
-        stats={[{ v: total.toLocaleString("en-AU"), l: "law firms" }, { v: "66", l: "regions" }, { v: String(areas.length), l: "areas of law" }]}>
-        <div className="surface-glass p-2"><SearchBox size="lg" placeholder="Try “divorce”, “Parramatta” or a firm name" /></div>
+      <Hero size="lg" title="The right lawyer, without the guesswork." intro="Find legal expertise for life’s important moments. Explore Australian law firms, compare their experience and reviews, and take your next step with confidence."
+        stats={[{ v: total.toLocaleString("en-AU"), l: "law firms" }, { v: String(regions.length), l: "regions" }, { v: String(areas.length), l: "areas of law" }]}>
+        <div className="surface-glass p-2"><SearchBox size="lg" placeholder="Legal issue, location or firm" /></div>
       </Hero>
-      <section className="wrap -mt-2 pb-4">
+      <section className="wrap situation-section"><p className="section-eyebrow">Not sure where to start? Find help for your situation</p>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {SIT.map(([I, t, g, h]) => (<li key={h}><Link href={h} style={gStyle(g)} className="surface card-hover flex h-full items-center gap-3 p-4"><span className="tile-icon g-tint !h-10 !w-10 shrink-0"><I className="h-5 w-5" /></span><span className="text-[15px] font-medium leading-snug">{t}</span></Link></li>))}
+          {SIT.map(([I, t, g, h]) => (<li key={h}><Link href={h} style={gStyle(g)} className="situation-link surface card-hover flex h-full items-center gap-3"><span className="tile-icon g-tint !h-10 !w-10 shrink-0"><I className="h-5 w-5" /></span><span className="text-[13px] font-medium leading-snug">{t}</span></Link></li>))}
         </ul>
       </section>
       <LogoCarousel logos={logos} title="Some of the firms listed" />
-      <section className="wrap py-10">
+      <section className="wrap py-16">
         <SectionHead title="Browse by area of law" sub="Each area explains what the lawyers do, why it matters and how it works in Australia." href="/law" linkText="All areas" />
         <div className="mt-8"><AreaTiles tiles={groups.filter((g) => g.slug !== "general").map((g) => ({ href: `/law/${g.slug}`, name: g.name, sub: g.intro ?? undefined, count: gCounts[g.slug], icon: g.slug, group: g.slug }))} /></div>
       </section>
@@ -45,7 +45,7 @@ export default async function Home() {
       </div></section>
       {featured.length ? <section className="wrap py-16"><SectionHead title="Well-reviewed firms" sub="Verified firms with strong Google ratings from many reviews." /><div className="mt-8 grid gap-4 md:grid-cols-2">{featured.map((l) => <ListingCard key={l.listing_id} l={l} areas={areaMap(areas)} group={areas.find((a) => a.slug === l.primary_practice_area)?.group_slug} />)}</div></section> : null}
       <section className="band"><div className="wrap grid gap-6 py-16 md:grid-cols-3">
-        {[[ShieldCheck, "Checked listings", "Every firm is matched to a live website, and most are confirmed against Google by phone number."], [Star, "Clearly sourced reviews", "Google ratings show where they came from and the date we retrieved them. Firms with too few reviews aren’t rated."], [PhoneCall, "Contact firms directly", "No middleman or fees. Call, visit the website or send an enquiry to the firm."]].map(([I, t, d]) => { const Icon = I as typeof ShieldCheck; return (
+        {[[ShieldCheck, "Checked listings", "Look for the verification badge to see where a firm’s phone number has been matched to its website and Google."], [Star, "Clearly sourced reviews", "Google ratings show where they came from and the date we retrieved them. Firms with too few reviews aren’t rated."], [PhoneCall, "Contact firms directly", "No middleman or fees. Call, visit the website or send an enquiry to the firm."]].map(([I, t, d]) => { const Icon = I as typeof ShieldCheck; return (
           <div key={t as string} className="surface p-7"><span className="tile-icon bg-accent-soft text-accent"><Icon className="h-5 w-5" /></span><h3 className="mt-4 text-[21px] font-semibold tracking-tight">{t as string}</h3><p className="mt-2 text-[15px] leading-relaxed text-muted">{d as string}</p></div>); })}
       </div></section>
       <div className="wrap">

@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { correctPracticeContent } from "@/content/corrections";
 import { supabase } from "./supabase";
 import { siteAreaFilter, SITE_KEY } from "./site";
 import type { Filters } from "./filters";
@@ -41,7 +42,7 @@ export const getPracticeAreas = cache(async (): Promise<PracticeArea[]> => {
   const filter = await siteAreaFilter();
   let q = supabase.from("practice_areas").select(AREA_COLS).order("sort");
   if (filter.length) q = q.in("slug", filter);
-  return ((await q).data ?? []) as PracticeArea[];
+  return (((await q).data ?? []) as PracticeArea[]).map(correctPracticeContent);
 });
 export async function getPracticeArea(slug: string) { return (await getPracticeAreas()).find((a) => a.slug === slug) ?? null; }
 export const getRegions = cache(async (): Promise<Region[]> => ((await supabase.from("regions").select(REGION_COLS).order("state").order("region_name")).data ?? []) as Region[]);

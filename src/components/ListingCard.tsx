@@ -17,9 +17,9 @@ export default function ListingCard({ l, areas, group }: { l: Listing; areas: Re
   const langs = (l.languages_spoken ?? []).filter((x) => x !== "english");
   const topRated = (l.google_rating ?? 0) >= 4.8 && (l.google_review_count ?? 0) >= 50;
   return (
-    <article style={gStyle(group)} className={`surface card-hover relative flex flex-col overflow-hidden p-4 sm:p-5 ${featured ? "ring-2 ring-star/70" : ""}`}>
+    <article style={gStyle(group)} className={`listing-card surface card-hover relative flex flex-col overflow-hidden p-4 sm:p-5 ${featured ? "ring-2 ring-star/70" : ""}`}>
       <span aria-hidden="true" className="g-bar absolute inset-x-0 top-0 h-[3px] opacity-70" />
-      <div className="flex items-start gap-4">
+      <div className="listing-card-header flex items-start gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-soft logo-tile">
           {l.logo_url ? <img src={l.logo_url} alt="" className="max-h-11 max-w-11 object-contain" loading="lazy" /> : <Initials name={l.business_name} className="text-lg" />}
         </div>
@@ -41,7 +41,7 @@ export default function ListingCard({ l, areas, group }: { l: Listing; areas: Re
         {l.free_first_consultation === "yes" ? <Tip label="The firm advertises a free first consultation."><span className="pill !text-[13px]"><Clock className="h-3.5 w-3.5" />Free first consult</span></Tip> : null}
         {langs.length ? <Tip label={`Languages mentioned on the firm’s website: ${langs.join(", ")}`}><span className="pill !text-[13px]"><Languages className="h-3.5 w-3.5" />{langs.length + 1} languages</span></Tip> : null}
       </div>
-      <div className="relative z-10 mt-auto flex items-center gap-2 pt-4">
+      <div className="listing-card-footer relative z-10 mt-auto flex items-center gap-2 pt-4">
         {l.phone_e164 ? <a href={`tel:${l.phone_e164}`} className="btn btn-soft !px-3.5 !py-2 text-[14px]"><Phone className="h-4 w-4" />{fmtPhone(l.phone_primary)}</a> : null}
         {l.website_url ? <a href={l.website_url} target="_blank" rel="noopener nofollow" className="btn btn-ghost text-[14px]" aria-label={`${l.business_name} website`}><Globe className="h-4 w-4" />Website</a> : null}
         {l.year_established ? <span className="ml-auto text-[12px] text-muted">Est. {l.year_established}</span> : null}

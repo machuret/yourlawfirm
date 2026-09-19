@@ -1,0 +1,469 @@
+{
+  "generator": "Built-in image_gen",
+  "purpose": "Illustrative regional impressions; not documentary images of particular buildings or firms.",
+  "maxBytes": 180000,
+  "assets": [
+    {
+      "file": "public/images/locations/nsw-sydney-south.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Southern Sydney, NSW, Australia, drawing on the regional character of Hurstville, Sutherland, Cronulla. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 178798,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-sydney-east.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Eastern Suburbs & Inner West, NSW, Australia, drawing on the regional character of Bondi Junction, Randwick, Newtown. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 176810,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-sydney-hills.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Hills District, NSW, Australia, drawing on the regional character of Castle Hill, Baulkham Hills, Norwest. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 154030,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-central-coast.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Central Coast, NSW, Australia, drawing on the regional character of Gosford, Wyong, Erina. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 176642,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-hunter.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Newcastle & Hunter, NSW, Australia, drawing on the regional character of Newcastle, Maitland, Cessnock. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 171396,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-illawarra.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Illawarra & Wollongong, NSW, Australia, drawing on the regional character of Wollongong, Shellharbour, Kiama. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 161472,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-sydney-cbd.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Sydney CBD, NSW, Australia, drawing on the regional character of Sydney. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 161682,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-sydney-north.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Sydney North Shore & Northern Beaches, NSW, Australia, drawing on the regional character of Chatswood, North Sydney, Hornsby. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 168452,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-south-coast.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of South Coast, NSW, Australia, drawing on the regional character of Nowra, Ulladulla, Batemans Bay. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 150916,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-sydney-west.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Western Sydney, NSW, Australia, drawing on the regional character of Parramatta, Blacktown, Penrith. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 179654,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-melbourne-north.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Northern Melbourne, VIC, Australia, drawing on the regional character of Preston, Broadmeadows, Epping. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 164848,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-southern-highlands.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Southern Highlands & Tablelands, NSW, Australia, drawing on the regional character of Bowral, Goulburn, Queanbeyan. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 165202,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-snowy-monaro.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Snowy Monaro, NSW, Australia, drawing on the regional character of Cooma, Jindabyne. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 166060,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-mid-north-coast.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Mid North Coast, NSW, Australia, drawing on the regional character of Port Macquarie, Coffs Harbour, Taree. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 171224,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-northern-rivers.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Northern Rivers, NSW, Australia, drawing on the regional character of Lismore, Ballina, Byron Bay. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 172228,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-new-england.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of New England & North West, NSW, Australia, drawing on the regional character of Armidale, Tamworth, Moree. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 167074,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-central-west.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Central West & Orana, NSW, Australia, drawing on the regional character of Orange, Bathurst, Dubbo. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 172074,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-riverina.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Riverina & Murray, NSW, Australia, drawing on the regional character of Wagga Wagga, Albury, Griffith. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 178292,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nsw-far-west.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Far West, NSW, Australia, drawing on the regional character of Broken Hill. Wide open Australian landscape with a small settlement and region-appropriate vegetation. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 178832,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/act-canberra.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Canberra, ACT, Australia, drawing on the regional character of Canberra City, Belconnen, Woden. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 111794,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-melbourne-cbd.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Melbourne CBD, VIC, Australia, drawing on the regional character of Melbourne. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 150388,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-ipswich.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Ipswich, QLD, Australia, drawing on the regional character of Ipswich, Springfield. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 168264,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-melbourne-east.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Eastern Melbourne, VIC, Australia, drawing on the regional character of Box Hill, Ringwood, Glen Waverley. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 172398,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-melbourne-south-east.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of South East Melbourne, VIC, Australia, drawing on the regional character of Dandenong, Frankston, Cranbourne. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 171620,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-melbourne-west.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Western Melbourne, VIC, Australia, drawing on the regional character of Footscray, Sunshine, Werribee. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 172734,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-mornington-peninsula.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Mornington Peninsula, VIC, Australia, drawing on the regional character of Mornington, Rosebud. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 157162,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-geelong.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Geelong & Surf Coast, VIC, Australia, drawing on the regional character of Geelong, Torquay. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 178190,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-ballarat.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Ballarat & Central Highlands, VIC, Australia, drawing on the regional character of Ballarat. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 164730,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-bendigo.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Bendigo & Loddon, VIC, Australia, drawing on the regional character of Bendigo, Castlemaine. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 166070,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-gippsland.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Gippsland, VIC, Australia, drawing on the regional character of Traralgon, Sale, Bairnsdale. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 164270,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-hume.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Hume & North East, VIC, Australia, drawing on the regional character of Shepparton, Wangaratta, Wodonga. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 167260,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-western.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Western District & Wimmera, VIC, Australia, drawing on the regional character of Warrnambool, Hamilton, Horsham. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 164656,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/vic-mallee.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Mallee, VIC, Australia, drawing on the regional character of Mildura, Swan Hill. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 171600,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-brisbane-cbd.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Brisbane CBD, QLD, Australia, drawing on the regional character of Brisbane. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 155858,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-brisbane-north.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Brisbane North & Moreton Bay, QLD, Australia, drawing on the regional character of Chermside, Redcliffe, North Lakes. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 178390,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-brisbane-south.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Brisbane South & Logan, QLD, Australia, drawing on the regional character of Mount Gravatt, Logan, Springwood. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 179996,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-gold-coast.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Gold Coast, QLD, Australia, drawing on the regional character of Southport, Surfers Paradise, Robina. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 158088,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-sunshine-coast.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Sunshine Coast, QLD, Australia, drawing on the regional character of Maroochydore, Caloundra, Noosa. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 155790,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-toowoomba.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Toowoomba & Darling Downs, QLD, Australia, drawing on the regional character of Toowoomba, Warwick, Dalby. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 173290,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-wide-bay.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Wide Bay-Burnett, QLD, Australia, drawing on the regional character of Bundaberg, Hervey Bay, Maryborough. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 168014,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-central.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Central Queensland, QLD, Australia, drawing on the regional character of Rockhampton, Gladstone, Emerald. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 176370,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-mackay.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Mackay & Whitsundays, QLD, Australia, drawing on the regional character of Mackay, Airlie Beach. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 172240,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-perth-east.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Perth East, WA, Australia, drawing on the regional character of Midland, Cannington. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 173680,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-townsville.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Townsville & North Queensland, QLD, Australia, drawing on the regional character of Townsville, Bowen, Ayr. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 162008,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-cairns.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Cairns & Far North, QLD, Australia, drawing on the regional character of Cairns, Port Douglas, Atherton. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 176326,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/qld-outback.webp",
+      "prompt": "Create one single continuous landscape 3:2 editorial photograph, not a collage or diptych. An outback Queensland small town at the edge of a vast dry inland plain, modest low-rise veranda-front buildings beside a quiet broad street, sparse eucalyptus trees and red ochre earth beyond. No sea, no skyline, no grand civic monuments. Soft warm morning light, premium realistic architectural and landscape photography, restrained colours for a professional legal directory. This is an illustrative regional impression, not documentary evidence of a particular settlement. No text, readable signs, logos, watermark, split panels, montage or inset pictures. One natural camera view.",
+      "bytes": 136514,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-perth-cbd.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Perth CBD, WA, Australia, drawing on the regional character of Perth. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 179420,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-perth-north.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Perth North, WA, Australia, drawing on the regional character of Joondalup, Wanneroo, Stirling. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 175028,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-perth-south.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Perth South, WA, Australia, drawing on the regional character of Fremantle, Rockingham, Mandurah. A calm established suburban streetscape, local commercial village architecture and greenery. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 176906,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-south-west.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of South West, WA, Australia, drawing on the regional character of Bunbury, Busselton, Margaret River. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 169884,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-great-southern.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Great Southern, WA, Australia, drawing on the regional character of Albany. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 167270,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-goldfields.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Goldfields-Esperance, WA, Australia, drawing on the regional character of Kalgoorlie, Esperance. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 146454,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-midwest.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Mid West & Gascoyne, WA, Australia, drawing on the regional character of Geraldton, Carnarvon. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 148108,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/wa-north-west.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Pilbara & Kimberley, WA, Australia, drawing on the regional character of Karratha, Port Hedland, Broome. Wide open Australian landscape with a small settlement and region-appropriate vegetation. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 175860,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/sa-adelaide-cbd.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Adelaide CBD, SA, Australia, drawing on the regional character of Adelaide. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 147952,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/sa-adelaide-metro.webp",
+      "prompt": "Create one single continuous landscape 3:2 editorial photograph, not a collage or diptych. A calm Adelaide suburban commercial street with modest sandstone shopfronts, a wide leafy footpath and mature eucalyptus trees, soft morning light. Flat terrain, subtle Australian suburban architecture, welcoming and professional atmosphere for a legal directory. Warm ivory, muted olive and navy shadows. This is an illustrative regional impression, not a specific real building. No split panels, no montage, no inset images, no readable signage, no text, logos or watermark. One camera view.",
+      "bytes": 170960,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/sa-barossa-hills.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Barossa & Adelaide Hills, SA, Australia, drawing on the regional character of Mount Barker, Nuriootpa, Gawler. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 175808,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/sa-fleurieu.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Fleurieu & Kangaroo Island, SA, Australia, drawing on the regional character of Victor Harbor. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 174940,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/sa-limestone-coast.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Limestone Coast, SA, Australia, drawing on the regional character of Mount Gambier. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 177294,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/sa-riverland-murray.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Riverland & Murraylands, SA, Australia, drawing on the regional character of Berri, Murray Bridge, Renmark. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 163690,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nt-central.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Alice Springs & Central, NT, Australia, drawing on the regional character of Alice Springs, Tennant Creek, Katherine. Wide open Australian landscape with a small settlement and region-appropriate vegetation. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 173786,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/sa-eyre-yorke.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Eyre, Yorke & Mid North, SA, Australia, drawing on the regional character of Port Lincoln, Port Augusta, Whyalla. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 172706,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/tas-hobart.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Hobart & South, TAS, Australia, drawing on the regional character of Hobart, Glenorchy, Kingston. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 164086,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/tas-launceston.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Launceston & North, TAS, Australia, drawing on the regional character of Launceston. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 166008,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/tas-north-west.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of North West & West Coast, TAS, Australia, drawing on the regional character of Devonport, Burnie, Ulverstone. A regional town streetscape with local architectural character, trees and a hint of the surrounding landscape. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 141122,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "file": "public/images/locations/nt-darwin.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 hero image for an Australian legal directory location guide. Create a premium editorial photographic impression of Darwin & Palmerston, NT, Australia, drawing on the regional character of Darwin, Palmerston, Casuarina. An elegant cityscape with contemporary buildings and civic public space. This is an illustrative regional impression, not documentary evidence of any specific building or law firm. No courthouse labels, invented landmarks or readable signs. Warm natural morning light, warm sandstone and ivory with muted green foliage and navy shadows, realistic materials, editorial architectural photography, dignified and welcoming. No text, no logos, no watermark, no people in focus, no gavels, no scales.",
+      "bytes": 174792,
+      "width": 1280,
+      "height": 853
+    }
+  ]
+}

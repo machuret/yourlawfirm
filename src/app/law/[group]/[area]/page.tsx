@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Hero from "@/components/Hero";
+import { GuideNav, PracticeGuide } from "@/components/EditorialGuide";
 import FaqList from "@/components/FaqList";
-import ListingList from "@/components/ListingList";
 import Results from "@/components/Results";
 import { parseFilters, qs } from "@/lib/filters";
 import ContextCards from "@/components/ContextCards";
@@ -33,14 +33,16 @@ export default async function AreaPage({ params, searchParams }: P) {
       crumbs={[{ name: "Areas of law", href: "/law" }, ...(g.name !== a.name ? [{ name: g.name, href: `/law/${g.slug}` }] : []), { name: a.name }]} stats={[{ v: (counts[a.slug] ?? count).toLocaleString("en-AU"), l: "firms" }, { v: String(top.length), l: "regions" }]}>
       <div className="max-w-xl"><SearchBox placeholder={`Suburb or postcode for ${a.name.toLowerCase()}`} /></div>
     </Hero>
-    <div className="wrap">
+    <GuideNav />
+    <div className="wrap pt-8">
       <ContextCards body={a.body} why={a.why} au={a.au_context} topic={a.name} group={g.slug} />
       <LinkGrid title={`${lawyersTitle(a.name)} near you`} cols={4} links={top.map((r) => ({ href: `/law/${g.slug}/${a.slug}/${r.region_slug}`, label: `${r.region_name}, ${r.state}`, count: Number(r.listings) }))} />
     </div>
     <LogoCarousel logos={logos} title={`${a.name} firms in the directory`} />
     <div className="wrap">
-      <h2 className="h-md">{(counts[a.slug] ?? count).toLocaleString("en-AU")} {a.name.toLowerCase()} firms</h2>
+      <h2 id="directory-results" className="h-md">{(counts[a.slug] ?? count).toLocaleString("en-AU")} {a.name.toLowerCase()} firms</h2>
       <div className="mt-6"><Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers`} page={page} filters={f} group={g.slug} hrefFor={(p) => `/law/${g.slug}/${a.slug}${qs(sp, { page: p > 1 ? p : null })}`} /></div>
+      <PracticeGuide group={g} area={a} />
       <FaqList faq={[...(a.faq ?? []), ...(g.faq ?? []).slice(0, 2)]} />
       <LinkGrid title={`More in ${g.name}`} links={siblings.map((s) => ({ href: `/law/${g.slug}/${s.slug}`, label: s.name, count: counts[s.slug] }))} />
       <LinkGrid title="Other areas of law" cols={4} links={groups.filter((x) => x.slug !== g.slug).map((x) => ({ href: `/law/${x.slug}`, label: x.name }))} />

@@ -1,21 +1,21 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Suggestion } from "@/lib/types";
 const KIND: Record<string, string> = { category: "Area of law", area: "Area of law", region: "Location", suburb: "Suburb", firm: "Law firm" };
 export default function SearchBox({ size = "md", placeholder = "Search a legal issue, suburb or firm" }: { size?: "sm" | "md" | "lg"; placeholder?: string }) {
   const router = useRouter();
   const [q, setQ] = useState(""); const [items, setItems] = useState<Suggestion[]>([]); const [open, setOpen] = useState(false); const [active, setActive] = useState(-1);
-  const box = useRef<HTMLDivElement>(null); const id = useRef(`sb-${Math.random().toString(36).slice(2, 8)}`).current;
+  const box = useRef<HTMLDivElement>(null); const id = useId();
   useEffect(() => {
-    if (q.trim().length < 2) { setItems([]); return; }
+    if (q.trim().length < 2) return;
     const c = new AbortController();
-    const t = setTimeout(() => { fetch(`/api/suggest?q=${encodeURIComponent(q)}`, { signal: c.signal }).then((r) => r.json()).then((d) => { setItems(d); setOpen(true); setActive(-1); }).catch(() => {}); }, 160);
+    const t = setTimeout(() => { fetch(`/api/suggest?q=${encodeURIComponent(q)}`, { signal: c.signal }).then((r) => r.json()).then((d) => { if (c.signal.aborted || !Array.isArray(d)) return; setItems(d); setOpen(true); setActive(-1); }).catch(() => {}); }, 160);
     return () => { clearTimeout(t); c.abort(); };
   }, [q]);
   useEffect(() => { const h = (e: MouseEvent) => { if (!box.current?.contains(e.target as Node)) setOpen(false); }; document.addEventListener("mousedown", h); return () => document.removeEventListener("mousedown", h); }, []);
   function go(url: string) { setOpen(false); router.push(url); }
-  function submit(e: React.FormEvent) { e.preventDefault(); if (active >= 0 && items[active]) return go(items[active].url); if (q.trim()) go(`/search?q=${encodeURIComponent(q.trim())}`); }
+  function submit(e: React.FormEvent) { e.preventDefault(); if (open && active >= 0 && items[active]) return go(items[active].url); if (q.trim()) go(`/search?q=${encodeURIComponent(q.trim())}`); }
   function key(e: React.KeyboardEvent) {
     if (!open || !items.length) return;
     if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => (a + 1) % items.length); }
@@ -27,9 +27,9 @@ export default function SearchBox({ size = "md", placeholder = "Search a legal i
     <div ref={box} className="relative w-full">
       <form onSubmit={submit} role="search">
         <label htmlFor={id} className="sr-only">Search</label>
-        <input id={id} value={q} onChange={(e) => setQ(e.target.value)} onFocus={() => items.length && setOpen(true)} onKeyDown={key} placeholder={placeholder} autoComplete="off"
-          role="combobox" aria-expanded={open} aria-controls={`${id}-list`} aria-activedescendant={active >= 0 ? `${id}-${active}` : undefined}
-          className={`w-full rounded-full border border-hair bg-paper text-ink shadow-[var(--shadow-1)] outline-none focus:border-accent ${pad}`} />
+        <input id={id} value={q} onChange={(e) => { setQ(e.target.value); setItems([]); setActive(-1); setOpen(false); }} onFocus={() => items.length && setOpen(true)} onKeyDown={key} placeholder={placeholder} autoComplete="off"
+          role="combobox" aria-autocomplete="list" aria-expanded={open && items.length > 0} aria-controls={`${id}-list`} aria-activedescendant={open && active >= 0 ? `${id}-${active}` : undefined}
+          className={`w-full rounded-full border border-hair bg-paper text-ink shadow-[var(--shadow-1)] focus:border-accent ${pad}`} />
         <button type="submit" className={`absolute right-1.5 top-1/2 -translate-y-1/2 btn btn-primary ${size === "sm" ? "!px-3 !py-1 !text-[13px]" : ""}`}>Search</button>
       </form>
       {open && items.length ? (

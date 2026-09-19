@@ -1,0 +1,490 @@
+{
+  "regions": [
+    "nsw-sydney-south",
+    "nsw-sydney-east",
+    "nsw-sydney-hills",
+    "nsw-central-coast",
+    "nsw-hunter",
+    "nsw-illawarra",
+    "nsw-sydney-cbd",
+    "nsw-sydney-north",
+    "nsw-south-coast",
+    "nsw-sydney-west",
+    "vic-melbourne-north",
+    "nsw-southern-highlands",
+    "nsw-snowy-monaro",
+    "nsw-mid-north-coast",
+    "nsw-northern-rivers",
+    "nsw-new-england",
+    "nsw-central-west",
+    "nsw-riverina",
+    "nsw-far-west",
+    "act-canberra",
+    "vic-melbourne-cbd",
+    "qld-ipswich",
+    "vic-melbourne-east",
+    "vic-melbourne-south-east",
+    "vic-melbourne-west",
+    "vic-mornington-peninsula",
+    "vic-geelong",
+    "vic-ballarat",
+    "vic-bendigo",
+    "vic-gippsland",
+    "vic-hume",
+    "vic-western",
+    "vic-mallee",
+    "qld-brisbane-cbd",
+    "qld-brisbane-north",
+    "qld-brisbane-south",
+    "qld-gold-coast",
+    "qld-sunshine-coast",
+    "qld-toowoomba",
+    "qld-wide-bay",
+    "qld-central",
+    "qld-mackay",
+    "wa-perth-east",
+    "qld-townsville",
+    "qld-cairns",
+    "qld-outback",
+    "wa-perth-cbd",
+    "wa-perth-north",
+    "wa-perth-south",
+    "wa-south-west",
+    "wa-great-southern",
+    "wa-goldfields",
+    "wa-midwest",
+    "wa-north-west",
+    "sa-adelaide-cbd",
+    "sa-adelaide-metro",
+    "sa-barossa-hills",
+    "sa-fleurieu",
+    "sa-limestone-coast",
+    "sa-riverland-murray",
+    "nt-central",
+    "sa-eyre-yorke",
+    "tas-hobart",
+    "tas-launceston",
+    "tas-north-west",
+    "nt-darwin"
+  ],
+  "areas": [
+    {
+      "slug": "child-custody-parenting",
+      "group": "family"
+    },
+    {
+      "slug": "property-settlement",
+      "group": "family"
+    },
+    {
+      "slug": "de-facto-relationships",
+      "group": "family"
+    },
+    {
+      "slug": "probate-estate-administration",
+      "group": "wills"
+    },
+    {
+      "slug": "powers-of-attorney-guardianship",
+      "group": "wills"
+    },
+    {
+      "slug": "elder-law",
+      "group": "wills"
+    },
+    {
+      "slug": "estate-planning-trusts",
+      "group": "wills"
+    },
+    {
+      "slug": "family-law",
+      "group": "family"
+    },
+    {
+      "slug": "divorce-separation",
+      "group": "family"
+    },
+    {
+      "slug": "domestic-violence-avo",
+      "group": "family"
+    },
+    {
+      "slug": "surrogacy-adoption",
+      "group": "family"
+    },
+    {
+      "slug": "mediation",
+      "group": "family"
+    },
+    {
+      "slug": "child-protection-care",
+      "group": "family"
+    },
+    {
+      "slug": "binding-financial-agreements",
+      "group": "family"
+    },
+    {
+      "slug": "wills-estates",
+      "group": "wills"
+    },
+    {
+      "slug": "contested-wills",
+      "group": "wills"
+    },
+    {
+      "slug": "superannuation-death-benefits",
+      "group": "wills"
+    },
+    {
+      "slug": "criminal-law",
+      "group": "criminal"
+    },
+    {
+      "slug": "sexual-offences-defence",
+      "group": "criminal"
+    },
+    {
+      "slug": "bail-applications",
+      "group": "criminal"
+    },
+    {
+      "slug": "appeals",
+      "group": "criminal"
+    },
+    {
+      "slug": "firearms-licensing",
+      "group": "criminal"
+    },
+    {
+      "slug": "youth-justice",
+      "group": "criminal"
+    },
+    {
+      "slug": "traffic-law",
+      "group": "criminal"
+    },
+    {
+      "slug": "motor-vehicle-accidents",
+      "group": "injury"
+    },
+    {
+      "slug": "tpd-superannuation-claims",
+      "group": "injury"
+    },
+    {
+      "slug": "victims-compensation",
+      "group": "injury"
+    },
+    {
+      "slug": "institutional-abuse-claims",
+      "group": "injury"
+    },
+    {
+      "slug": "product-liability",
+      "group": "injury"
+    },
+    {
+      "slug": "commercial-property",
+      "group": "property"
+    },
+    {
+      "slug": "building-construction",
+      "group": "property"
+    },
+    {
+      "slug": "buying-selling-business",
+      "group": "business"
+    },
+    {
+      "slug": "intellectual-property",
+      "group": "business"
+    },
+    {
+      "slug": "insolvency-restructuring",
+      "group": "business"
+    },
+    {
+      "slug": "tax-law",
+      "group": "business"
+    },
+    {
+      "slug": "employment-law",
+      "group": "employment"
+    },
+    {
+      "slug": "unfair-dismissal",
+      "group": "employment"
+    },
+    {
+      "slug": "workplace-discrimination-harassment",
+      "group": "employment"
+    },
+    {
+      "slug": "partner-visas",
+      "group": "immigration"
+    },
+    {
+      "slug": "visa-appeals-art",
+      "group": "immigration"
+    },
+    {
+      "slug": "visa-cancellation-character",
+      "group": "immigration"
+    },
+    {
+      "slug": "debt-disputes",
+      "group": "disputes"
+    },
+    {
+      "slug": "insurance-law",
+      "group": "disputes"
+    },
+    {
+      "slug": "mental-health-guardianship-tribunal",
+      "group": "government"
+    },
+    {
+      "slug": "franchising",
+      "group": "business"
+    },
+    {
+      "slug": "fraud-white-collar",
+      "group": "criminal"
+    },
+    {
+      "slug": "ndis-disability",
+      "group": "government"
+    },
+    {
+      "slug": "drink-driving",
+      "group": "criminal"
+    },
+    {
+      "slug": "drug-offences",
+      "group": "criminal"
+    },
+    {
+      "slug": "assault-violence",
+      "group": "criminal"
+    },
+    {
+      "slug": "centrelink-social-security",
+      "group": "government"
+    },
+    {
+      "slug": "personal-injury",
+      "group": "injury"
+    },
+    {
+      "slug": "workers-compensation",
+      "group": "injury"
+    },
+    {
+      "slug": "public-liability",
+      "group": "injury"
+    },
+    {
+      "slug": "medical-negligence",
+      "group": "injury"
+    },
+    {
+      "slug": "dust-diseases-asbestos",
+      "group": "injury"
+    },
+    {
+      "slug": "class-actions",
+      "group": "injury"
+    },
+    {
+      "slug": "property-conveyancing",
+      "group": "property"
+    },
+    {
+      "slug": "strata-law",
+      "group": "property"
+    },
+    {
+      "slug": "planning-environment",
+      "group": "property"
+    },
+    {
+      "slug": "residential-tenancy",
+      "group": "property"
+    },
+    {
+      "slug": "business-commercial",
+      "group": "business"
+    },
+    {
+      "slug": "corporate-law",
+      "group": "business"
+    },
+    {
+      "slug": "contracts",
+      "group": "business"
+    },
+    {
+      "slug": "technology-privacy",
+      "group": "business"
+    },
+    {
+      "slug": "competition-consumer",
+      "group": "business"
+    },
+    {
+      "slug": "bankruptcy",
+      "group": "business"
+    },
+    {
+      "slug": "debt-recovery",
+      "group": "business"
+    },
+    {
+      "slug": "banking-finance",
+      "group": "business"
+    },
+    {
+      "slug": "agribusiness",
+      "group": "business"
+    },
+    {
+      "slug": "professional-negligence",
+      "group": "disputes"
+    },
+    {
+      "slug": "employer-advisory",
+      "group": "employment"
+    },
+    {
+      "slug": "immigration",
+      "group": "immigration"
+    },
+    {
+      "slug": "skilled-business-visas",
+      "group": "immigration"
+    },
+    {
+      "slug": "citizenship",
+      "group": "immigration"
+    },
+    {
+      "slug": "litigation-disputes",
+      "group": "disputes"
+    },
+    {
+      "slug": "defamation",
+      "group": "disputes"
+    },
+    {
+      "slug": "administrative-law",
+      "group": "government"
+    },
+    {
+      "slug": "human-rights-discrimination",
+      "group": "government"
+    },
+    {
+      "slug": "international-family-law",
+      "group": "family"
+    },
+    {
+      "slug": "indigenous-native-title",
+      "group": "government"
+    },
+    {
+      "slug": "military-veterans",
+      "group": "government"
+    },
+    {
+      "slug": "maritime-law",
+      "group": "specialist"
+    },
+    {
+      "slug": "aviation-law",
+      "group": "specialist"
+    },
+    {
+      "slug": "sports-entertainment",
+      "group": "specialist"
+    },
+    {
+      "slug": "notary-public",
+      "group": "specialist"
+    },
+    {
+      "slug": "mining-resources-energy",
+      "group": "specialist"
+    },
+    {
+      "slug": "psychological-injury",
+      "group": "injury"
+    },
+    {
+      "slug": "retirement-villages",
+      "group": "property"
+    },
+    {
+      "slug": "commercial-litigation",
+      "group": "business"
+    },
+    {
+      "slug": "liquor-licensing-gaming",
+      "group": "business"
+    },
+    {
+      "slug": "not-for-profit-charity",
+      "group": "business"
+    },
+    {
+      "slug": "workplace-injury-bullying",
+      "group": "employment"
+    },
+    {
+      "slug": "coronial-inquests",
+      "group": "disputes"
+    },
+    {
+      "slug": "licensed-conveyancing",
+      "group": "property"
+    },
+    {
+      "slug": "cyber-security-incidents",
+      "group": "business"
+    },
+    {
+      "slug": "migration-agent-services",
+      "group": "immigration"
+    },
+    {
+      "slug": "civil-claims-against-police",
+      "group": "disputes"
+    },
+    {
+      "slug": "education-law",
+      "group": "government"
+    },
+    {
+      "slug": "health-medical-law",
+      "group": "government"
+    },
+    {
+      "slug": "general-practice",
+      "group": "general"
+    }
+  ],
+  "groups": [
+    "family",
+    "wills",
+    "criminal",
+    "injury",
+    "property",
+    "employment",
+    "immigration",
+    "disputes",
+    "government",
+    "business",
+    "specialist",
+    "general"
+  ]
+}

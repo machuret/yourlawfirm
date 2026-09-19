@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight } from "next/font/google";
+import { Inter, Libre_Caslon_Display } from "next/font/google";
 import { getSite, siteUrl } from "@/lib/site";
 import { getGroups, getPracticeAreas, getRegions, getStates } from "@/lib/queries";
 import Header from "@/components/Header";
@@ -7,9 +7,10 @@ import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { CompareTray } from "@/components/Shortlist";
 import "./globals.css";
+import "./editorial.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const interTight = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tight", display: "swap" });
+const editorial = Libre_Caslon_Display({ subsets: ["latin"], weight: "400", variable: "--font-editorial", display: "swap" });
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getSite();
@@ -26,16 +27,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     .filter(([, a]) => areas.some((x) => x.slug === a)).map(([gg, a, n]) => ({ href: `/law/${gg}/${a}`, name: n }));
   const base = siteUrl();
   return (
-    <html lang="en-AU" className={`${inter.variable} ${interTight.variable}`} suppressHydrationWarning>
+    <html lang="en-AU" className={`${inter.variable} ${editorial.variable}`} suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#fbfbfd" />
+        <meta name="theme-color" content="#172e3c" />
         <script dangerouslySetInnerHTML={{ __html: `try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}` }} />
       </head>
       <body className="min-h-screen flex flex-col bg-bg">
         <JsonLd data={[{ "@context": "https://schema.org", "@type": "Organization", name: site.brand_name, url: base },
           { "@context": "https://schema.org", "@type": "WebSite", name: site.brand_name, url: base, potentialAction: { "@type": "SearchAction", target: `${base}/search?q={search_term_string}`, "query-input": "required name=search_term_string" } }]} />
-        <Header brand={site.brand_name ?? "Your Law Firm"} groups={g} states={s} />
-        <main className="flex-1">{children}</main>
+        <a href="#main-content" className="skip-link">Skip to content</a><Header brand={site.brand_name ?? "Your Law Firm"} groups={g} states={s} />
+        <main id="main-content" className="flex-1">{children}</main>
         <CompareTray />
         <Footer brand={site.brand_name ?? "Your Law Firm"} groups={g} states={s} popular={pop} />
       </body>

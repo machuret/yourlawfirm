@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Hero from "@/components/Hero";
+import { GuideNav, PracticeGuide } from "@/components/EditorialGuide";
+import { locationImage } from "@/lib/imagery";
 import FaqList from "@/components/FaqList";
-import ListingList from "@/components/ListingList";
 import Results from "@/components/Results";
 import { parseFilters, qs } from "@/lib/filters";
 import ContextCards from "@/components/ContextCards";
@@ -27,17 +28,19 @@ export default async function AreaRegion({ params, searchParams }: P) {
   const nearby = regions.filter((x) => x.state === r.state && x.region_slug !== r.region_slug);
   const otherAreas = all.filter((x) => (rgc.areas[x.slug] ?? 0) > 0 && x.slug !== a.slug).sort((x, y) => (rgc.areas[y.slug] ?? 0) - (rgc.areas[x.slug] ?? 0)).slice(0, 12);
   return (<>
-    <Hero kicker={`${g.name} · ${r.region_name}`} group={g.slug} title={`${lawyersTitle(a.name)} in ${r.region_name}`} intro={`${count ? count.toLocaleString("en-AU") : "No"} ${a.name.toLowerCase()} ${count === 1 ? "firm" : "firms"} in ${r.region_name}, ${st?.name ?? r.state}, including ${r.major_centres.slice(0, 4).join(", ")}.`}
+    <Hero image={locationImage(r.region_slug)} credit="AI-generated regional illustration" kicker={`${g.name} · ${r.region_name}`} group={g.slug} title={`${lawyersTitle(a.name)} in ${r.region_name}`} intro={`${count ? count.toLocaleString("en-AU") : "No"} ${a.name.toLowerCase()} ${count === 1 ? "firm" : "firms"} in ${r.region_name}, ${st?.name ?? r.state}, including ${r.major_centres.slice(0, 4).join(", ")}.`}
       crumbs={[{ name: g.name, href: `/law/${g.slug}` }, ...(g.name !== a.name ? [{ name: a.name, href: `/law/${g.slug}/${a.slug}` }] : []), { name: r.region_name }]} />
-    <div className="wrap">
+    <GuideNav local />
+    <div id="directory-results" className="wrap pt-8">
       <Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers in ${r.region_name}`} page={page} filters={f} group={g.slug} hrefFor={(p) => `/law/${g.slug}/${a.slug}/${r.region_slug}${qs(sp, { page: p > 1 ? p : null })}`} />
-      <div className="mt-16"><ContextCards why={a.why} au={a.au_context} topic={a.name} group={g.slug} /></div>
+      <div className="mt-16"><ContextCards body={a.body} why={a.why} au={a.au_context} topic={a.name} group={g.slug} /></div>
+      <PracticeGuide group={g} area={a} region={r} />
       {st ? <section className="surface mt-4 p-7"><h2 className="text-[22px] font-semibold tracking-tight">Courts and tribunals in {st.name}</h2><p className="mt-2 max-w-3xl text-[17px] leading-relaxed text-ink-2">{st.body}</p></section> : null}
     </div>
     <LogoCarousel logos={logos} title={`${a.name} firms in ${r.region_name}`} />
     <div className="wrap">
       <FaqList faq={[...(a.faq ?? []), ...(r.faq ?? []).slice(0, 2)]} />
-      <LinkGrid title={`${lawyersTitle(a.name)} nearby`} links={nearby.map((x) => ({ href: `/law/${g.slug}/${a.slug}/${x.region_slug}`, label: `${a.name} in ${x.region_name}` }))} />
+      <LinkGrid title={`${lawyersTitle(a.name)} in other ${r.state} regions`} links={nearby.map((x) => ({ href: `/law/${g.slug}/${a.slug}/${x.region_slug}`, label: `${a.name} in ${x.region_name}` }))} />
       <LinkGrid title={`Other lawyers in ${r.region_name}`} links={otherAreas.map((x) => ({ href: `/law/${x.group_slug}/${x.slug}/${r.region_slug}`, label: x.name, count: rgc.areas[x.slug] }))} />
       <LinkGrid title="Explore" cols={3} links={[{ href: `/locations/${r.region_slug}`, label: `All lawyers in ${r.region_name}` }, { href: `/law/${g.slug}/${a.slug}`, label: `${a.name} across Australia` }, { href: `/locations/${r.region_slug}/${g.slug}`, label: `${g.name} in ${r.region_name}` }]} />
     </div></>);
