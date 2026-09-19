@@ -5,9 +5,9 @@ import { faqLd } from "@/lib/seo";
 export default function FaqList({ faq, title = "Frequently asked questions" }: { faq: Faq[] | null | undefined; title?: string }) {
   if (!faq?.length) return null;
   return (
-    <section className="mt-20">
+    <section className="mt-20"><span aria-hidden="true" className="divider mb-16 block" />
       <JsonLd data={faqLd(faq)} />
-      <h2 className="h-md">{title}</h2>
+      <p className="eyebrow">Good to know</p><h2 className="h-md mt-2">{title}</h2>
       <div className="surface-flat mt-6 divide-y divide-hair">
         {faq.map((f, i) => (
           <details key={i} className="group px-6 py-5">

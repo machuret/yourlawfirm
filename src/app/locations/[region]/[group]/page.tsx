@@ -22,12 +22,12 @@ export default async function RegionGroup({ params, searchParams }: P) {
   const all = await getPracticeAreas(); const areas = all.filter((a) => a.group_slug === g.slug);
   const [{ rows, count }, rgc, regions, groups] = await Promise.all([listByAreas(areas.map((a) => a.slug), { region: r.region_slug, page, filters: f, size: f.view === "map" ? 300 : 24 }), getRegionGroupCounts(r.region_slug), getRegions(), getGroups()]);
   return (<>
-    <Hero kicker={r.region_name} title={`${lawyersTitle(g.name)} in ${r.region_name}`} intro={g.intro} crumbs={[{ name: "Locations", href: "/locations" }, { name: r.region_name, href: `/locations/${r.region_slug}` }, { name: g.name }]}>
+    <Hero kicker={r.region_name} group={g.slug} title={`${lawyersTitle(g.name)} in ${r.region_name}`} intro={g.intro} crumbs={[{ name: "Locations", href: "/locations" }, { name: r.region_name, href: `/locations/${r.region_slug}` }, { name: g.name }]}>
       <div className="scroll-x">{areas.filter((a) => rgc.areas[a.slug]).map((a) => <a key={a.slug} href={`/law/${g.slug}/${a.slug}/${r.region_slug}`} className="pill hover:bg-hair">{a.name} <span className="text-muted">{rgc.areas[a.slug]}</span></a>)}</div>
     </Hero>
     <div className="wrap">
-      <Results rows={rows} count={count} areas={areaMap(all)} name={`${g.name} lawyers in ${r.region_name}`} page={page} filters={f} hrefFor={(p) => `/locations/${r.region_slug}/${g.slug}${qs(sp, { page: p > 1 ? p : null })}`} />
-      <div className="mt-16"><ContextCards why={g.why} au={g.au_context} topic={g.short_name ?? g.name} /></div>
+      <Results rows={rows} count={count} areas={areaMap(all)} name={`${g.name} lawyers in ${r.region_name}`} page={page} filters={f} group={g.slug} hrefFor={(p) => `/locations/${r.region_slug}/${g.slug}${qs(sp, { page: p > 1 ? p : null })}`} />
+      <div className="mt-16"><ContextCards why={g.why} au={g.au_context} topic={g.short_name ?? g.name} group={g.slug} /></div>
       <FaqList faq={g.faq} />
       <LinkGrid title={`${g.name} nearby`} cols={4} links={regions.filter((x) => x.state === r.state && x.region_slug !== r.region_slug).map((x) => ({ href: `/locations/${x.region_slug}/${g.slug}`, label: x.region_name }))} />
       <LinkGrid title={`Other lawyers in ${r.region_name}`} cols={4} links={groups.filter((x) => x.slug !== g.slug && (rgc.groups[x.slug] ?? 0) > 0).map((x) => ({ href: `/locations/${r.region_slug}/${x.slug}`, label: x.name, count: rgc.groups[x.slug] }))} />

@@ -1,0 +1,3 @@
+/** Per-area colour identity. Returns a style object setting --g for the group. */
+export const GROUP_COLOUR: Record<string, string> = { family: "var(--g-family)", wills: "var(--g-wills)", criminal: "var(--g-criminal)", injury: "var(--g-injury)", property: "var(--g-property)", business: "var(--g-business)", employment: "var(--g-employment)", immigration: "var(--g-immigration)", disputes: "var(--g-disputes)", government: "var(--g-government)", specialist: "var(--g-specialist)", general: "var(--g-general)" };
+export const gStyle = (group?: string | null) => ({ ["--g" as string]: GROUP_COLOUR[group ?? ""] ?? "var(--accent)" }) as React.CSSProperties;

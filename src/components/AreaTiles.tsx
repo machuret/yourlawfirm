@@ -1,20 +1,22 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { GROUP_ICON } from "./Icons";
-export type Tile = { href: string; name: string; sub?: string; image?: string | null; count?: number; icon?: string };
-export default function AreaTiles({ tiles, cols = 3 }: { tiles: Tile[]; cols?: 2 | 3 | 4 }) {
+import { gStyle } from "@/lib/theme";
+export type Tile = { href: string; name: string; sub?: string; count?: number; icon?: string; group?: string };
+export default function AreaTiles({ tiles, cols = 3, compact = false }: { tiles: Tile[]; cols?: 2 | 3 | 4; compact?: boolean }) {
   const c = cols === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : cols === 2 ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3";
   return (
     <div className={`grid gap-4 ${c}`}>
       {tiles.map((t) => { const I = t.icon ? GROUP_ICON[t.icon] : null; return (
-        <Link key={t.href} href={t.href} className="surface card-hover group flex flex-col p-6">
+        <Link key={t.href} href={t.href} style={gStyle(t.group ?? t.icon)} className={`surface card-hover group relative flex flex-col overflow-hidden ${compact ? "p-5" : "p-6"}`}>
+          <span aria-hidden="true" className="g-bar absolute inset-x-0 top-0 h-1 opacity-80" />
           <div className="flex items-start justify-between">
-            {I ? <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent-soft text-accent"><I className="h-5 w-5" /></span> : <span />}
-            <ArrowUpRight aria-hidden="true" className="h-5 w-5 text-line transition group-hover:text-accent" />
+            {I ? <span className="tile-icon g-tint"><I className="h-5 w-5" /></span> : <span className="tile-icon g-tint text-[15px] font-bold">{t.name.slice(0, 1)}</span>}
+            <ArrowRight aria-hidden="true" className="h-5 w-5 -translate-x-1 text-line opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-accent" />
           </div>
-          <p className="mt-5 text-[21px] font-semibold tracking-tight leading-snug">{t.name}</p>
+          <p className={`mt-5 font-semibold tracking-tight leading-snug ${compact ? "text-[18px]" : "text-[21px]"}`}>{t.name}</p>
           {t.sub ? <p className="mt-1.5 line-clamp-2 text-[15px] text-muted">{t.sub}</p> : null}
-          {t.count != null ? <p className="mt-auto pt-4 text-[13px] text-accent">{t.count.toLocaleString("en-AU")} firms</p> : null}
+          {t.count != null ? <p className="mt-auto pt-4 text-[13px] font-medium text-muted"><span className="stat text-ink">{t.count.toLocaleString("en-AU")}</span> firms</p> : null}
         </Link>); })}
     </div>
   );

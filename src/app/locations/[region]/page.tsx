@@ -27,11 +27,11 @@ export default async function RegionPage({ params, searchParams }: P) {
   const localAreas = areas.filter((a) => (rgc.areas[a.slug] ?? 0) > 0 && a.slug !== "general-practice").sort((a, b) => (rgc.areas[b.slug] ?? 0) - (rgc.areas[a.slug] ?? 0));
   return (<>
     <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: `Lawyers in ${r.region_name}, ${r.state}`, url: `${siteUrl()}/locations/${r.region_slug}`, about: { "@type": "Place", name: `${r.region_name}, ${st?.name ?? r.state}`, containedInPlace: { "@type": "State", name: st?.name ?? r.state } } }} />
-    <Hero kicker={st?.name} title={`Lawyers in ${r.region_name}`} intro={r.intro} image={r.hero_image_url} credit={r.hero_credit} crumbs={[{ name: "Locations", href: "/locations" }, { name: st?.name ?? r.state, href: `/locations#${r.state}` }, { name: r.region_name }]}>
+    <Hero kicker={st?.name} title={`Lawyers in ${r.region_name}`} intro={r.intro} stats={[{ v: count.toLocaleString("en-AU"), l: "firms" }, { v: String(localAreas.length), l: "areas of law" }, { v: String(r.major_centres.length), l: "major centres" }]} crumbs={[{ name: "Locations", href: "/locations" }, { name: st?.name ?? r.state, href: `/locations#${r.state}` }, { name: r.region_name }]}>
       <div className="scroll-x">{localAreas.slice(0, 10).map((a) => <a key={a.slug} href={`/law/${a.group_slug}/${a.slug}/${r.region_slug}`} className="pill hover:bg-hair">{a.name} <span className="text-muted">{rgc.areas[a.slug]}</span></a>)}</div>
     </Hero>
     <div className="wrap">
-      <AreaTiles cols={4} tiles={groups.filter((g) => (rgc.groups[g.slug] ?? 0) > 0 && g.slug !== "general").map((g) => ({ href: `/locations/${r.region_slug}/${g.slug}`, name: g.name, count: rgc.groups[g.slug], icon: g.slug }))} />
+      <AreaTiles cols={4} compact tiles={groups.filter((g) => (rgc.groups[g.slug] ?? 0) > 0 && g.slug !== "general").map((g) => ({ href: `/locations/${r.region_slug}/${g.slug}`, name: g.name, count: rgc.groups[g.slug], icon: g.slug, group: g.slug }))} />
     </div>
     <LogoCarousel logos={logos} title={`Firms in ${r.region_name}`} />
     <div className="wrap">

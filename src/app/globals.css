@@ -8,12 +8,6 @@
   --shadow-1: 0 1px 1px rgba(0,0,0,.03), 0 6px 24px rgba(0,0,0,.05); --shadow-2: 0 2px 4px rgba(0,0,0,.04), 0 14px 36px rgba(0,0,0,.09); --shadow-pop: 0 20px 50px rgba(0,0,0,.14);
   --tip-bg: #1d1d1f; --tip-fg: #ffffff; --heart-bg: #ffe9ec; --heart: #e11d48; --tray-bg: rgba(29,29,31,.92); --tray-fg: #ffffff; --logo-bg: #ffffff; --map-filter: none;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark;
-  --bg: #000000; --paper: #1c1c1e; --soft: #2c2c2e; --line: #48484a; --hair: #38383a;
-  --ink: #f5f5f7; --ink-2: #d1d1d6; --ink-3: #e5e5ea; --muted: #98989d; --accent: #30b886; --accent-deep: #7fe0bb; --accent-soft: rgba(48,184,134,.16); --on-accent: #04130d;
-  --star: #ff9f0a; --link: #2997ff; --glass: rgba(22,22,24,.72); --glass-strong: rgba(28,28,30,.96); --glow: rgba(48,184,134,.14);
-  --shadow-1: 0 0 0 1px rgba(255,255,255,.06); --shadow-2: 0 0 0 1px rgba(255,255,255,.1), 0 14px 36px rgba(0,0,0,.6); --shadow-pop: 0 0 0 1px rgba(255,255,255,.08), 0 24px 60px rgba(0,0,0,.7);
-  --tip-bg: #f5f5f7; --tip-fg: #1d1d1f; --heart-bg: rgba(251,113,133,.16); --heart: #fb7185; --tray-bg: rgba(44,44,46,.94); --tray-fg: #f5f5f7; --logo-bg: #f5f5f7; --map-filter: brightness(.82) contrast(1.05) saturate(.85); } }
 :root[data-theme="dark"] { color-scheme: dark;
   --bg: #000000; --paper: #1c1c1e; --soft: #2c2c2e; --line: #48484a; --hair: #38383a;
   --ink: #f5f5f7; --ink-2: #d1d1d6; --ink-3: #e5e5ea; --muted: #98989d; --accent: #30b886; --accent-deep: #7fe0bb; --accent-soft: rgba(48,184,134,.16); --on-accent: #04130d;
@@ -67,6 +61,19 @@ input, select, button, textarea { font: inherit; letter-spacing: inherit; }
 .navbtn { padding: .4rem .7rem; border-radius: 999px; white-space: nowrap; } .navbtn:hover { background: var(--soft); color: var(--ink); }
 
 html, body { transition: background-color .25s ease, color .25s ease; }
+/* per-area colour identity (soft tint + strong) */
+:root { --g-family: #ff6b8a; --g-wills: #a78bfa; --g-criminal: #f97316; --g-injury: #ef4444; --g-property: #0ea5e9; --g-business: #2563eb; --g-employment: #14b8a6; --g-immigration: #8b5cf6; --g-disputes: #f59e0b; --g-government: #64748b; --g-specialist: #06b6d4; --g-general: #22c55e; }
+.g-tint { background: color-mix(in srgb, var(--g) 12%, var(--paper)); color: color-mix(in srgb, var(--g) 70%, var(--ink)); }
+.g-glow { background: radial-gradient(55% 70% at 18% 0%, color-mix(in srgb, var(--g) 26%, transparent) 0%, transparent 65%), radial-gradient(40% 50% at 80% 10%, color-mix(in srgb, var(--accent) 12%, transparent) 0%, transparent 70%); }
+.g-mesh { background: radial-gradient(60% 80% at 20% 20%, color-mix(in srgb, var(--g) 40%, transparent), transparent 60%), radial-gradient(50% 60% at 80% 30%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 60%), radial-gradient(70% 60% at 50% 100%, color-mix(in srgb, var(--g) 25%, transparent), transparent 60%), var(--soft); }
+.g-bar { background: linear-gradient(90deg, var(--g), color-mix(in srgb, var(--g) 40%, var(--accent))); }
+.h-xl, .h-lg { font-weight: 700; }
+.stat { font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: -0.03em; }
+.surface-glass { background: var(--glass-strong); backdrop-filter: blur(20px) saturate(160%); border: 1px solid var(--hair); border-radius: 24px; box-shadow: var(--shadow-2); }
+.divider { height: 1px; background: linear-gradient(90deg, transparent, var(--hair), transparent); }
+.tile-icon { display: flex; height: 48px; width: 48px; align-items: center; justify-content: center; border-radius: 14px; }
+.step { counter-increment: step; } .step::before { content: counter(step); display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; border-radius: 999px; background: var(--ink); color: var(--paper); font-size: 13px; font-weight: 600; }
+.steps { counter-reset: step; }
 .logo-tile:has(img) { background: var(--logo-bg); }
 .leaflet-tile-pane { filter: var(--map-filter); }
 .leaflet-container { background: var(--soft); font: inherit; }

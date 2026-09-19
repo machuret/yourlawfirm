@@ -7,7 +7,7 @@ export const metadata = { title: "Areas of law", description: "Browse every area
 export default async function Law() {
   const [groups, areas, counts, gc] = await Promise.all([getGroups(), getPracticeAreas(), getAreaCounts(), getGroupCounts()]);
   return (<>
-    <Hero title="Areas of law" intro="Choose the area that fits your problem. Each page explains what the lawyers do, common questions, and firms that practise in it." crumbs={[{ name: "Areas of law" }]} />
+    <Hero kicker="Browse" title="Areas of law" intro="Choose the area that fits your problem. Each page explains what the lawyers do, common questions, and firms that practise in it." crumbs={[{ name: "Areas of law" }]} />
     <div className="wrap py-14 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
       {groups.map((g) => (<section key={g.slug}>
         <h2 className="text-[22px] font-semibold tracking-tight"><Link href={`/law/${g.slug}`} className="hover:text-accent">{g.name}</Link> <span className="text-[15px] text-muted font-normal">{gc[g.slug] ?? 0}</span></h2>

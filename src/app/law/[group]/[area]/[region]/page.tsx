@@ -27,11 +27,11 @@ export default async function AreaRegion({ params, searchParams }: P) {
   const nearby = regions.filter((x) => x.state === r.state && x.region_slug !== r.region_slug);
   const otherAreas = all.filter((x) => (rgc.areas[x.slug] ?? 0) > 0 && x.slug !== a.slug).sort((x, y) => (rgc.areas[y.slug] ?? 0) - (rgc.areas[x.slug] ?? 0)).slice(0, 12);
   return (<>
-    <Hero kicker={`${g.name} · ${r.region_name}`} title={`${lawyersTitle(a.name)} in ${r.region_name}`} intro={`${count ? count.toLocaleString("en-AU") : "No"} ${a.name.toLowerCase()} ${count === 1 ? "firm" : "firms"} in ${r.region_name}, ${st?.name ?? r.state}, including ${r.major_centres.slice(0, 4).join(", ")}.`}
+    <Hero kicker={`${g.name} · ${r.region_name}`} group={g.slug} title={`${lawyersTitle(a.name)} in ${r.region_name}`} intro={`${count ? count.toLocaleString("en-AU") : "No"} ${a.name.toLowerCase()} ${count === 1 ? "firm" : "firms"} in ${r.region_name}, ${st?.name ?? r.state}, including ${r.major_centres.slice(0, 4).join(", ")}.`}
       crumbs={[{ name: g.name, href: `/law/${g.slug}` }, ...(g.name !== a.name ? [{ name: a.name, href: `/law/${g.slug}/${a.slug}` }] : []), { name: r.region_name }]} />
     <div className="wrap">
-      <Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers in ${r.region_name}`} page={page} filters={f} hrefFor={(p) => `/law/${g.slug}/${a.slug}/${r.region_slug}${qs(sp, { page: p > 1 ? p : null })}`} />
-      <div className="mt-16"><ContextCards why={a.why} au={a.au_context} topic={a.name} /></div>
+      <Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers in ${r.region_name}`} page={page} filters={f} group={g.slug} hrefFor={(p) => `/law/${g.slug}/${a.slug}/${r.region_slug}${qs(sp, { page: p > 1 ? p : null })}`} />
+      <div className="mt-16"><ContextCards why={a.why} au={a.au_context} topic={a.name} group={g.slug} /></div>
       {st ? <section className="surface mt-4 p-7"><h2 className="text-[22px] font-semibold tracking-tight">Courts and tribunals in {st.name}</h2><p className="mt-2 max-w-3xl text-[17px] leading-relaxed text-ink-2">{st.body}</p></section> : null}
     </div>
     <LogoCarousel logos={logos} title={`${a.name} firms in ${r.region_name}`} />

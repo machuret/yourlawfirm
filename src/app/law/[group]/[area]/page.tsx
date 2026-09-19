@@ -29,19 +29,18 @@ export default async function AreaPage({ params, searchParams }: P) {
   const url = `${siteUrl()}/law/${g.slug}/${a.slug}`;
   return (<>
     <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: `${lawyersTitle(a.name)} in Australia`, url, description: a.intro, about: { "@type": "Thing", name: a.name }, isPartOf: { "@type": "CollectionPage", name: g.name, url: `${siteUrl()}/law/${g.slug}` } }} />
-    <Hero kicker={g.name} title={lawyersTitle(a.name)} intro={a.intro} image={a.hero_image_url} credit={a.hero_credit}
-      crumbs={[{ name: "Areas of law", href: "/law" }, ...(g.name !== a.name ? [{ name: g.name, href: `/law/${g.slug}` }] : []), { name: a.name }]}>
+    <Hero kicker={g.name} group={g.slug} title={lawyersTitle(a.name)} intro={a.intro}
+      crumbs={[{ name: "Areas of law", href: "/law" }, ...(g.name !== a.name ? [{ name: g.name, href: `/law/${g.slug}` }] : []), { name: a.name }]} stats={[{ v: (counts[a.slug] ?? count).toLocaleString("en-AU"), l: "firms" }, { v: String(top.length), l: "regions" }]}>
       <div className="max-w-xl"><SearchBox placeholder={`Suburb or postcode for ${a.name.toLowerCase()}`} /></div>
-      <p className="mt-4 text-[15px] text-muted">{(counts[a.slug] ?? count).toLocaleString("en-AU")} firms across {top.length ? `${top.length}+ locations` : "Australia"}</p>
     </Hero>
     <div className="wrap">
-      <ContextCards body={a.body} why={a.why} au={a.au_context} topic={a.name} />
+      <ContextCards body={a.body} why={a.why} au={a.au_context} topic={a.name} group={g.slug} />
       <LinkGrid title={`${lawyersTitle(a.name)} near you`} cols={4} links={top.map((r) => ({ href: `/law/${g.slug}/${a.slug}/${r.region_slug}`, label: `${r.region_name}, ${r.state}`, count: Number(r.listings) }))} />
     </div>
     <LogoCarousel logos={logos} title={`${a.name} firms in the directory`} />
     <div className="wrap">
       <h2 className="h-md">{(counts[a.slug] ?? count).toLocaleString("en-AU")} {a.name.toLowerCase()} firms</h2>
-      <div className="mt-6"><Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers`} page={page} filters={f} hrefFor={(p) => `/law/${g.slug}/${a.slug}${qs(sp, { page: p > 1 ? p : null })}`} /></div>
+      <div className="mt-6"><Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers`} page={page} filters={f} group={g.slug} hrefFor={(p) => `/law/${g.slug}/${a.slug}${qs(sp, { page: p > 1 ? p : null })}`} /></div>
       <FaqList faq={[...(a.faq ?? []), ...(g.faq ?? []).slice(0, 2)]} />
       <LinkGrid title={`More in ${g.name}`} links={siblings.map((s) => ({ href: `/law/${g.slug}/${s.slug}`, label: s.name, count: counts[s.slug] }))} />
       <LinkGrid title="Other areas of law" cols={4} links={groups.filter((x) => x.slug !== g.slug).map((x) => ({ href: `/law/${x.slug}`, label: x.name }))} />

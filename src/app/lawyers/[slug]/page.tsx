@@ -15,6 +15,7 @@ import ListingCard, { Initials } from "@/components/ListingCard";
 import OpenStatus from "@/components/OpenStatus";
 import LinkGrid from "@/components/LinkGrid";
 import { SaveButton } from "@/components/Shortlist";
+import { gStyle } from "@/lib/theme";
 export const revalidate = 3600;
 type P = { params: Promise<{ slug: string }> };
 const ROLE: Record<string, string> = { founder: "Founder", co_founder: "Co-founder", founding_partner: "Founding partner", managing_partner: "Managing partner", senior_partner: "Senior partner", partner: "Partner", managing_director: "Managing director", principal: "Principal", director: "Director", ceo: "CEO", president: "President", chair: "Chair", special_counsel: "Special counsel", of_counsel: "Of counsel" };
@@ -44,14 +45,14 @@ export default async function ListingPage({ params }: P) {
   return (
     <>
       <JsonLd data={ld} />
-      <section className="relative overflow-hidden">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -top-40 h-[30rem] bg-[radial-gradient(60%_60%_at_30%_0%,var(--glow)_0%,transparent_70%)]" />
+      <section className="relative overflow-hidden" style={gStyle(g?.slug)}>
+        <div aria-hidden="true" className="g-glow pointer-events-none absolute inset-x-0 top-0 h-[30rem]" />
         <div className="wrap relative pt-8 pb-10">
           <Breadcrumbs items={crumbs} />
           <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center">
             <div className="flex h-16 w-16 md:h-24 md:w-24 shrink-0 items-center justify-center overflow-hidden rounded-[20px] md:rounded-[26px] bg-paper logo-tile shadow-[var(--shadow-2)]">{l.logo_url ? <img src={l.logo_url} alt={`${l.business_name} logo`} className="max-h-12 max-w-12 md:max-h-16 md:max-w-16 object-contain" /> : <Initials name={l.business_name} className="text-2xl md:text-3xl" />}</div>
             <div className="min-w-0">
-              {pa ? <p className="eyebrow">{pa.name}</p> : null}
+              {pa ? <p className="inline-flex rounded-full g-tint px-3 py-1 text-[13px] font-semibold">{pa.name}</p> : null}
               <div className="flex items-center gap-2"><h1 className="h-lg">{l.business_name}</h1>{l.data_confidence === "high" ? <Tip label="Verified: phone number confirmed on the firm’s website and Google"><BadgeCheck aria-hidden="true" className="h-7 w-7 text-accent" /></Tip> : null}</div>
               {l.office_name && l.office_name !== l.business_name ? <p className="mt-1 text-[15px] text-muted">{l.office_name}</p> : null}
               <p className="mt-2 flex items-center gap-1.5 text-[17px] text-muted"><MapPin className="h-4 w-4" />{[l.address_line_1, l.suburb, l.state, l.postcode].filter(Boolean).join(", ")}</p>
@@ -74,7 +75,7 @@ export default async function ListingPage({ params }: P) {
           {l.short_description ? <p className="text-[21px] leading-[1.45] tracking-tight text-ink-3">{l.short_description}</p> : null}
           <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">Areas of practice</h2>
             {(() => { const all = [l.primary_practice_area, ...(l.practice_areas ?? []).filter((a) => a !== l.primary_practice_area)];
-              const pill = (a: string) => { const x = areas.find((z) => z.slug === a); return <li key={a}><Link href={x ? `/law/${x.group_slug}/${x.slug}${l.region_slug ? `/${l.region_slug}` : ""}` : "#"} className={`pill hover:bg-hair ${a === l.primary_practice_area ? "pill-accent" : ""}`}>{areaName(a, names)}</Link></li>; };
+              const pill = (a: string) => { const x = areas.find((z) => z.slug === a); return <li key={a}><Link href={x ? `/law/${x.group_slug}/${x.slug}${l.region_slug ? `/${l.region_slug}` : ""}` : "#"} className={`pill hover:bg-hair ${a === l.primary_practice_area ? "g-tint font-medium" : ""}`}>{areaName(a, names)}</Link></li>; };
               return <><ul className="mt-4 flex flex-wrap gap-2">{all.slice(0, 5).map(pill)}</ul>{all.length > 5 ? <details className="mt-2"><summary className="link cursor-pointer text-[14px]">Show {all.length - 5} more</summary><ul className="mt-2 flex flex-wrap gap-2">{all.slice(5).map(pill)}</ul></details> : null}</>; })()}</section>
           {facts.length ? <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">At a glance</h2>
             <dl className="surface mt-4 grid gap-px overflow-hidden sm:grid-cols-2">{facts.map(([k, v]) => <div key={k} className="bg-paper p-5"><dt className="text-[13px] text-muted">{k}</dt><dd className="mt-0.5 text-[17px] font-medium">{v}</dd></div>)}</dl></section> : null}
@@ -111,7 +112,7 @@ export default async function ListingPage({ params }: P) {
         </aside>
       </div>
       <div className="wrap">
-        {related.length ? <section className="mt-6"><h2 className="h-md">Similar firms nearby</h2><div className="mt-8 grid gap-4 md:grid-cols-2">{related.map((x) => <ListingCard key={x.listing_id} l={x} areas={names} />)}</div></section> : null}
+        {related.length ? <section className="mt-6"><h2 className="h-md">Similar firms nearby</h2><div className="mt-8 grid gap-4 md:grid-cols-2">{related.map((x) => <ListingCard key={x.listing_id} l={x} areas={names} group={g?.slug} />)}</div></section> : null}
         {l.region_slug ? <LinkGrid title={`Lawyers in ${l.region_name}`} links={areas.filter((a) => (rgc.areas[a.slug] ?? 0) > 1 && a.slug !== "general-practice").sort((a, b) => (rgc.areas[b.slug] ?? 0) - (rgc.areas[a.slug] ?? 0)).slice(0, 12).map((a) => ({ href: `/law/${a.group_slug}/${a.slug}/${l.region_slug}`, label: lawyersTitle(a.name), count: rgc.areas[a.slug] }))} /> : null}
         <p className="mt-14 text-[13px] text-muted">Compiled from the firm’s website, public directories and Google{l.date_last_verified ? `, last checked ${new Date(l.date_last_verified).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}` : ""}. Run this firm? <Link href={`/claim/${l.slug}`} className="link">Claim or correct this listing</Link>.</p>
       </div>

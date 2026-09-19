@@ -28,9 +28,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en-AU" className={`${inter.variable} ${interTight.variable}`} suppressHydrationWarning>
       <head>
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfbfd" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
-        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}` }} />
+        <meta name="theme-color" content="#fbfbfd" />
+        <script dangerouslySetInnerHTML={{ __html: `try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}` }} />
       </head>
       <body className="min-h-screen flex flex-col bg-bg">
         <JsonLd data={[{ "@context": "https://schema.org", "@type": "Organization", name: site.brand_name, url: base },
