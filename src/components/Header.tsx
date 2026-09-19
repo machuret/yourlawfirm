@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import SearchBox from "./SearchBox";
+import ThemeToggle from "./ThemeToggle";
 type G = { slug: string; name: string; areas: { slug: string; name: string }[] };
 type R = { state: string; name: string; regions: { slug: string; name: string }[] };
 export default function Header({ brand, groups, states }: { brand: string; groups: G[]; states: R[] }) {
@@ -13,21 +14,22 @@ export default function Header({ brand, groups, states }: { brand: string; group
     document.addEventListener("mousedown", h); document.addEventListener("keydown", k); return () => { document.removeEventListener("mousedown", h); document.removeEventListener("keydown", k); }; }, []);
   const tog = (k: "law" | "loc" | "mob") => setOpen((o) => (o === k ? null : k));
   return (
-    <header ref={ref} className="sticky top-0 z-40 border-b border-hair bg-[rgba(251,251,253,.78)] backdrop-blur-xl backdrop-saturate-150">
+    <header ref={ref} className="sticky top-0 z-40 border-b border-hair bg-glass backdrop-blur-xl backdrop-saturate-150">
       <div className="wrap flex h-14 items-center gap-5">
         <Link href="/" className="display text-[19px] tracking-tight shrink-0">{brand}</Link>
-        <nav className="hidden lg:flex items-center gap-0.5 text-[14px] text-[#424245]" aria-label="Main">
+        <nav className="hidden lg:flex items-center gap-0.5 text-[14px] text-ink-2" aria-label="Main">
           <button onClick={() => tog("law")} aria-expanded={open === "law"} className={`navbtn ${open === "law" ? "bg-soft" : ""}`}>Areas of law <span aria-hidden="true">▾</span></button>
           <button onClick={() => tog("loc")} aria-expanded={open === "loc"} className={`navbtn ${open === "loc" ? "bg-soft" : ""}`}>Locations <span aria-hidden="true">▾</span></button>
           <Link href="/search" className="navbtn">Find a lawyer</Link>
           <Link href="/claim" className="navbtn">For law firms</Link>
-          <Link href="/about" className="navbtn">About</Link>
+          <Link href="/about" className="navbtn hidden xl:inline-block">About</Link>
         </nav>
-        <div className="ml-auto hidden md:block w-80"><SearchBox size="sm" placeholder="Search law, suburb or firm" /></div>
-        <button className="lg:hidden ml-auto md:ml-0 navbtn" onClick={() => tog("mob")} aria-expanded={open === "mob"} aria-label="Menu">{open === "mob" ? "Close" : "Menu"}</button>
+        <div className="ml-auto hidden md:block w-64 xl:w-80"><SearchBox size="sm" placeholder="Search law, suburb or firm" /></div>
+        <div className="ml-auto md:ml-0"><ThemeToggle /></div>
+        <button className="lg:hidden navbtn" onClick={() => tog("mob")} aria-expanded={open === "mob"} aria-label="Menu">{open === "mob" ? "Close" : "Menu"}</button>
       </div>
       {open === "law" ? (
-        <div className="absolute inset-x-0 top-full border-b border-hair bg-[rgba(251,251,253,.96)] backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,.08)]">
+        <div className="absolute inset-x-0 top-full border-b border-hair bg-glass-strong backdrop-blur-xl shadow-[var(--shadow-pop)]">
           <div className="wrap grid gap-x-8 gap-y-6 py-8 md:grid-cols-4 max-h-[75vh] overflow-auto">
             {groups.map((g) => (
               <div key={g.slug}>
@@ -38,7 +40,7 @@ export default function Header({ brand, groups, states }: { brand: string; group
           </div>
         </div>) : null}
       {open === "loc" ? (
-        <div className="absolute inset-x-0 top-full border-b border-hair bg-[rgba(251,251,253,.96)] backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,.08)]">
+        <div className="absolute inset-x-0 top-full border-b border-hair bg-glass-strong backdrop-blur-xl shadow-[var(--shadow-pop)]">
           <div className="wrap grid gap-x-8 gap-y-6 py-8 sm:grid-cols-2 md:grid-cols-4 max-h-[75vh] overflow-auto">
             {states.map((s) => (
               <div key={s.state}>

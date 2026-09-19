@@ -16,7 +16,7 @@ export default function ListingCard({ l, areas }: { l: Listing; areas: Record<st
   return (
     <article className={`surface card-hover relative flex flex-col p-4 sm:p-5 ${featured ? "ring-2 ring-star/70" : ""}`}>
       <div className="flex items-start gap-4">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-soft">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-soft logo-tile">
           {l.logo_url ? <img src={l.logo_url} alt="" className="max-h-11 max-w-11 object-contain" loading="lazy" /> : <Initials name={l.business_name} className="text-lg" />}
         </div>
         <div className="min-w-0 flex-1">
@@ -29,7 +29,7 @@ export default function ListingCard({ l, areas }: { l: Listing; areas: Record<st
         </div>
         <div className="flex shrink-0 items-center gap-1.5">{featured ? <span className="pill pill-accent !text-[12px]"><Sparkles className="h-3 w-3" />Featured</span> : null}<SaveButton slug={l.slug} name={l.business_name} /></div>
       </div>
-      {l.short_description ? <p className="mt-3 line-clamp-2 text-[14px] leading-snug text-[#424245]">{l.short_description}</p> : null}
+      {l.short_description ? <p className="mt-3 line-clamp-2 text-[14px] leading-snug text-ink-2">{l.short_description}</p> : null}
       <div className="relative z-10 mt-3 flex flex-wrap gap-1.5 [&>*:nth-child(n+5)]:hidden">
         <span className="pill pill-accent !text-[13px]">{areaName(l.primary_practice_area, areas)}</span>
         {(l.practice_areas?.length ?? 0) > 1 ? <Tip label={(l.practice_areas ?? []).filter((a) => a !== l.primary_practice_area).map((a) => areaName(a, areas)).join(" · ")}><span className="pill !text-[13px]">+{(l.practice_areas?.length ?? 1) - 1} more</span></Tip> : null}

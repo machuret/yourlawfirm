@@ -29,11 +29,11 @@ export default function SearchBox({ size = "md", placeholder = "Search a legal i
         <label htmlFor={id} className="sr-only">Search</label>
         <input id={id} value={q} onChange={(e) => setQ(e.target.value)} onFocus={() => items.length && setOpen(true)} onKeyDown={key} placeholder={placeholder} autoComplete="off"
           role="combobox" aria-expanded={open} aria-controls={`${id}-list`} aria-activedescendant={active >= 0 ? `${id}-${active}` : undefined}
-          className={`w-full rounded-full border border-hair bg-paper text-ink shadow-[0_2px_12px_rgba(0,0,0,.06)] outline-none focus:border-accent ${pad}`} />
+          className={`w-full rounded-full border border-hair bg-paper text-ink shadow-[var(--shadow-1)] outline-none focus:border-accent ${pad}`} />
         <button type="submit" className={`absolute right-1.5 top-1/2 -translate-y-1/2 btn btn-primary ${size === "sm" ? "!px-3 !py-1 !text-[13px]" : ""}`}>Search</button>
       </form>
       {open && items.length ? (
-        <ul id={`${id}-list`} role="listbox" className="absolute z-50 mt-2 max-h-96 w-full overflow-auto rounded-2xl border border-hair bg-paper p-1.5 text-left text-ink shadow-[0_20px_50px_rgba(0,0,0,.14)]">
+        <ul id={`${id}-list`} role="listbox" className="absolute z-50 mt-2 max-h-96 w-full overflow-auto rounded-2xl border border-hair bg-paper p-1.5 text-left text-ink shadow-[var(--shadow-pop)]">
           {items.map((s, i) => (
             <li key={s.url + i} id={`${id}-${i}`} role="option" aria-selected={i === active}>
               <button type="button" onMouseEnter={() => setActive(i)} onClick={() => go(s.url)} className={`flex w-full items-center justify-between gap-4 rounded-xl px-3.5 py-2.5 text-left ${i === active ? "bg-soft" : ""}`}>

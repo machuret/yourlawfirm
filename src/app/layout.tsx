@@ -26,7 +26,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     .filter(([, a]) => areas.some((x) => x.slug === a)).map(([gg, a, n]) => ({ href: `/law/${gg}/${a}`, name: n }));
   const base = siteUrl();
   return (
-    <html lang="en-AU" className={`${inter.variable} ${interTight.variable}`}>
+    <html lang="en-AU" className={`${inter.variable} ${interTight.variable}`} suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfbfd" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}` }} />
+      </head>
       <body className="min-h-screen flex flex-col bg-bg">
         <JsonLd data={[{ "@context": "https://schema.org", "@type": "Organization", name: site.brand_name, url: base },
           { "@context": "https://schema.org", "@type": "WebSite", name: site.brand_name, url: base, potentialAction: { "@type": "SearchAction", target: `${base}/search?q={search_term_string}`, "query-input": "required name=search_term_string" } }]} />

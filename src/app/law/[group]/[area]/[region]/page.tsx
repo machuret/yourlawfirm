@@ -32,7 +32,7 @@ export default async function AreaRegion({ params, searchParams }: P) {
     <div className="wrap">
       <Results rows={rows} count={count} areas={areaMap(all)} name={`${a.name} lawyers in ${r.region_name}`} page={page} filters={f} hrefFor={(p) => `/law/${g.slug}/${a.slug}/${r.region_slug}${qs(sp, { page: p > 1 ? p : null })}`} />
       <div className="mt-16"><ContextCards why={a.why} au={a.au_context} topic={a.name} /></div>
-      {st ? <section className="surface mt-4 p-7"><h2 className="text-[22px] font-semibold tracking-tight">Courts and tribunals in {st.name}</h2><p className="mt-2 max-w-3xl text-[17px] leading-relaxed text-[#424245]">{st.body}</p></section> : null}
+      {st ? <section className="surface mt-4 p-7"><h2 className="text-[22px] font-semibold tracking-tight">Courts and tribunals in {st.name}</h2><p className="mt-2 max-w-3xl text-[17px] leading-relaxed text-ink-2">{st.body}</p></section> : null}
     </div>
     <LogoCarousel logos={logos} title={`${a.name} firms in ${r.region_name}`} />
     <div className="wrap">

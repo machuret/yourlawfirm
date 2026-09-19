@@ -45,11 +45,11 @@ export default async function ListingPage({ params }: P) {
     <>
       <JsonLd data={ld} />
       <section className="relative overflow-hidden">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -top-40 h-[30rem] bg-[radial-gradient(60%_60%_at_30%_0%,#e7f3ee_0%,transparent_70%)]" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -top-40 h-[30rem] bg-[radial-gradient(60%_60%_at_30%_0%,var(--glow)_0%,transparent_70%)]" />
         <div className="wrap relative pt-8 pb-10">
           <Breadcrumbs items={crumbs} />
           <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center">
-            <div className="flex h-16 w-16 md:h-24 md:w-24 shrink-0 items-center justify-center overflow-hidden rounded-[20px] md:rounded-[26px] bg-paper shadow-[0_6px_24px_rgba(0,0,0,.08)]">{l.logo_url ? <img src={l.logo_url} alt={`${l.business_name} logo`} className="max-h-12 max-w-12 md:max-h-16 md:max-w-16 object-contain" /> : <Initials name={l.business_name} className="text-2xl md:text-3xl" />}</div>
+            <div className="flex h-16 w-16 md:h-24 md:w-24 shrink-0 items-center justify-center overflow-hidden rounded-[20px] md:rounded-[26px] bg-paper logo-tile shadow-[var(--shadow-2)]">{l.logo_url ? <img src={l.logo_url} alt={`${l.business_name} logo`} className="max-h-12 max-w-12 md:max-h-16 md:max-w-16 object-contain" /> : <Initials name={l.business_name} className="text-2xl md:text-3xl" />}</div>
             <div className="min-w-0">
               {pa ? <p className="eyebrow">{pa.name}</p> : null}
               <div className="flex items-center gap-2"><h1 className="h-lg">{l.business_name}</h1>{l.data_confidence === "high" ? <Tip label="Verified: phone number confirmed on the firm’s website and Google"><BadgeCheck aria-hidden="true" className="h-7 w-7 text-accent" /></Tip> : null}</div>
@@ -66,12 +66,12 @@ export default async function ListingPage({ params }: P) {
           </div>
         </div>
       </section>
-      <nav aria-label="On this page" className="sticky top-14 z-30 border-y border-hair bg-[rgba(251,251,253,.88)] backdrop-blur-xl">
+      <nav aria-label="On this page" className="sticky top-14 z-30 border-y border-hair bg-glass backdrop-blur-xl">
         <ul className="wrap scroll-x !gap-1 py-2 text-[14px]">{[["overview", "Overview"], ...(people.length ? [["people", "People"]] : []), ...(google.length || own.length ? [["reviews", "Reviews"]] : []), ...(l.opening_hours ? [["hours", "Hours"]] : []), ...(l.latitude ? [["location", "Location"]] : []), ["enquire", "Enquire"]].map(([id, t]) => <li key={id}><a href={`#${id}`} className="navbtn block text-muted hover:text-ink">{t}</a></li>)}</ul>
       </nav>
       <div className="wrap grid gap-12 pb-10 pt-10 lg:grid-cols-[1fr_22rem]">
         <div id="overview" className="min-w-0 scroll-mt-28">
-          {l.short_description ? <p className="text-[21px] leading-[1.45] tracking-tight text-[#333336]">{l.short_description}</p> : null}
+          {l.short_description ? <p className="text-[21px] leading-[1.45] tracking-tight text-ink-3">{l.short_description}</p> : null}
           <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">Areas of practice</h2>
             {(() => { const all = [l.primary_practice_area, ...(l.practice_areas ?? []).filter((a) => a !== l.primary_practice_area)];
               const pill = (a: string) => { const x = areas.find((z) => z.slug === a); return <li key={a}><Link href={x ? `/law/${x.group_slug}/${x.slug}${l.region_slug ? `/${l.region_slug}` : ""}` : "#"} className={`pill hover:bg-hair ${a === l.primary_practice_area ? "pill-accent" : ""}`}>{areaName(a, names)}</Link></li>; };
@@ -91,10 +91,10 @@ export default async function ListingPage({ params }: P) {
             <ul className="scroll-x mt-4 snap-x pb-2">{google.map((r) => <li key={r.review_id} className="surface w-[85%] shrink-0 snap-start p-6 sm:w-[23rem]">
               <div className="flex items-center justify-between gap-2"><span className="truncate font-semibold">{r.author_name}</span><Stars rating={r.rating} /></div>
               {r.published_at ? <p className="text-[13px] text-muted">{new Date(r.published_at).toLocaleDateString("en-AU", { month: "long", year: "numeric" })}</p> : null}
-              <p className="mt-3 line-clamp-6 text-[15px] leading-relaxed text-[#424245]">{r.text}</p>
+              <p className="mt-3 line-clamp-6 text-[15px] leading-relaxed text-ink-2">{r.text}</p>
               {r.source_url ? <a href={r.source_url} target="_blank" rel="noopener nofollow" className="link mt-3 inline-block text-[13px]">View on Google</a> : null}</li>)}</ul></section> : null}
           {own.length ? <section className="mt-12"><h2 className="text-[24px] font-semibold tracking-tight">Client testimonials</h2><p className="text-[13px] text-muted">Published by the firm on its own website.</p>
-            <ul className="mt-4 grid gap-4 md:grid-cols-2">{own.map((r) => <li key={r.review_id} className="surface p-6 text-[15px]"><p className="leading-relaxed text-[#424245]">“{r.text}”</p>{r.author_name ? <p className="mt-2 text-muted">{r.author_name}</p> : null}</li>)}</ul></section> : null}
+            <ul className="mt-4 grid gap-4 md:grid-cols-2">{own.map((r) => <li key={r.review_id} className="surface p-6 text-[15px]"><p className="leading-relaxed text-ink-2">“{r.text}”</p>{r.author_name ? <p className="mt-2 text-muted">{r.author_name}</p> : null}</li>)}</ul></section> : null}
           {l.latitude ? <section id="location" className="mt-12 scroll-mt-28"><h2 className="text-[24px] font-semibold tracking-tight">Location</h2>
             <div className="surface mt-4 overflow-hidden"><iframe title={`Map of ${l.business_name}`} src={`https://www.google.com/maps?q=${l.latitude},${l.longitude}&z=15&output=embed`} className="h-72 w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div></section> : null}
         </div>
@@ -115,7 +115,7 @@ export default async function ListingPage({ params }: P) {
         {l.region_slug ? <LinkGrid title={`Lawyers in ${l.region_name}`} links={areas.filter((a) => (rgc.areas[a.slug] ?? 0) > 1 && a.slug !== "general-practice").sort((a, b) => (rgc.areas[b.slug] ?? 0) - (rgc.areas[a.slug] ?? 0)).slice(0, 12).map((a) => ({ href: `/law/${a.group_slug}/${a.slug}/${l.region_slug}`, label: lawyersTitle(a.name), count: rgc.areas[a.slug] }))} /> : null}
         <p className="mt-14 text-[13px] text-muted">Compiled from the firm’s website, public directories and Google{l.date_last_verified ? `, last checked ${new Date(l.date_last_verified).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}` : ""}. Run this firm? <Link href={`/claim/${l.slug}`} className="link">Claim or correct this listing</Link>.</p>
       </div>
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-hair bg-[rgba(251,251,253,.9)] p-3 backdrop-blur-xl md:hidden" style={{ paddingBottom: "max(.75rem, env(safe-area-inset-bottom))" }}>
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-hair bg-glass p-3 backdrop-blur-xl md:hidden" style={{ paddingBottom: "max(.75rem, env(safe-area-inset-bottom))" }}>
         <div className="flex gap-2">{l.phone_e164 ? <a href={`tel:${l.phone_e164}`} className="btn btn-primary flex-1"><Phone className="h-4 w-4" />Call</a> : null}<a href="#enquire" className="btn btn-soft flex-1"><Send className="h-4 w-4" />Enquire</a>{l.website_url ? <a href={l.website_url} target="_blank" rel="noopener nofollow" className="btn btn-soft" aria-label="Website"><Globe className="h-4 w-4" /></a> : null}</div>
       </div>
       <div className="h-20 md:hidden" aria-hidden="true" />

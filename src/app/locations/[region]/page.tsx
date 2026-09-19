@@ -38,7 +38,7 @@ export default async function RegionPage({ params, searchParams }: P) {
       <h2 className="h-md">{count.toLocaleString("en-AU")} firms in {r.region_name}</h2>
       <div className="mt-6"><Results rows={rows} count={count} areas={areaMap(areas)} name={`Lawyers in ${r.region_name}`} page={page} filters={f} hrefFor={(p) => `/locations/${r.region_slug}${qs(sp, { page: p > 1 ? p : null })}`} /></div>
       {st ? <section className="mt-20 grid gap-4 md:grid-cols-[1.4fr_1fr]">
-        <div className="surface p-7"><h2 className="text-[22px] font-semibold tracking-tight">The legal system in {st.name}</h2><p className="mt-3 text-[17px] leading-relaxed text-[#424245]">{r.body}</p></div>
+        <div className="surface p-7"><h2 className="text-[22px] font-semibold tracking-tight">The legal system in {st.name}</h2><p className="mt-3 text-[17px] leading-relaxed text-ink-2">{r.body}</p></div>
         <dl className="surface grid gap-3 p-7 text-[15px]">{[["First instance", st.lower_court], ["Intermediate", st.intermediate_court], ["Superior court", st.supreme_court], ["Tribunal", st.tribunal], ["Family law", st.family_court], ["Lawyer regulator", st.regulator]].filter(([, v]) => v).map(([k, v]) => <div key={k}><dt className="text-[13px] text-muted">{k}</dt><dd className="font-medium">{v}</dd></div>)}</dl>
       </section> : null}
       <FaqList faq={r.faq} />

@@ -5,7 +5,7 @@ import Breadcrumbs from "./Breadcrumbs";
 export default function Hero({ title, kicker, intro, image, credit, crumbs, children, size = "md", center = false }: { title: string; kicker?: string; intro?: string | null; image?: string | null; credit?: Credit; crumbs?: Crumb[]; children?: React.ReactNode; size?: "md" | "lg"; center?: boolean }) {
   return (
     <section className="relative overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -top-40 h-[34rem] bg-[radial-gradient(60%_60%_at_50%_0%,#e7f3ee_0%,transparent_70%)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -top-40 h-[34rem] bg-[radial-gradient(60%_60%_at_50%_0%,var(--glow)_0%,transparent_70%)]" />
       <div className={`wrap relative ${size === "lg" ? "pt-16 pb-12 md:pt-28 md:pb-16" : "pt-8 pb-10 md:pt-12 md:pb-14"} ${center ? "text-center" : ""}`}>
         {crumbs ? <div className={`mb-8 ${center ? "flex justify-center" : ""}`}><Breadcrumbs items={crumbs} /></div> : null}
         {kicker ? <p className="eyebrow">{kicker}</p> : null}

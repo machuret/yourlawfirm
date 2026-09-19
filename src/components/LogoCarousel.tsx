@@ -9,7 +9,7 @@ export default function LogoCarousel({ logos, title }: { logos: { slug: string; 
         <ul className="marquee-track items-center">
           {row.map((l, i) => (
             <li key={i} aria-hidden={i >= logos.length ? "true" : undefined}>
-              <Link href={`/lawyers/${l.slug}`} tabIndex={i >= logos.length ? -1 : undefined} title={l.business_name} className="flex h-14 w-36 items-center justify-center rounded-2xl bg-paper px-4 opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0">
+              <Link href={`/lawyers/${l.slug}`} tabIndex={i >= logos.length ? -1 : undefined} title={l.business_name} className="flex h-14 w-36 items-center justify-center rounded-2xl bg-paper logo-tile px-4 opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0">
                 <img src={l.logo_url} alt={l.business_name} className="max-h-10 max-w-full object-contain" loading="lazy" />
               </Link>
             </li>))}

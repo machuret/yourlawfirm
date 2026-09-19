@@ -14,7 +14,7 @@ export default function FaqList({ faq, title = "Frequently asked questions" }: {
             <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[19px] font-semibold tracking-tight">
               <span>{f.q}</span><Plus aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-muted transition-transform duration-200 group-open:rotate-45" />
             </summary>
-            <p className="mt-3 text-[17px] leading-relaxed text-[#424245]">{f.a}</p>
+            <p className="mt-3 text-[17px] leading-relaxed text-ink-2">{f.a}</p>
           </details>))}
       </div>
     </section>
